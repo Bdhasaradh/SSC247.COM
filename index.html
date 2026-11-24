@@ -1,0 +1,2560 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ssc247.com — Free Mock Test &amp; Study Portal (SSC, RRB, TSLPRB, TSPSC, APPSC)</title>
+  <meta name="description" content="ssc247.com - Free Online Mock Test Portal & Study Notes PDF for SSC CGL, CHSL, GD, RRB, TSLPRB SI / Constable, TSPSC & APPSC Bilingual Preparation." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ssc247.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- PDF.js for Mobile & Desktop PDF Preview -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <!-- pdf-lib for Safe Watermarked PDF Download -->
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+  <style id="core-styles">
+    :root {
+      --bg-page: #F5F7FF;
+      --bg-outer: linear-gradient(160deg, #1E1B4B 0%, #2E1065 38%, #4C1D95 75%, #312E81 100%);
+      --bg-header: rgba(15, 23, 42, 0.92);
+      --bg-card: #FFFFFF;
+      --bg-panel: rgba(255, 255, 255, 0.96);
+      --bg-soft: #F3F0FF;
+      --bg-input: #FFFFFF;
+      --border-color: #E2E8F0;
+      --border-strong: #CBD5E1;
+      --text-header: #F8FAFC;
+      --text-card: #0F172A;
+      --text-muted: #475569;
+      --accent-primary: #6D28D9;
+      --accent-secondary: #4F46E5;
+      --accent-deep: #3B0764;
+      --accent-green: #16A34A;
+      --accent-red: #DC2626;
+      --notice-bg: #FEF9C3;
+      --notice-border: #FDE047;
+      --notice-text: #713F12;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.08);
+      --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.14);
+      --radius-md: 12px;
+      --radius-lg: 16px;
+    }
+
+    body.user-dark-mode {
+      --bg-page: #0B1120;
+      --bg-outer: linear-gradient(160deg, #090D16 0%, #111827 50%, #1E1B4B 100%);
+      --bg-header: rgba(9, 13, 22, 0.96);
+      --bg-card: #162033;
+      --bg-panel: #111827;
+      --bg-soft: #1E293B;
+      --bg-input: #0F172A;
+      --border-color: #334155;
+      --border-strong: #475569;
+      --text-header: #F8FAFC;
+      --text-card: #F1F5F9;
+      --text-muted: #94A3B8;
+      --accent-primary: #8B5CF6;
+      --accent-secondary: #6366F1;
+      --notice-bg: #2D2612;
+      --notice-border: #854D0E;
+      --notice-text: #FEF08A;
+    }
+
+    body.hide-site-borders .panel-box,
+    body.hide-site-borders .item-card,
+    body.hide-site-borders .utility-card,
+    body.hide-site-borders .important-notice-box {
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', 'Noto Sans Telugu', sans-serif;
+    }
+
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: var(--bg-outer);
+      color: var(--text-card);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .portal-wrapper {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ================= HEADER ================= */
+    .portal-header {
+      width: 100%;
+      background: var(--bg-header);
+      backdrop-filter: blur(10px);
+      padding: 10px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      position: sticky;
+      top: 0;
+      z-index: 900;
+    }
+
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .theme-switch {
+      display: inline-flex;
+      align-items: center;
+      width: 54px;
+      height: 28px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 3px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .theme-switch-knob {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #FDE047;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      transition: transform 0.25s ease;
+    }
+
+    body.user-dark-mode .theme-switch-knob {
+      transform: translateX(26px);
+      background: #38BDF8;
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #FFFFFF;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .official-badge {
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+      color: #FFFFFF;
+      font-size: 0.68rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(255, 255, 255, 0.1);
+      color: #FFFFFF;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+      transform: translateY(-1px);
+    }
+
+    .nav-btn.create-btn {
+      background: #16A34A;
+      border-color: #22C55E;
+    }
+
+    .nav-btn.create-btn:hover {
+      background: #15803D;
+    }
+
+    .nav-btn.admin-btn {
+      background: #4F46E5;
+      border-color: #818CF8;
+    }
+
+    .nav-btn.admin-btn:hover {
+      background: #4338CA;
+    }
+
+    /* ================= HERO & SUBJECT BAR (100% FULL WIDTH) ================= */
+    .hero-strip {
+      width: 100%;
+      padding: 18px 24px 14px;
+      background: rgba(15, 23, 42, 0.35);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-top-row {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .hero-heading h1 {
+      color: #FFFFFF;
+      font-size: 1.45rem;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .hero-heading p {
+      color: #CBD5E1;
+      font-size: 0.88rem;
+      margin-top: 3px;
+    }
+
+    .view-mode-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      background: rgba(15, 23, 42, 0.55);
+      padding: 5px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .mode-pill {
+      padding: 7px 14px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      color: #E2E8F0;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mode-pill.active {
+      background: #FFFFFF;
+      color: #1E1B4B;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Subject Bar (Top Horizontal Navigation + Dropdown) */
+    .subject-control-bar {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.62);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .subject-bar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .subject-label-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+    }
+
+    .live-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: #4ADE80;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .live-dot::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ADE80;
+      box-shadow: 0 0 8px #4ADE80;
+    }
+
+    .subject-search-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .subject-select, .portal-search-input {
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-strong);
+      background: var(--bg-input);
+      color: var(--text-card);
+      font-size: 0.92rem;
+      font-weight: 600;
+      outline: none;
+    }
+
+    .subject-pills-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+      scrollbar-width: thin;
+    }
+
+    .subject-pill-btn {
+      white-space: nowrap;
+      padding: 6px 13px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.1);
+      color: #F8FAFC;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .subject-pill-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .subject-pill-btn.active {
+      background: #7C3AED;
+      border-color: #C4B5FD;
+      color: #FFFFFF;
+      box-shadow: 0 2px 10px rgba(124, 58, 237, 0.45);
+    }
+
+    /* ================= MAIN FULL-WIDTH WORKSPACE ================= */
+    .main-content {
+      width: 100%;
+      flex: 1;
+      padding: 18px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* SIDE-BY-SIDE SPLIT LAYOUT (LEFT: MOCK TESTS | RIGHT: STUDY NOTES & PDFs) */
+    .dual-workspace {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .dual-workspace.mode-tests {
+      grid-template-columns: 1fr;
+    }
+    .dual-workspace.mode-tests #pdfColumn {
+      display: none;
+    }
+
+    .dual-workspace.mode-pdfs {
+      grid-template-columns: 1fr;
+    }
+    .dual-workspace.mode-pdfs #mockTestColumn {
+      display: none;
+    }
+
+    .panel-box {
+      width: 100%;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      min-height: 360px;
+    }
+
+    .panel-head {
+      padding: 14px 18px;
+      background: var(--bg-soft);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .panel-head-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-card);
+    }
+
+    .count-chip {
+      background: var(--accent-primary);
+      color: #FFFFFF;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+
+    .panel-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex: 1;
+    }
+
+    /* Cards inside Left & Right columns */
+    .item-card {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-left: 4px solid var(--accent-primary);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .item-card.pdf-card {
+      border-left-color: #0284C7;
+    }
+
+    .item-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+      border-color: var(--accent-secondary);
+    }
+
+    .item-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .item-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    .order-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent-primary);
+      color: #FFFFFF;
+      font-size: 0.78rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .pdf-card .order-num {
+      background: #0284C7;
+    }
+
+    .subject-tag {
+      background: var(--bg-soft);
+      color: var(--accent-primary);
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+    }
+
+    .pdf-card .subject-tag {
+      color: #0369A1;
+    }
+
+    body.user-dark-mode .pdf-card .subject-tag {
+      color: #38BDF8;
+    }
+
+    .meta-small {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .item-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--text-card);
+      line-height: 1.45;
+      word-break: break-word;
+    }
+
+    .item-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    .item-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary-action {
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #312E81, #6D28D9);
+      color: #FFFFFF;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .btn-primary-action:hover {
+      opacity: 0.94;
+      transform: scale(1.02);
+    }
+
+    .btn-pdf-view {
+      padding: 8px 13px;
+      border-radius: 8px;
+      border: 1px solid #0284C7;
+      background: transparent;
+      color: #0284C7;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    body.user-dark-mode .btn-pdf-view {
+      color: #38BDF8;
+      border-color: #38BDF8;
+    }
+
+    .btn-pdf-download {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: none;
+      background: linear-gradient(135deg, #0284C7, #2563EB);
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-pdf-download:hover {
+      filter: brightness(1.08);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 36px 16px;
+      color: var(--text-muted);
+      border: 1px dashed var(--border-strong);
+      border-radius: var(--radius-md);
+      background: var(--bg-soft);
+    }
+
+    /* ================= LOWER FULL-WIDTH UTILITY GRID ================= */
+    .quote-banner {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .quote-banner p {
+      font-size: 0.98rem;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .quote-banner span {
+      display: block;
+      margin-top: 5px;
+      font-size: 0.8rem;
+      color: #CBD5E1;
+    }
+
+    .bottom-utility-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .utility-card {
+      width: 100%;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .utility-card h3 {
+      font-size: 1.02rem;
+      font-weight: 800;
+      color: var(--accent-primary);
+      margin-bottom: 12px;
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border-strong);
+      background: var(--bg-input);
+      color: var(--text-card);
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.14);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 76px;
+      margin-bottom: 10px;
+    }
+
+    .submit-full-btn {
+      width: 100%;
+      padding: 11px 16px;
+      border-radius: 9px;
+      border: none;
+      background: linear-gradient(135deg, #6D28D9, #4F46E5);
+      color: #FFFFFF;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .submit-full-btn:hover {
+      filter: brightness(1.07);
+    }
+
+    .important-notice-box {
+      width: 100%;
+      background: var(--notice-bg);
+      border: 1px solid var(--notice-border);
+      color: var(--notice-text);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      font-size: 0.85rem;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .stat-tile {
+      background: var(--bg-soft);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    .stat-tile .num {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: var(--accent-primary);
+    }
+
+    .stat-tile .lbl {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* ================= FOOTER ================= */
+    .portal-footer {
+      width: 100%;
+      background: var(--bg-header);
+      color: #CBD5E1;
+      padding: 16px 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.84rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-link-btn {
+      background: none;
+      border: none;
+      color: #C4B5FD;
+      font-size: 0.84rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* ================= FULL-SCREEN MODALS (EXAM, PDF VIEWER, ADMIN, PAGE) ================= */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 13, 22, 0.82);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-shell {
+      width: 100%;
+      max-width: 1280px;
+      max-height: 94vh;
+      background: var(--bg-card);
+      color: var(--text-card);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+    }
+
+    .modal-shell.fullscreen {
+      max-width: 100%;
+      height: 96vh;
+      max-height: 96vh;
+    }
+
+    .modal-head {
+      padding: 14px 20px;
+      background: #1E1B4B;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .modal-close-btn {
+      padding: 7px 14px;
+      border-radius: 8px;
+      border: none;
+      background: #DC2626;
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 0.84rem;
+      cursor: pointer;
+    }
+
+    .modal-content {
+      padding: 18px 20px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    /* ================= EXAM INTERFACE ================= */
+    .exam-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 18px;
+    }
+
+    .exam-question-card {
+      background: var(--bg-soft);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 18px;
+    }
+
+    .exam-q-text {
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border-strong);
+      background: var(--bg-card);
+      color: var(--text-card);
+      font-size: 0.94rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .option-btn.selected {
+      background: #EDE9FE;
+      border-color: #6D28D9;
+      color: #3B0764;
+    }
+
+    body.user-dark-mode .option-btn.selected {
+      background: #312E81;
+      color: #FFFFFF;
+      border-color: #818CF8;
+    }
+
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .palette-btn {
+      padding: 8px 0;
+      border-radius: 8px;
+      border: 1px solid var(--border-strong);
+      background: var(--bg-card);
+      color: var(--text-card);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .palette-btn.answered {
+      background: #16A34A;
+      color: #FFFFFF;
+      border-color: #16A34A;
+    }
+
+    .palette-btn.current {
+      outline: 3px solid #6D28D9;
+    }
+
+    /* ================= ADMIN TABS ================= */
+    .admin-tabs-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .admin-tab-btn {
+      white-space: nowrap;
+      padding: 9px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border-strong);
+      background: var(--bg-soft);
+      color: var(--text-card);
+      font-weight: 700;
+      font-size: 0.84rem;
+      cursor: pointer;
+    }
+
+    .admin-tab-btn.active {
+      background: #312E81;
+      color: #FFFFFF;
+      border-color: #6366F1;
+    }
+
+    .admin-section {
+      display: none;
+    }
+
+    .admin-section.active {
+      display: block;
+    }
+
+    .admin-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table.admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+
+    table.admin-table th, table.admin-table td {
+      border: 1px solid var(--border-color);
+      padding: 10px;
+      text-align: left;
+    }
+
+    table.admin-table th {
+      background: var(--bg-soft);
+      font-weight: 800;
+    }
+
+    .code-editor-box {
+      width: 100%;
+      min-height: 110px;
+      font-family: monospace;
+      background: #0F172A;
+      color: #38BDF8;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 0.85rem;
+      margin-bottom: 12px;
+    }
+
+    .toast-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0F172A;
+      color: #FFFFFF;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border-left: 4px solid #22C55E;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      z-index: 4000;
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: none;
+    }
+
+    /* ================= PDF PREVIEW CANVAS CONTAINER ================= */
+    #pdfCanvasList canvas {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: #FFFFFF;
+    }
+
+    /* ================= MOBILE RESPONSIVE RULES ================= */
+    @media (max-width: 899px) {
+      .portal-header {
+        padding: 10px 14px;
+      }
+      .hero-strip {
+        padding: 14px 12px 12px;
+      }
+      .hero-heading h1 {
+        font-size: 1.18rem;
+      }
+      .subject-search-row {
+        grid-template-columns: 1fr;
+      }
+      .main-content {
+        padding: 12px;
+        gap: 14px;
+      }
+      .dual-workspace {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .item-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .item-actions {
+        width: 100%;
+        justify-content: flex-end;
+      }
+      .bottom-utility-grid {
+        grid-template-columns: 1fr;
+      }
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .exam-layout {
+        grid-template-columns: 1fr;
+      }
+      .portal-footer {
+        padding: 14px 12px;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <!-- Dynamic Live Custom CSS Container -->
+  <style id="live-custom-css"></style>
+</head>
+<body>
+  <div class="portal-wrapper">
+    <!-- ================= TOP NAVIGATION HEADER ================= -->
+    <header class="portal-header">
+      <div class="brand-left">
+        <button class="theme-switch" id="themeToggleBtn" title="Toggle Dark / Light Mode" aria-label="Toggle Theme">
+          <span class="theme-switch-knob" id="themeKnob">☀️</span>
+        </button>
+        <a class="brand-title" onclick="goHome()">
+          <span>ssc247.com</span>
+          <span class="official-badge">OFFICIAL</span>
+        </a>
+      </div>
+
+      <nav class="header-actions">
+        <button class="nav-btn" onclick="goHome()">Home</button>
+        <button class="nav-btn create-btn" onclick="openAdminPanel(1)">+ Create Post</button>
+        <button class="nav-btn admin-btn" onclick="openAdminPanel(2)">Admin Panel</button>
+      </nav>
+    </header>
+
+    <!-- ================= HERO & SUBJECT NAVIGATION BAR ================= -->
+    <section class="hero-strip">
+      <div class="hero-top-row">
+        <div class="hero-heading">
+          <h1>ssc247.com — Free Mock Test &amp; Study Portal</h1>
+          <p>SSC CGL, CHSL, GD, RRB, TSLPRB SI / Constable, TSPSC &amp; APPSC Bilingual Preparation</p>
+        </div>
+
+        <div class="view-mode-pills">
+          <button class="mode-pill active" id="btnModeBoth" onclick="setViewMode('both')">Side-by-Side View</button>
+          <button class="mode-pill" id="btnModeTests" onclick="setViewMode('tests')">Online Mock Tests</button>
+          <button class="mode-pill" id="btnModePdfs" onclick="setViewMode('pdfs')">Study Notes &amp; PDFs</button>
+        </div>
+      </div>
+
+      <div class="subject-control-bar">
+        <div class="subject-bar-header">
+          <div class="subject-label-wrap">
+            <span>CHOOSE YOUR SUBJECT</span>
+            <span class="live-dot">LIVE</span>
+          </div>
+          <span style="color:#CBD5E1; font-size:0.8rem;" id="activeFilterLabel">Showing: All Subjects</span>
+        </div>
+
+        <div class="subject-search-row">
+          <select id="subjectSelect" class="subject-select" onchange="onSubjectChange(this.value)"></select>
+          <input type="text" id="portalSearchInput" class="portal-search-input" placeholder="Search Mock Tests or Study PDFs (Telugu / English)..." oninput="renderMainWorkspace()" />
+        </div>
+
+        <div class="subject-pills-scroll" id="subjectPillsContainer"></div>
+      </div>
+    </section>
+
+    <!-- ================= MAIN 100% FULL-WIDTH CONTENT ================= -->
+    <main class="main-content">
+      <!-- Custom Live HTML Slot -->
+      <div id="liveCustomHtmlSlot"></div>
+
+      <!-- SIDE-BY-SIDE GRID: LEFT = MOCK TESTS, RIGHT = STUDY NOTES & PDFs -->
+      <section class="dual-workspace" id="dualWorkspace">
+        <!-- LEFT COLUMN: ONLINE MOCK TESTS -->
+        <div class="panel-box" id="mockTestColumn">
+          <div class="panel-head">
+            <div class="panel-head-title">
+              <span>📝 Online Mock Tests</span>
+              <span class="count-chip" id="mockCountChip">0 Tests</span>
+            </div>
+            <button class="nav-btn" style="background:var(--accent-primary); padding:5px 10px; font-size:0.76rem;" onclick="openAdminPanel(1)">+ Add Test</button>
+          </div>
+          <div class="panel-body" id="mockTestsContainer"></div>
+        </div>
+
+        <!-- RIGHT COLUMN: STUDY NOTES & PDFs (ALIGNED RIGHT BESIDE MOCK TESTS) -->
+        <div class="panel-box" id="pdfColumn">
+          <div class="panel-head">
+            <div class="panel-head-title">
+              <span>📚 Study Notes &amp; PDFs</span>
+              <span class="count-chip" style="background:#0284C7;" id="pdfCountChip">0 PDFs</span>
+            </div>
+            <button class="nav-btn" style="background:#0284C7; padding:5px 10px; font-size:0.76rem;" onclick="openAdminPanel(3)">+ Add PDF</button>
+          </div>
+          <div class="panel-body" id="studyPdfsContainer"></div>
+        </div>
+      </section>
+
+      <!-- MOTIVATIONAL QUOTE -->
+      <section class="quote-banner">
+        <p id="portalQuoteText">"Discipline in your study schedule turns an ordinary aspirant into a top ranker."</p>
+        <span id="portalQuoteAuthor">— Aspirant Mindset</span>
+      </section>
+
+      <!-- LOWER UTILITY SECTION: REQUEST FORM + NOTICE & STATS -->
+      <section class="bottom-utility-grid">
+        <div class="utility-card">
+          <h3>Request a Mock Test / Study Note</h3>
+          <form id="requestForm" onsubmit="submitUserRequest(event)">
+            <div class="form-grid-2">
+              <input type="text" id="reqName" class="form-input" placeholder="Your Name *" required />
+              <input type="email" id="reqEmail" class="form-input" placeholder="Your Email ID *" required />
+            </div>
+            <textarea id="reqDetails" class="form-textarea" placeholder="Write topic name or exam details... *" required></textarea>
+            <button type="submit" class="submit-full-btn">Send Request to Admin</button>
+          </form>
+        </div>
+
+        <div class="utility-card">
+          <h3>Portal Overview &amp; Notice</h3>
+          <div class="important-notice-box" id="portalNoticeText">
+            <strong>Important Notice:</strong> ssc247.com is an independent educational preparation platform and is NOT affiliated with SSC (ssc.gov.in / ssc.nic.in), RRB, TSPSC, APPSC, or any government organization.
+          </div>
+          <div class="stats-grid">
+            <div class="stat-tile">
+              <div class="num" id="statTests">0</div>
+              <div class="lbl">Mock Tests</div>
+            </div>
+            <div class="stat-tile">
+              <div class="num" id="statPdfs">0</div>
+              <div class="lbl">Study PDFs</div>
+            </div>
+            <div class="stat-tile">
+              <div class="num" id="statSubjects">0</div>
+              <div class="lbl">Subjects</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="portal-footer">
+      <div>&copy; <span id="currentYear"></span> <strong>ssc247.com</strong> — All Rights Reserved.</div>
+      <div class="footer-links" id="footerLinksContainer"></div>
+    </footer>
+  </div>
+
+  <!-- ================= MOCK TEST EXAM MODAL ================= -->
+  <div class="modal-overlay" id="examModal">
+    <div class="modal-shell fullscreen">
+      <div class="modal-head">
+        <div>
+          <strong id="examModalTitle">Mock Test</strong>
+          <div style="font-size:0.8rem; color:#C4B5FD;" id="examModalSub">Subject</div>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <span id="examTimerBadge" style="background:#F59E0B; color:#111827; padding:6px 12px; border-radius:999px; font-weight:800; font-size:0.86rem;">00:00</span>
+          <button class="modal-close-btn" onclick="closeExamModal()">Exit Exam ✕</button>
+        </div>
+      </div>
+      <div class="modal-content" id="examModalBody"></div>
+    </div>
+  </div>
+
+  <!-- ================= PDF VIEWER MODAL ================= -->
+  <div class="modal-overlay" id="pdfViewerModal">
+    <div class="modal-shell fullscreen">
+      <div class="modal-head">
+        <div>
+          <strong id="pdfModalTitle">Study Note Preview</strong>
+          <div style="font-size:0.8rem; color:#BAE6FD;" id="pdfModalSub">PDF Preview</div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:center;">
+          <button class="btn-pdf-download" id="pdfModalDownloadBtn">⬇ Download PDF</button>
+          <button class="modal-close-btn" onclick="closeModal('pdfViewerModal')">Close ✕</button>
+        </div>
+      </div>
+      <div class="modal-content" id="pdfViewerBody">
+        <div id="pdfViewerStatus" style="margin-bottom:10px; font-weight:600; color:var(--text-muted);"></div>
+        <div id="pdfCanvasList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER PAGE MODAL ================= -->
+  <div class="modal-overlay" id="footerPageModal">
+    <div class="modal-shell" style="max-width:800px;">
+      <div class="modal-head">
+        <strong id="footerPageTitle">Page</strong>
+        <button class="modal-close-btn" onclick="closeModal('footerPageModal')">Close ✕</button>
+      </div>
+      <div class="modal-content" id="footerPageBody" style="line-height:1.7;"></div>
+    </div>
+  </div>
+
+  <!-- ================= ADMIN LOGIN MODAL ================= -->
+  <div class="modal-overlay" id="adminLoginModal">
+    <div class="modal-shell" style="max-width:420px;">
+      <div class="modal-head">
+        <strong>Admin Authentication</strong>
+        <button class="modal-close-btn" onclick="closeModal('adminLoginModal')">Close ✕</button>
+      </div>
+      <div class="modal-content">
+        <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:12px;">Enter Admin Password (Default: <strong>8525</strong>)</p>
+        <input type="password" id="adminPassInput" class="form-input" placeholder="Enter Password..." onkeydown="if(event.key==='Enter') verifyAdminLogin()" style="margin-bottom:12px;" />
+        <button class="submit-full-btn" onclick="verifyAdminLogin()">Unlock Admin Panel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MASTER ADMIN CONTROL PANEL ================= -->
+  <div class="modal-overlay" id="adminPanelModal">
+    <div class="modal-shell fullscreen">
+      <div class="modal-head">
+        <div>
+          <strong>Master Admin Control Panel (Full Screen)</strong>
+          <span style="margin-left:10px; background:#16A34A; padding:3px 9px; border-radius:999px; font-size:0.74rem;">Lifelong Backup &amp; Live Sync Active</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('adminPanelModal')">Close Admin ✕</button>
+      </div>
+
+      <div class="modal-content">
+        <div class="admin-tabs-bar">
+          <button class="admin-tab-btn" id="atab1" onclick="switchAdminTab(1)">1. Create New Post</button>
+          <button class="admin-tab-btn" id="atab2" onclick="switchAdminTab(2)">2. Manage Posts &amp; Backup</button>
+          <button class="admin-tab-btn" id="atab3" onclick="switchAdminTab(3)">3. Study Notes, PDF &amp; Watermark</button>
+          <button class="admin-tab-btn" id="atab4" onclick="switchAdminTab(4)">4. Subjects &amp; Requests</button>
+          <button class="admin-tab-btn" id="atab5" onclick="switchAdminTab(5)">5. Footer Pages</button>
+          <button class="admin-tab-btn" id="atab6" onclick="switchAdminTab(6)">6. Themes, Borders &amp; Notice</button>
+          <button class="admin-tab-btn" id="atab7" onclick="switchAdminTab(7)">7. Live Code &amp; Password</button>
+        </div>
+
+        <!-- TAB 1: CREATE / EDIT MOCK TEST -->
+        <div class="admin-section" id="asec1">
+          <h3 style="margin-bottom:12px;" id="postFormHeading">Create New Mock Test Post</h3>
+          <input type="hidden" id="editPostId" />
+          <div class="form-grid-2">
+            <div>
+              <label style="font-size:0.82rem; font-weight:700;">Subject *</label>
+              <select id="postSubjectSelect" class="form-select" style="margin-top:4px;"></select>
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:700;">Duration (Minutes) *</label>
+              <input type="number" id="postDuration" class="form-input" value="15" min="1" style="margin-top:4px;" />
+            </div>
+          </div>
+          <div style="margin-bottom:12px;">
+            <label style="font-size:0.82rem; font-weight:700;">Mock Test Title (Telugu / English) *</label>
+            <input type="text" id="postTitleInput" class="form-input" placeholder="Ex: ఆసిఫ్ జాహీ వంశం హైదరాబాద్ నిజాంలు - Free Mock Test" style="margin-top:4px;" />
+          </div>
+
+          <div style="background:var(--bg-soft); padding:14px; border-radius:10px; border:1px solid var(--border-color); margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <strong>Questions Builder</strong>
+              <button type="button" class="nav-btn create-btn" style="padding:6px 12px; font-size:0.8rem;" onclick="addQuestionEditorRow()">+ Add Question</button>
+            </div>
+            <div id="questionsBuilderList"></div>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button type="button" class="submit-full-btn" style="max-width:260px;" onclick="saveMockTestPost()">Save &amp; Publish Mock Test</button>
+            <button type="button" class="nav-btn" style="background:#64748B;" onclick="resetPostEditor()">Reset Form</button>
+          </div>
+        </div>
+
+        <!-- TAB 2: MANAGE POSTS & LIFELONG BACKUP -->
+        <div class="admin-section" id="asec2">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <h3>Active Published Mock Tests</h3>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button class="nav-btn create-btn" onclick="exportFullBackup()">⬇ Export JSON Backup</button>
+              <label class="nav-btn admin-btn" style="cursor:pointer;">
+                ⬆ Import JSON Backup
+                <input type="file" accept=".json" style="display:none;" onchange="importFullBackup(event)" />
+              </label>
+            </div>
+          </div>
+          <div class="admin-table-wrap" id="adminPostsTableWrap"></div>
+
+          <h3 style="margin:22px 0 10px;">Lifelong Backup Vault (Deleted Posts)</h3>
+          <div class="admin-table-wrap" id="adminVaultTableWrap"></div>
+        </div>
+
+        <!-- TAB 3: STUDY NOTES, PDF & WATERMARK -->
+        <div class="admin-section" id="asec3">
+          <h3 style="margin-bottom:12px;">Add Study Note / PDF (Appears Side-by-Side with Mock Tests)</h3>
+          <div class="form-grid-2">
+            <div>
+              <label style="font-size:0.82rem; font-weight:700;">Subject *</label>
+              <select id="pdfSubjectSelect" class="form-select" style="margin-top:4px;"></select>
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:700;">PDF Title *</label>
+              <input type="text" id="pdfTitleInput" class="form-input" placeholder="Ex: Telangana History Short Notes PDF" style="margin-top:4px;" />
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div>
+              <label style="font-size:0.82rem; font-weight:700;">Upload PDF File (Optional)</label>
+              <input type="file" id="pdfFileInput" accept="application/pdf" class="form-input" style="margin-top:4px;" />
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:700;">OR Direct PDF URL (Optional)</label>
+              <input type="url" id="pdfUrlInput" class="form-input" placeholder="https://example.com/notes.pdf" style="margin-top:4px;" />
+            </div>
+          </div>
+          <div style="margin-bottom:10px;">
+            <label style="font-size:0.82rem; font-weight:700;">Short Notes Summary / Auto-PDF Content (Used if no file uploaded)</label>
+            <textarea id="pdfSummaryInput" class="form-textarea" placeholder="Write key study points here..." style="margin-top:4px;"></textarea>
+          </div>
+          <button class="submit-full-btn" style="max-width:260px; margin-bottom:20px;" onclick="savePdfNote()">Save Study Note / PDF</button>
+
+          <hr style="border:none; border-top:1px solid var(--border-color); margin:16px 0;" />
+
+          <h4 style="margin-bottom:8px;">Hidden Download Watermark Setting (English/ASCII Recommended)</h4>
+          <div style="display:flex; gap:10px; max-width:520px; margin-bottom:20px;">
+            <input type="text" id="watermarkInput" class="form-input" placeholder="ssc247.com Official Study Material" />
+            <button class="nav-btn admin-btn" onclick="saveWatermark()">Save</button>
+          </div>
+
+          <h3 style="margin-bottom:10px;">Published Study Notes &amp; PDFs</h3>
+          <div class="admin-table-wrap" id="adminPdfsTableWrap"></div>
+        </div>
+
+        <!-- TAB 4: SUBJECTS & USER REQUESTS -->
+        <div class="admin-section" id="asec4">
+          <h3 style="margin-bottom:10px;">Manage Subjects</h3>
+          <div style="display:flex; gap:10px; max-width:520px; margin-bottom:14px;">
+            <input type="text" id="newSubjectInput" class="form-input" placeholder="Add New Subject Name..." />
+            <button class="nav-btn create-btn" onclick="addNewSubject()">+ Add</button>
+          </div>
+          <div id="adminSubjectsList" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px;"></div>
+
+          <h3 style="margin-bottom:10px;">Student Mock Test / PDF Requests</h3>
+          <div class="admin-table-wrap" id="adminRequestsTableWrap"></div>
+        </div>
+
+        <!-- TAB 5: FOOTER PAGES -->
+        <div class="admin-section" id="asec5">
+          <h3 style="margin-bottom:10px;">Edit Footer Pages</h3>
+          <div class="form-grid-2">
+            <select id="footerPageSelect" class="form-select" onchange="loadFooterPageEditor()"></select>
+            <input type="text" id="footerPageTitleInput" class="form-input" placeholder="Page Title" />
+          </div>
+          <textarea id="footerPageContentInput" class="form-textarea" style="min-height:150px;" placeholder="Page HTML or text content..."></textarea>
+          <button class="submit-full-btn" style="max-width:240px;" onclick="saveFooterPage()">Save Footer Page</button>
+        </div>
+
+        <!-- TAB 6: THEMES, BORDERS & NOTICE -->
+        <div class="admin-section" id="asec6">
+          <h3 style="margin-bottom:12px;">Appearance, Quote &amp; Disclaimer Notice</h3>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
+            <button class="nav-btn admin-btn" onclick="toggleBorderVisibility()">Toggle Card Borders</button>
+            <button class="nav-btn" style="background:#0F172A;" onclick="toggleTheme()">Switch Light / Dark Mode</button>
+          </div>
+          <label style="font-size:0.82rem; font-weight:700;">Motivational Quote</label>
+          <input type="text" id="adminQuoteInput" class="form-input" style="margin:4px 0 12px;" />
+          <label style="font-size:0.82rem; font-weight:700;">Important Notice Banner Text</label>
+          <textarea id="adminNoticeInput" class="form-textarea" style="margin-top:4px;"></textarea>
+          <button class="submit-full-btn" style="max-width:240px;" onclick="savePortalTexts()">Update Quote &amp; Notice</button>
+        </div>
+
+        <!-- TAB 7: LIVE CODE UPDATER & PASSWORD -->
+        <div class="admin-section" id="asec7">
+          <h3 style="margin-bottom:10px;">Change Admin Password</h3>
+          <div style="display:flex; gap:10px; max-width:460px; margin-bottom:20px;">
+            <input type="password" id="newAdminPassInput" class="form-input" placeholder="Enter New Admin Password" />
+            <button class="nav-btn admin-btn" onclick="updateAdminPassword()">Update Password</button>
+          </div>
+
+          <h3 style="margin-bottom:10px;">Live Code Updater (Zero GitHub Push Needed)</h3>
+          <label style="font-size:0.82rem; font-weight:700;">Custom HTML Block:</label>
+          <textarea id="customHtmlInput" class="code-editor-box" placeholder="<!-- Optional custom HTML -->"></textarea>
+
+          <label style="font-size:0.82rem; font-weight:700;">Custom CSS Styles:</label>
+          <textarea id="customCssInput" class="code-editor-box" placeholder="/* Optional custom CSS */"></textarea>
+
+          <label style="font-size:0.82rem; font-weight:700;">Custom JavaScript Code:</label>
+          <textarea id="customJsInput" class="code-editor-box" placeholder="// Optional custom JS"></textarea>
+
+          <button class="submit-full-btn" style="max-width:280px; background:#16A34A;" onclick="saveLiveCode()">Submit &amp; Update Live Portal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-box" id="toastBox"></div>
+
+  <script>
+    // Configure PDF.js worker safely
+    if (window.pdfjsLib) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+
+    const STORAGE_KEY = 'ssc247_portal_state_v2';
+
+    const DEFAULT_STATE = {
+      password: '8525',
+      darkMode: false,
+      hideBorders: false,
+      watermarkText: 'ssc247.com Official Study Material',
+      quote: '"Discipline in your study schedule turns an ordinary aspirant into a top ranker."',
+      quoteAuthor: '— Aspirant Mindset',
+      notice: 'Important Notice: ssc247.com is an independent educational preparation platform and is NOT affiliated with SSC (ssc.gov.in / ssc.nic.in), RRB, TSPSC, APPSC, or any government organization.',
+      customHtml: '',
+      customCss: '',
+      customJs: '',
+      subjects: [
+        'Telangana History',
+        'General Science',
+        'Current Affairs',
+        'History of India',
+        'Geography',
+        'Indian Polity and Economy',
+        'Telangana Movement and State Formation',
+        'Arithmetic & Reasoning'
+      ],
+      posts: [
+        {
+          id: 'SYNC-8492A',
+          subject: 'Telangana History',
+          title: 'ఆసిఫ్ జాహీ వంశం హైదరాబాద్ నిజాంలు - Free Mock Test',
+          duration: 10,
+          createdAt: '2026-11-24',
+          questions: [
+            {
+              q: 'హైదరాబాద్‌లో ఆసిఫ్ జాహీ వంశాన్ని (నిజాం రాజ్యాన్ని) 1724లో స్థాపించింది ఎవరు?',
+              options: [
+                'మీర్ ఖమరుద్దీన్ ఖాన్ (నిజాం-ఉల్-ముల్క్)',
+                'నాసిర్ జంగ్',
+                'సలాబత్ జంగ్',
+                'మీర్ ఉస్మాన్ అలీ ఖాన్'
+              ],
+              ans: 0,
+              exp: 'మీర్ ఖమరుద్దీన్ ఖాన్ (ఆసిఫ్ జా I) 1724 శకర్ ఖేడా యుద్ధం తర్వాత స్వతంత్ర హైదరాబాద్ రాజ్యాన్ని స్థాపించారు.'
+            },
+            {
+              q: 'ఆసిఫ్ జాహీ వంశంలో చివరి నిజాం (7వ నిజాం) ఎవరు?',
+              options: [
+                'మీర్ మహబూబ్ అలీ ఖాన్',
+                'మీర్ ఉస్మాన్ అలీ ఖాన్',
+                'అఫ్జల్-ఉద్-దౌలా',
+                'సికిందర్ జా'
+              ],
+              ans: 1,
+              exp: 'మీర్ ఉస్మాన్ అలీ ఖాన్ (1911–1948) ఆసిఫ్ జాహీ వంశంలో 7వ మరియు చివరి నిజాం.'
+            }
+          ]
+        }
+      ],
+      vault: [],
+      pdfs: [
+        {
+          id: 'PDF-1001',
+          subject: 'Telangana History',
+          title: 'ఆసిఫ్ జాహీ వంశం (హైదరాబాద్ నిజాంలు) — Complete Study Notes PDF',
+          summary: 'Asaf Jahi Dynasty (1724 - 1948) Key Exam Points:\n1. Founder: Mir Qamar-ud-din Khan (Asaf Jah I / Nizam-ul-Mulk) in 1724 after Battle of Shakar Kheda.\n2. Capital shifted from Aurangabad to Hyderabad by Nizam Ali Khan (Asaf Jah II) in 1769.\n3. Subsidiary Alliance signed by Nizam Ali Khan in 1798.\n4. Osmania University established in 1918 by Mir Osman Ali Khan (7th Nizam).\n5. Operation Polo (Police Action) integrated Hyderabad State into India on Sept 17, 1948.',
+          fileData: '',
+          fileUrl: '',
+          createdAt: '2026-11-24'
+        }
+      ],
+      requests: [],
+      footerPages: {
+        about: {
+          title: 'About ssc247.com',
+          content: 'ssc247.com is a free bilingual competitive exam preparation portal offering daily mock tests and study PDFs for SSC, RRB, TSLPRB SI/Constable, TSPSC, and APPSC aspirants.'
+        },
+        privacy: {
+          title: 'Privacy Policy',
+          content: 'We respect student privacy. No sensitive personal data is shared with third parties. Study requests submitted on this portal are used solely to add requested topics.'
+        },
+        contact: {
+          title: 'Contact & Support',
+          content: 'Need specific mock tests or Telugu/English study PDFs? Use the "Request a Mock Test / Study Note" form on the homepage.'
+        }
+      }
+    };
+
+    let state = loadState();
+    let selectedSubject = 'ALL';
+    let currentViewMode = 'both';
+    let isAdminUnlocked = false;
+    let pendingAdminTab = 2;
+
+    // Exam runtime variables
+    let activeExam = null;
+    let examCurrentIdx = 0;
+    let examAnswers = {};
+    let examTimerInterval = null;
+    let examSecondsLeft = 0;
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return structuredClone(DEFAULT_STATE);
+        const parsed = JSON.parse(raw);
+        return {
+          ...structuredClone(DEFAULT_STATE),
+          ...parsed,
+          footerPages: { ...DEFAULT_STATE.footerPages, ...(parsed.footerPages || {}) }
+        };
+      } catch (e) {
+        return structuredClone(DEFAULT_STATE);
+      }
+    }
+
+    function persistState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (err) {
+        showToast('Storage almost full! Try using PDF URLs for very large files.');
+      }
+    }
+
+    function showToast(msg) {
+      const box = document.getElementById('toastBox');
+      box.textContent = msg;
+      box.style.display = 'block';
+      clearTimeout(box._t);
+      box._t = setTimeout(() => { box.style.display = 'none'; }, 3200);
+    }
+
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // ================= INITIALIZATION =================
+    function initPortal() {
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      applyThemeAndBorders();
+      applyPortalTexts();
+      applyLiveCustomCode();
+      renderSubjectControls();
+      renderMainWorkspace();
+      renderFooterLinks();
+    }
+
+    function applyThemeAndBorders() {
+      document.body.classList.toggle('user-dark-mode', !!state.darkMode);
+      document.body.classList.toggle('hide-site-borders', !!state.hideBorders);
+      document.getElementById('themeKnob').textContent = state.darkMode ? '🌙' : '☀️';
+    }
+
+    function toggleTheme() {
+      state.darkMode = !state.darkMode;
+      persistState();
+      applyThemeAndBorders();
+    }
+    document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);
+
+    function toggleBorderVisibility() {
+      state.hideBorders = !state.hideBorders;
+      persistState();
+      applyThemeAndBorders();
+      showToast(state.hideBorders ? 'Borders Hidden' : 'Borders Enabled');
+    }
+
+    function applyPortalTexts() {
+      document.getElementById('portalQuoteText').textContent = state.quote;
+      document.getElementById('portalQuoteAuthor').textContent = state.quoteAuthor || '— Aspirant Mindset';
+      document.getElementById('portalNoticeText').innerHTML = escapeHtml(state.notice);
+    }
+
+    function applyLiveCustomCode() {
+      document.getElementById('liveCustomHtmlSlot').innerHTML = state.customHtml || '';
+      document.getElementById('live-custom-css').textContent = state.customCss || '';
+      if (state.customJs && state.customJs.trim()) {
+        try {
+          new Function(state.customJs)();
+        } catch (e) {
+          console.warn('Custom JS skipped due to syntax error:', e);
+        }
+      }
+    }
+
+    function goHome() {
+      selectedSubject = 'ALL';
+      document.getElementById('portalSearchInput').value = '';
+      setViewMode('both');
+      renderSubjectControls();
+      renderMainWorkspace();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function setViewMode(mode) {
+      currentViewMode = mode;
+      const ws = document.getElementById('dualWorkspace');
+      ws.classList.remove('mode-tests', 'mode-pdfs');
+      if (mode === 'tests') ws.classList.add('mode-tests');
+      if (mode === 'pdfs') ws.classList.add('mode-pdfs');
+
+      document.getElementById('btnModeBoth').classList.toggle('active', mode === 'both');
+      document.getElementById('btnModeTests').classList.toggle('active', mode === 'tests');
+      document.getElementById('btnModePdfs').classList.toggle('active', mode === 'pdfs');
+    }
+
+    // ================= SUBJECT CONTROLS =================
+    function renderSubjectControls() {
+      const sel = document.getElementById('subjectSelect');
+      const pills = document.getElementById('subjectPillsContainer');
+      const totalItems = state.posts.length + state.pdfs.length;
+
+      let selectHtml = `<option value="ALL">-- All Subjects (${totalItems} Available) --</option>`;
+      let pillsHtml = `<button class="subject-pill-btn ${selectedSubject === 'ALL' ? 'active' : ''}" onclick="onSubjectChange('ALL')">All Subjects</button>`;
+
+      state.subjects.forEach(subj => {
+        const tCount = state.posts.filter(p => p.subject === subj).length;
+        const pCount = state.pdfs.filter(d => d.subject === subj).length;
+        const sum = tCount + pCount;
+        const label = sum > 0 ? `${subj} (${sum})` : subj;
+        selectHtml += `<option value="${escapeHtml(subj)}" ${selectedSubject === subj ? 'selected' : ''}>${escapeHtml(label)}</option>`;
+        pillsHtml += `<button class="subject-pill-btn ${selectedSubject === subj ? 'active' : ''}" onclick="onSubjectChange('${escapeHtml(subj).replace(/'/g, "\\'")}')">${escapeHtml(subj)}${sum > 0 ? ` (${sum})` : ''}</button>`;
+      });
+
+      sel.innerHTML = selectHtml;
+      sel.value = selectedSubject;
+      pills.innerHTML = pillsHtml;
+      document.getElementById('activeFilterLabel').textContent =
+        selectedSubject === 'ALL' ? 'Showing: All Subjects' : `Showing: ${selectedSubject}`;
+    }
+
+    function onSubjectChange(val) {
+      selectedSubject = val;
+      renderSubjectControls();
+      renderMainWorkspace();
+    }
+
+    // ================= MAIN SIDE-BY-SIDE RENDERER =================
+    function renderMainWorkspace() {
+      const q = (document.getElementById('portalSearchInput').value || '').trim().toLowerCase();
+
+      const filteredPosts = state.posts.filter(p => {
+        const subOk = selectedSubject === 'ALL' || p.subject === selectedSubject;
+        const qOk = !q || p.title.toLowerCase().includes(q) || p.subject.toLowerCase().includes(q);
+        return subOk && qOk;
+      });
+
+      const filteredPdfs = state.pdfs.filter(d => {
+        const subOk = selectedSubject === 'ALL' || d.subject === selectedSubject;
+        const qOk = !q || d.title.toLowerCase().includes(q) || d.subject.toLowerCase().includes(q) || (d.summary || '').toLowerCase().includes(q);
+        return subOk && qOk;
+      });
+
+      document.getElementById('mockCountChip').textContent = `${filteredPosts.length} Tests`;
+      document.getElementById('pdfCountChip').textContent = `${filteredPdfs.length} PDFs`;
+      document.getElementById('statTests').textContent = state.posts.length;
+      document.getElementById('statPdfs').textContent = state.pdfs.length;
+      document.getElementById('statSubjects').textContent = state.subjects.length;
+
+      // Render Mock Tests (Left Column)
+      const mockWrap = document.getElementById('mockTestsContainer');
+      if (!filteredPosts.length) {
+        mockWrap.innerHTML = `<div class="empty-state">ఈ సబ్జెక్ట్‌లో ఇంకా Mock Tests లేవు.<br/><br/><button class="btn-primary-action" onclick="openAdminPanel(1)">+ Add First Mock Test</button></div>`;
+      } else {
+        mockWrap.innerHTML = filteredPosts.map((post, idx) => `
+          <article class="item-card">
+            <div class="item-info">
+              <div class="item-meta">
+                <span class="order-num">${idx + 1}</span>
+                <span class="subject-tag">${escapeHtml(post.subject)}</span>
+                <span class="meta-small">${post.questions.length} Qs • ${post.duration || 10} Min</span>
+              </div>
+              <div class="item-title">${escapeHtml(post.title)}</div>
+            </div>
+            <div class="item-actions">
+              <button class="btn-primary-action" onclick="startExam('${post.id}')">Start Exam →</button>
+            </div>
+          </article>
+        `).join('');
+      }
+
+      // Render Study Notes & PDFs (Right Column — Aligned Side-by-Side)
+      const pdfWrap = document.getElementById('studyPdfsContainer');
+      if (!filteredPdfs.length) {
+        pdfWrap.innerHTML = `<div class="empty-state">ఈ సబ్జెక్ట్‌లో ఇంకా Study Notes / PDFs లేవు.<br/><br/><button class="btn-pdf-download" onclick="openAdminPanel(3)">+ Upload Study PDF</button></div>`;
+      } else {
+        pdfWrap.innerHTML = filteredPdfs.map((doc, idx) => `
+          <article class="item-card pdf-card">
+            <div class="item-info">
+              <div class="item-meta">
+                <span class="order-num">${idx + 1}</span>
+                <span class="subject-tag">${escapeHtml(doc.subject)}</span>
+                <span class="meta-small">PDF Study Note</span>
+              </div>
+              <div class="item-title">${escapeHtml(doc.title)}</div>
+              ${doc.summary ? `<div class="item-desc">${escapeHtml(doc.summary.slice(0, 110))}${doc.summary.length > 110 ? '...' : ''}</div>` : ''}
+            </div>
+            <div class="item-actions">
+              <button class="btn-pdf-view" onclick="viewPdfNote('${doc.id}')">👁 View</button>
+              <button class="btn-pdf-download" onclick="downloadPdfNote('${doc.id}')">⬇ Download PDF</button>
+            </div>
+          </article>
+        `).join('');
+      }
+    }
+
+    // ================= ERROR-FREE PDF DOWNLOAD & VIEWER =================
+    function safeAscii(text) {
+      return String(text || 'ssc247.com').replace(/[^\x20-\x7E]/g, '').trim() || 'ssc247.com Official';
+    }
+
+    function safeFilename(title) {
+      const cleaned = String(title || 'ssc247_notes')
+        .replace(/[\\/:*?"<>|]+/g, '')
+        .replace(/\s+/g, '_')
+        .slice(0, 60);
+      return (cleaned || 'ssc247_notes') + '.pdf';
+    }
+
+    function dataUriToUint8Array(dataUri) {
+      const base64 = dataUri.includes(',') ? dataUri.split(',')[1] : dataUri;
+      const bin = atob(base64);
+      const bytes = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      return bytes;
+    }
+
+    async function buildSafePdfBytes(doc) {
+      if (!window.PDFLib) throw new Error('PDFLib unavailable');
+      const { PDFDocument, StandardFonts, rgb, degrees } = PDFLib;
+      const wmText = safeAscii(state.watermarkText || 'ssc247.com Official Study Material');
+
+      let pdfDoc = null;
+
+      // Case 1: Uploaded Base64 PDF
+      if (doc.fileData) {
+        const rawBytes = dataUriToUint8Array(doc.fileData);
+        pdfDoc = await PDFDocument.load(rawBytes, { ignoreEncryption: true });
+      }
+      // Case 2: External URL PDF (with CORS-safe check)
+      else if (doc.fileUrl) {
+        const res = await fetch(doc.fileUrl);
+        if (!res.ok) throw new Error('CORS or Network Error');
+        const arrBuf = await res.arrayBuffer();
+        pdfDoc = await PDFDocument.load(arrBuf, { ignoreEncryption: true });
+      }
+      // Case 3: Auto-generate a clean PDF from the Study Note summary
+      else {
+        pdfDoc = await PDFDocument.create();
+        const page = pdfDoc.addPage([595, 842]);
+        const fontBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+        const fontReg = await pdfDoc.embedFont(StandardFonts.Helvetica);
+
+        page.drawText('ssc247.com - Free Study Notes & Exam Material', {
+          x: 42, y: 795, size: 15, font: fontBold, color: rgb(0.24, 0.14, 0.56)
+        });
+        page.drawText('Subject: ' + safeAscii(doc.subject), {
+          x: 42, y: 768, size: 11, font: fontBold, color: rgb(0.15, 0.15, 0.25)
+        });
+        page.drawText('Topic: ' + safeAscii(doc.title), {
+          x: 42, y: 748, size: 11, font: fontBold, color: rgb(0.1, 0.1, 0.1)
+        });
+
+        const lines = safeAscii(doc.summary || 'Visit ssc247.com for complete mock tests and updated study material.')
+          .match(/.{1,78}(\s|$)/g) || ['Visit ssc247.com for complete notes.'];
+
+        let cursorY = 710;
+        lines.forEach(line => {
+          if (cursorY > 60) {
+            page.drawText(line.trim(), { x: 42, y: cursorY, size: 10.5, font: fontReg, color: rgb(0.15, 0.15, 0.15) });
+            cursorY -= 18;
+          }
+        });
+      }
+
+      // Safely stamp watermark on every page using ASCII-safe Helvetica
+      try {
+        const wmFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+        const pages = pdfDoc.getPages();
+        pages.forEach(p => {
+          const { width, height } = p.getSize();
+          p.drawText(wmText, {
+            x: Math.max(40, width * 0.15),
+            y: height * 0.45,
+            size: 28,
+            font: wmFont,
+            color: rgb(0.6, 0.6, 0.7),
+            opacity: 0.18,
+            rotate: degrees(32)
+          });
+        });
+      } catch (wmErr) {
+        console.warn('Watermark skipped safely:', wmErr);
+      }
+
+      return await pdfDoc.save();
+    }
+
+    function triggerBlobDownload(bytes, filename) {
+      const blob = new Blob([bytes], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 1000);
+    }
+
+    async function downloadPdfNote(id) {
+      const doc = state.pdfs.find(d => d.id === id);
+      if (!doc) return;
+
+      showToast('PDF సిద్ధమవుతోంది... దయచేసి వేచి ఉండండి.');
+      const filename = safeFilename(doc.title);
+
+      try {
+        const bytes = await buildSafePdfBytes(doc);
+        triggerBlobDownload(bytes, filename);
+        showToast('PDF విజయవంతంగా డౌన్‌లోడ్ అయింది!');
+      } catch (err) {
+        // Error-free fallback: direct download if external CORS blocks pdf-lib
+        if (doc.fileData) {
+          triggerBlobDownload(dataUriToUint8Array(doc.fileData), filename);
+          showToast('PDF డౌన్‌లోడ్ అయింది!');
+        } else if (doc.fileUrl) {
+          window.open(doc.fileUrl, '_blank', 'noopener');
+          showToast('PDF కొత్త ట్యాబ్‌లో ఓపెన్ చేయబడింది!');
+        } else {
+          showToast('PDF డౌన్‌లోడ్ చేయడంలో సమస్య వచ్చింది. మళ్ళీ ప్రయత్నించండి.');
+        }
+      }
+    }
+
+    async function viewPdfNote(id) {
+      const doc = state.pdfs.find(d => d.id === id);
+      if (!doc) return;
+
+      document.getElementById('pdfModalTitle').textContent = doc.title;
+      document.getElementById('pdfModalSub').textContent = `Subject: ${doc.subject}`;
+      document.getElementById('pdfModalDownloadBtn').onclick = () => downloadPdfNote(id);
+
+      const statusEl = document.getElementById('pdfViewerStatus');
+      const canvasList = document.getElementById('pdfCanvasList');
+      canvasList.innerHTML = '';
+      statusEl.textContent = 'Loading preview...';
+      openModal('pdfViewerModal');
+
+      if (!doc.fileData && !doc.fileUrl) {
+        statusEl.textContent = 'Study Notes Preview (Click Download PDF for formatted file):';
+        canvasList.innerHTML = `
+          <div style="background:var(--bg-soft); padding:20px; border-radius:12px; border:1px solid var(--border-color); white-space:pre-wrap; line-height:1.8; font-size:0.96rem;">
+            ${escapeHtml(doc.summary || 'No preview text available.')}
+          </div>`;
+        return;
+      }
+
+      try {
+        const source = doc.fileData ? { data: dataUriToUint8Array(doc.fileData) } : { url: doc.fileUrl };
+        const pdf = await pdfjsLib.getDocument(source).promise;
+        statusEl.textContent = `Total Pages: ${pdf.numPages}`;
+
+        for (let pageNum = 1; pageNum <= Math.min(pdf.numPages, 25); pageNum++) {
+          const page = await pdf.getPage(pageNum);
+          const viewport = page.getViewport({ scale: 1.4 });
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+          canvasList.appendChild(canvas);
+          await page.render({ canvasContext: ctx, viewport }).promise;
+        }
+      } catch (err) {
+        if (doc.fileUrl) {
+          statusEl.textContent = 'Direct Viewer:';
+          canvasList.innerHTML = `<iframe src="${escapeHtml(doc.fileUrl)}" style="width:100%; height:72vh; border:none; border-radius:8px;"></iframe>`;
+        } else {
+          statusEl.textContent = 'Preview unavailable directly. Please click Download PDF above.';
+        }
+      }
+    }
+
+    // ================= MOCK TEST EXAM ENGINE =================
+    function startExam(postId) {
+      const post = state.posts.find(p => p.id === postId);
+      if (!post || !post.questions.length) {
+        showToast('ఈ టెస్ట్‌లో ప్రశ్నలు లేవు!');
+        return;
+      }
+
+      activeExam = post;
+      examCurrentIdx = 0;
+      examAnswers = {};
+      examSecondsLeft = (post.duration || 10) * 60;
+
+      document.getElementById('examModalTitle').textContent = post.title;
+      document.getElementById('examModalSub').textContent = `${post.subject} • ${post.questions.length} Questions`;
+
+      openModal('examModal');
+      renderExamQuestion();
+
+      clearInterval(examTimerInterval);
+      updateTimerUi();
+      examTimerInterval = setInterval(() => {
+        examSecondsLeft--;
+        updateTimerUi();
+        if (examSecondsLeft <= 0) {
+          clearInterval(examTimerInterval);
+          submitExam();
+        }
+      }, 1000);
+    }
+
+    function updateTimerUi() {
+      const m = String(Math.floor(Math.max(0, examSecondsLeft) / 60)).padStart(2, '0');
+      const s = String(Math.max(0, examSecondsLeft) % 60).padStart(2, '0');
+      document.getElementById('examTimerBadge').textContent = `⏱ ${m}:${s}`;
+    }
+
+    function renderExamQuestion() {
+      const qObj = activeExam.questions[examCurrentIdx];
+      const selected = examAnswers[examCurrentIdx];
+      const labels = ['A', 'B', 'C', 'D'];
+
+      const paletteHtml = activeExam.questions.map((_, i) => `
+        <button class="palette-btn ${examAnswers[i] !== undefined ? 'answered' : ''} ${i === examCurrentIdx ? 'current' : ''}" onclick="jumpExamQuestion(${i})">${i + 1}</button>
+      `).join('');
+
+      document.getElementById('examModalBody').innerHTML = `
+        <div class="exam-layout">
+          <div class="exam-question-card">
+            <div style="font-size:0.84rem; font-weight:700; color:var(--accent-primary); margin-bottom:8px;">
+              Question ${examCurrentIdx + 1} of ${activeExam.questions.length}
+            </div>
+            <div class="exam-q-text">${escapeHtml(qObj.q)}</div>
+            <div>
+              ${qObj.options.map((opt, idx) => `
+                <button class="option-btn ${selected === idx ? 'selected' : ''}" onclick="selectExamOption(${idx})">
+                  <strong>${labels[idx]}.</strong> <span>${escapeHtml(opt)}</span>
+                </button>
+              `).join('')}
+            </div>
+            <div style="display:flex; justify-content:space-between; gap:10px; margin-top:16px; flex-wrap:wrap;">
+              <button class="nav-btn" style="background:#475569;" onclick="jumpExamQuestion(${examCurrentIdx - 1})" ${examCurrentIdx === 0 ? 'disabled' : ''}>← Previous</button>
+              <div style="display:flex; gap:8px;">
+                ${examCurrentIdx < activeExam.questions.length - 1
+                  ? `<button class="nav-btn admin-btn" onclick="jumpExamQuestion(${examCurrentIdx + 1})">Save &amp; Next →</button>`
+                  : `<button class="nav-btn create-btn" onclick="submitExam()">Submit Exam ✓</button>`
+                }
+              </div>
+            </div>
+          </div>
+
+          <div class="exam-question-card">
+            <strong>Question Palette</strong>
+            <div class="palette-grid">${paletteHtml}</div>
+            <button class="submit-full-btn" style="margin-top:18px; background:#16A34A;" onclick="submitExam()">Finish &amp; View Score</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function selectExamOption(optIdx) {
+      examAnswers[examCurrentIdx] = optIdx;
+      renderExamQuestion();
+    }
+
+    function jumpExamQuestion(idx) {
+      if (idx < 0 || idx >= activeExam.questions.length) return;
+      examCurrentIdx = idx;
+      renderExamQuestion();
+    }
+
+    function submitExam() {
+      clearInterval(examTimerInterval);
+      let correct = 0, wrong = 0, unattempted = 0;
+
+      const reviewHtml = activeExam.questions.map((qObj, idx) => {
+        const userAns = examAnswers[idx];
+        const isCorrect = userAns === qObj.ans;
+        if (userAns === undefined) unattempted++;
+        else if (isCorrect) correct++;
+        else wrong++;
+
+        return `
+          <div style="background:var(--bg-soft); border:1px solid var(--border-color); border-left:4px solid ${userAns === undefined ? '#94A3B8' : isCorrect ? '#16A34A' : '#DC2626'}; border-radius:10px; padding:14px; margin-bottom:12px;">
+            <div style="font-weight:700; margin-bottom:6px;">Q${idx + 1}. ${escapeHtml(qObj.q)}</div>
+            <div style="font-size:0.88rem; margin-bottom:4px;">Your Answer: <strong>${userAns !== undefined ? escapeHtml(qObj.options[userAns]) : 'Not Attempted'}</strong></div>
+            <div style="font-size:0.88rem; color:#16A34A; font-weight:700;">Correct Answer: ${escapeHtml(qObj.options[qObj.ans])}</div>
+            ${qObj.exp ? `<div style="font-size:0.84rem; color:var(--text-muted); margin-top:6px;">Explanation: ${escapeHtml(qObj.exp)}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+
+      const accuracy = activeExam.questions.length ? Math.round((correct / activeExam.questions.length) * 100) : 0;
+
+      document.getElementById('examModalBody').innerHTML = `
+        <div style="text-align:center; padding:16px; background:var(--bg-soft); border-radius:12px; margin-bottom:18px;">
+          <h2 style="color:var(--accent-primary); margin-bottom:8px;">Exam Result Summary</h2>
+          <div style="display:flex; justify-content:center; gap:18px; flex-wrap:wrap; font-weight:800;">
+            <span style="color:#16A34A;">Correct: ${correct}</span>
+            <span style="color:#DC2626;">Wrong: ${wrong}</span>
+            <span style="color:#64748B;">Skipped: ${unattempted}</span>
+            <span style="color:var(--accent-primary);">Score: ${accuracy}%</span>
+          </div>
+        </div>
+        <h3 style="margin-bottom:10px;">Detailed Answer Review</h3>
+        ${reviewHtml}
+      `;
+    }
+
+    function closeExamModal() {
+      clearInterval(examTimerInterval);
+      closeModal('examModal');
+    }
+
+    // ================= USER REQUEST FORM =================
+    function submitUserRequest(e) {
+      e.preventDefault();
+      const name = document.getElementById('reqName').value.trim();
+      const email = document.getElementById('reqEmail').value.trim();
+      const details = document.getElementById('reqDetails').value.trim();
+      if (!name || !email || !details) return;
+
+      state.requests.unshift({
+        id: 'REQ-' + Date.now().toString().slice(-5),
+        name, email, details,
+        date: new Date().toLocaleDateString('en-IN')
+      });
+      persistState();
+      e.target.reset();
+      showToast('మీ రిక్వెస్ట్ అడ్మిన్‌కు విజయవంతంగా పంపబడింది!');
+    }
+
+    // ================= FOOTER PAGES =================
+    function renderFooterLinks() {
+      const container = document.getElementById('footerLinksContainer');
+      container.innerHTML = Object.keys(state.footerPages).map(key => `
+        <button class="footer-link-btn" onclick="openFooterPage('${key}')">${escapeHtml(state.footerPages[key].title)}</button>
+      `).join('');
+    }
+
+    function openFooterPage(key) {
+      const page = state.footerPages[key];
+      if (!page) return;
+      document.getElementById('footerPageTitle').textContent = page.title;
+      document.getElementById('footerPageBody').innerHTML = `<p style="white-space:pre-wrap;">${escapeHtml(page.content)}</p>`;
+      openModal('footerPageModal');
+    }
+
+    // ================= MODAL HELPERS =================
+    function openModal(id) {
+      document.getElementById(id).classList.add('open');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('open');
+    }
+
+    // ================= ADMIN AUTH & PANEL =================
+    function openAdminPanel(tabNum = 2) {
+      pendingAdminTab = tabNum;
+      if (isAdminUnlocked) {
+        launchAdminUi(tabNum);
+      } else {
+        document.getElementById('adminPassInput').value = '';
+        openModal('adminLoginModal');
+        setTimeout(() => document.getElementById('adminPassInput').focus(), 100);
+      }
+    }
+
+    function verifyAdminLogin() {
+      const entered = document.getElementById('adminPassInput').value.trim();
+      if (entered === state.password) {
+        isAdminUnlocked = true;
+        closeModal('adminLoginModal');
+        launchAdminUi(pendingAdminTab);
+      } else {
+        showToast('తప్పు పాస్‌వర్డ్! (Default: 8525)');
+      }
+    }
+
+    function launchAdminUi(tabNum) {
+      populateAdminDropdowns();
+      refreshAllAdminTables();
+      document.getElementById('watermarkInput').value = state.watermarkText || '';
+      document.getElementById('adminQuoteInput').value = state.quote || '';
+      document.getElementById('adminNoticeInput').value = state.notice || '';
+      document.getElementById('customHtmlInput').value = state.customHtml || '';
+      document.getElementById('customCssInput').value = state.customCss || '';
+      document.getElementById('customJsInput').value = state.customJs || '';
+
+      if (!document.getElementById('questionsBuilderList').children.length) {
+        addQuestionEditorRow();
+      }
+      openModal('adminPanelModal');
+      switchAdminTab(tabNum);
+    }
+
+    function switchAdminTab(num) {
+      for (let i = 1; i <= 7; i++) {
+        document.getElementById('atab' + i).classList.toggle('active', i === num);
+        document.getElementById('asec' + i).classList.toggle('active', i === num);
+      }
+      if (num === 5) loadFooterPageEditor();
+    }
+
+    function populateAdminDropdowns() {
+      const opts = state.subjects.map(s => `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join('');
+      document.getElementById('postSubjectSelect').innerHTML = opts;
+      document.getElementById('pdfSubjectSelect').innerHTML = opts;
+
+      const fSel = document.getElementById('footerPageSelect');
+      fSel.innerHTML = Object.keys(state.footerPages).map(k => `<option value="${k}">${escapeHtml(state.footerPages[k].title)}</option>`).join('');
+    }
+
+    // ---- TAB 1: QUESTION BUILDER ----
+    function addQuestionEditorRow(qData = null) {
+      const list = document.getElementById('questionsBuilderList');
+      const idx = list.children.length + 1;
+      const div = document.createElement('div');
+      div.className = 'q-editor-item';
+      div.style.cssText = 'background:var(--bg-card); border:1px solid var(--border-color); border-radius:10px; padding:12px; margin-bottom:10px;';
+      div.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <strong>Question #${idx}</strong>
+          <button type="button" onclick="this.closest('.q-editor-item').remove()" style="background:#DC2626; color:#FFF; border:none; border-radius:6px; padding:4px 9px; cursor:pointer; font-size:0.76rem;">Remove</button>
+        </div>
+        <input type="text" class="form-input qe-q" placeholder="Question text (Telugu / English) *" value="${qData ? escapeHtml(qData.q) : ''}" style="margin-bottom:8px;" />
+        <div class="form-grid-2">
+          <input type="text" class="form-input qe-o0" placeholder="Option A *" value="${qData ? escapeHtml(qData.options[0]) : ''}" />
+          <input type="text" class="form-input qe-o1" placeholder="Option B *" value="${qData ? escapeHtml(qData.options[1]) : ''}" />
+          <input type="text" class="form-input qe-o2" placeholder="Option C *" value="${qData ? escapeHtml(qData.options[2]) : ''}" />
+          <input type="text" class="form-input qe-o3" placeholder="Option D *" value="${qData ? escapeHtml(qData.options[3]) : ''}" />
+        </div>
+        <div class="form-grid-2">
+          <select class="form-select qe-ans">
+            <option value="0" ${qData && qData.ans === 0 ? 'selected' : ''}>Correct Answer: Option A</option>
+            <option value="1" ${qData && qData.ans === 1 ? 'selected' : ''}>Correct Answer: Option B</option>
+            <option value="2" ${qData && qData.ans === 2 ? 'selected' : ''}>Correct Answer: Option C</option>
+            <option value="3" ${qData && qData.ans === 3 ? 'selected' : ''}>Correct Answer: Option D</option>
+          </select>
+          <input type="text" class="form-input qe-exp" placeholder="Explanation (Optional)" value="${qData ? escapeHtml(qData.exp || '') : ''}" />
+        </div>
+      `;
+      list.appendChild(div);
+    }
+
+    function resetPostEditor() {
+      document.getElementById('editPostId').value = '';
+      document.getElementById('postFormHeading').textContent = 'Create New Mock Test Post';
+      document.getElementById('postTitleInput').value = '';
+      document.getElementById('postDuration').value = 15;
+      document.getElementById('questionsBuilderList').innerHTML = '';
+      addQuestionEditorRow();
+    }
+
+    function saveMockTestPost() {
+      const subject = document.getElementById('postSubjectSelect').value;
+      const title = document.getElementById('postTitleInput').value.trim();
+      const duration = parseInt(document.getElementById('postDuration').value, 10) || 10;
+      const editId = document.getElementById('editPostId').value;
+
+      if (!title) { showToast('దయచేసి Mock Test Title నమోదు చేయండి.'); return; }
+
+      const rows = Array.from(document.querySelectorAll('.q-editor-item'));
+      const questions = [];
+      for (const r of rows) {
+        const q = r.querySelector('.qe-q').value.trim();
+        const opts = [
+          r.querySelector('.qe-o0').value.trim(),
+          r.querySelector('.qe-o1').value.trim(),
+          r.querySelector('.qe-o2').value.trim(),
+          r.querySelector('.qe-o3').value.trim()
+        ];
+        if (q && opts[0] && opts[1]) {
+          questions.push({
+            q,
+            options: opts.map((o, i) => o || `Option ${i + 1}`),
+            ans: parseInt(r.querySelector('.qe-ans').value, 10) || 0,
+            exp: r.querySelector('.qe-exp').value.trim()
+          });
+        }
+      }
+
+      if (!questions.length) { showToast('కనీసం 1 ప్రశ్న మరియు ఆప్షన్స్ నమోదు చేయండి.'); return; }
+
+      if (editId) {
+        const idx = state.posts.findIndex(p => p.id === editId);
+        if (idx > -1) {
+          state.posts[idx] = { ...state.posts[idx], subject, title, duration, questions };
+        }
+      } else {
+        state.posts.unshift({
+          id: 'SYNC-' + Math.random().toString(36).substring(2, 7).toUpperCase(),
+          subject, title, duration, questions,
+          createdAt: new Date().toISOString().slice(0, 10)
+        });
+      }
+
+      persistState();
+      resetPostEditor();
+      renderSubjectControls();
+      renderMainWorkspace();
+      refreshAllAdminTables();
+      showToast('Mock Test విజయవంతంగా సేవ్ అయింది!');
+    }
+
+    function editExistingPost(id) {
+      const post = state.posts.find(p => p.id === id);
+      if (!post) return;
+      document.getElementById('editPostId').value = post.id;
+      document.getElementById('postFormHeading').textContent = 'Edit Mock Test: ' + post.id;
+      document.getElementById('postSubjectSelect').value = post.subject;
+      document.getElementById('postTitleInput').value = post.title;
+      document.getElementById('postDuration').value = post.duration || 10;
+      const list = document.getElementById('questionsBuilderList');
+      list.innerHTML = '';
+      post.questions.forEach(q => addQuestionEditorRow(q));
+      switchAdminTab(1);
+    }
+
+    function deletePostToVault(id) {
+      const idx = state.posts.findIndex(p => p.id === id);
+      if (idx === -1) return;
+      const [removed] = state.posts.splice(idx, 1);
+      removed.deletedAt = new Date().toLocaleDateString('en-IN');
+      state.vault.unshift(removed);
+      persistState();
+      renderSubjectControls();
+      renderMainWorkspace();
+      refreshAllAdminTables();
+      showToast('పోస్ట్ Lifelong Backup Vault కు తరలించబడింది.');
+    }
+
+    function restoreFromVault(id) {
+      const idx = state.vault.findIndex(v => v.id === id);
+      if (idx === -1) return;
+      const [item] = state.vault.splice(idx, 1);
+      delete item.deletedAt;
+      state.posts.unshift(item);
+      persistState();
+      renderSubjectControls();
+      renderMainWorkspace();
+      refreshAllAdminTables();
+      showToast('పోస్ట్ తిరిగి Restore చేయబడింది!');
+    }
+
+    function permanentDeleteVault(id) {
+      state.vault = state.vault.filter(v => v.id !== id);
+      persistState();
+      refreshAllAdminTables();
+      showToast('శాశ్వతంగా తొలగించబడింది.');
+    }
+
+    // ---- TAB 3: PDF NOTES ----
+    function savePdfNote() {
+      const subject = document.getElementById('pdfSubjectSelect').value;
+      const title = document.getElementById('pdfTitleInput').value.trim();
+      const url = document.getElementById('pdfUrlInput').value.trim();
+      const summary = document.getElementById('pdfSummaryInput').value.trim();
+      const fileInput = document.getElementById('pdfFileInput');
+
+      if (!title) { showToast('PDF Title తప్పనిసరి!'); return; }
+
+      const finalize = (fileData) => {
+        state.pdfs.unshift({
+          id: 'PDF-' + Date.now().toString().slice(-5),
+          subject,
+          title,
+          summary,
+          fileData: fileData || '',
+          fileUrl: url,
+          createdAt: new Date().toISOString().slice(0, 10)
+        });
+        persistState();
+        document.getElementById('pdfTitleInput').value = '';
+        document.getElementById('pdfUrlInput').value = '';
+        document.getElementById('pdfSummaryInput').value = '';
+        fileInput.value = '';
+        renderSubjectControls();
+        renderMainWorkspace();
+        refreshAllAdminTables();
+        showToast('Study Note / PDF విజయవంతంగా జోడించబడింది!');
+      };
+
+      if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = () => finalize(reader.result);
+        reader.readAsDataURL(fileInput.files[0]);
+      } else {
+        finalize('');
+      }
+    }
+
+    function deletePdfNote(id) {
+      state.pdfs = state.pdfs.filter(d => d.id !== id);
+      persistState();
+      renderSubjectControls();
+      renderMainWorkspace();
+      refreshAllAdminTables();
+      showToast('PDF తొలగించబడింది.');
+    }
+
+    function saveWatermark() {
+      state.watermarkText = document.getElementById('watermarkInput').value.trim() || 'ssc247.com Official';
+      persistState();
+      showToast('Watermark సేవ్ అయింది!');
+    }
+
+    // ---- TAB 4: SUBJECTS & REQUESTS ----
+    function addNewSubject() {
+      const val = document.getElementById('newSubjectInput').value.trim();
+      if (!val) return;
+      if (!state.subjects.includes(val)) {
+        state.subjects.push(val);
+        persistState();
+        document.getElementById('newSubjectInput').value = '';
+        populateAdminDropdowns();
+        renderSubjectControls();
+        renderMainWorkspace();
+        refreshAllAdminTables();
+        showToast('కొత్త సబ్జెక్ట్ జోడించబడింది!');
+      }
+    }
+
+    function removeSubject(subj) {
+      state.subjects = state.subjects.filter(s => s !== subj);
+      if (selectedSubject === subj) selectedSubject = 'ALL';
+      persistState();
+      populateAdminDropdowns();
+      renderSubjectControls();
+      renderMainWorkspace();
+      refreshAllAdminTables();
+    }
+
+    // ---- TAB 5, 6, 7 ----
+    function loadFooterPageEditor() {
+      const key = document.getElementById('footerPageSelect').value;
+      const page = state.footerPages[key];
+      if (!page) return;
+      document.getElementById('footerPageTitleInput').value = page.title;
+      document.getElementById('footerPageContentInput').value = page.content;
+    }
+
+    function saveFooterPage() {
+      const key = document.getElementById('footerPageSelect').value;
+      if (!state.footerPages[key]) return;
+      state.footerPages[key].title = document.getElementById('footerPageTitleInput').value.trim() || key;
+      state.footerPages[key].content = document.getElementById('footerPageContentInput').value.trim();
+      persistState();
+      renderFooterLinks();
+      populateAdminDropdowns();
+      showToast('Footer Page అప్‌డేట్ అయింది!');
+    }
+
+    function savePortalTexts() {
+      state.quote = document.getElementById('adminQuoteInput').value.trim() || DEFAULT_STATE.quote;
+      state.notice = document.getElementById('adminNoticeInput').value.trim() || DEFAULT_STATE.notice;
+      persistState();
+      applyPortalTexts();
+      showToast('Quote & Notice అప్‌డేట్ అయ్యాయి!');
+    }
+
+    function updateAdminPassword() {
+      const np = document.getElementById('newAdminPassInput').value.trim();
+      if (np.length < 4) { showToast('కనీసం 4 అక్షరాల పాస్‌వర్డ్ ఇవ్వండి.'); return; }
+      state.password = np;
+      persistState();
+      document.getElementById('newAdminPassInput').value = '';
+      showToast('Admin Password మార్చబడింది!');
+    }
+
+    function saveLiveCode() {
+      state.customHtml = document.getElementById('customHtmlInput').value;
+      state.customCss = document.getElementById('customCssInput').value;
+      state.customJs = document.getElementById('customJsInput').value;
+      persistState();
+      applyLiveCustomCode();
+      showToast('Custom Code లైవ్ పోర్టల్‌లో అప్లై అయింది!');
+    }
+
+    // ---- BACKUP EXPORT / IMPORT ----
+    function exportFullBackup() {
+      const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `ssc247_backup_${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Full JSON Backup డౌన్‌లోడ్ అయింది!');
+    }
+
+    function importFullBackup(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const imported = JSON.parse(reader.result);
+          state = { ...structuredClone(DEFAULT_STATE), ...imported };
+          persistState();
+          initPortal();
+          refreshAllAdminTables();
+          showToast('Backup విజయవంతంగా Restore అయింది!');
+        } catch (err) {
+          showToast('చెల్లని Backup ఫైల్!');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function refreshAllAdminTables() {
+      // Posts Table
+      document.getElementById('adminPostsTableWrap').innerHTML = `
+        <table class="admin-table">
+          <thead><tr><th>#</th><th>ID</th><th>Subject</th><th>Title</th><th>Qs</th><th>Actions</th></tr></thead>
+          <tbody>
+            ${state.posts.map((p, i) => `
+              <tr>
+                <td>${i + 1}</td>
+                <td>${escapeHtml(p.id)}</td>
+                <td>${escapeHtml(p.subject)}</td>
+                <td>${escapeHtml(p.title)}</td>
+                <td>${p.questions.length}</td>
+                <td style="white-space:nowrap;">
+                  <button class="nav-btn admin-btn" style="padding:4px 10px; font-size:0.76rem;" onclick="editExistingPost('${p.id}')">Edit</button>
+                  <button class="modal-close-btn" style="padding:4px 10px; font-size:0.76rem;" onclick="deletePostToVault('${p.id}')">Delete</button>
+                </td>
+              </tr>
+            `).join('') || '<tr><td colspan="6" style="text-align:center;">No active posts</td></tr>'}
+          </tbody>
+        </table>`;
+
+      // Vault Table
+      document.getElementById('adminVaultTableWrap').innerHTML = `
+        <table class="admin-table">
+          <thead><tr><th>ID</th><th>Subject</th><th>Title</th><th>Deleted On</th><th>Actions</th></tr></thead>
+          <tbody>
+            ${state.vault.map(v => `
+              <tr>
+                <td>${escapeHtml(v.id)}</td>
+                <td>${escapeHtml(v.subject)}</td>
+                <td>${escapeHtml(v.title)}</td>
+                <td>${escapeHtml(v.deletedAt || '-')}</td>
+                <td style="white-space:nowrap;">
+                  <button class="nav-btn create-btn" style="padding:4px 10px; font-size:0.76rem;" onclick="restoreFromVault('${v.id}')">Restore</button>
+                  <button class="modal-close-btn" style="padding:4px 10px; font-size:0.76rem;" onclick="permanentDeleteVault('${v.id}')">Delete Forever</button>
+                </td>
+              </tr>
+            `).join('') || '<tr><td colspan="5" style="text-align:center;">Vault is empty</td></tr>'}
+          </tbody>
+        </table>`;
+
+      // PDFs Table
+      document.getElementById('adminPdfsTableWrap').innerHTML = `
+        <table class="admin-table">
+          <thead><tr><th>#</th><th>Subject</th><th>PDF Title</th><th>Source</th><th>Action</th></tr></thead>
+          <tbody>
+            ${state.pdfs.map((d, i) => `
+              <tr>
+                <td>${i + 1}</td>
+                <td>${escapeHtml(d.subject)}</td>
+                <td>${escapeHtml(d.title)}</td>
+                <td>${d.fileData ? 'Uploaded PDF' : d.fileUrl ? 'URL PDF' : 'Auto Study Note PDF'}</td>
+                <td><button class="modal-close-btn" style="padding:4px 10px; font-size:0.76rem;" onclick="deletePdfNote('${d.id}')">Delete</button></td>
+              </tr>
+            `).join('') || '<tr><td colspan="5" style="text-align:center;">No PDFs yet</td></tr>'}
+          </tbody>
+        </table>`;
+
+      // Subjects Pills
+      document.getElementById('adminSubjectsList').innerHTML = state.subjects.map(s => `
+        <span style="background:var(--bg-soft); border:1px solid var(--border-color); padding:6px 12px; border-radius:999px; font-size:0.84rem; display:inline-flex; align-items:center; gap:8px;">
+          ${escapeHtml(s)}
+          <button onclick="removeSubject('${escapeHtml(s).replace(/'/g, "\\'")}')" style="background:none; border:none; color:#DC2626; font-weight:800; cursor:pointer;">✕</button>
+        </span>
+      `).join('');
+
+      // Requests Table
+      document.getElementById('adminRequestsTableWrap').innerHTML = `
+        <table class="admin-table">
+          <thead><tr><th>Date</th><th>Name</th><th>Email</th><th>Requested Topic</th></tr></thead>
+          <tbody>
+            ${state.requests.map(r => `
+              <tr>
+                <td>${escapeHtml(r.date)}</td>
+                <td>${escapeHtml(r.name)}</td>
+                <td>${escapeHtml(r.email)}</td>
+                <td>${escapeHtml(r.details)}</td>
+              </tr>
+            `).join('') || '<tr><td colspan="4" style="text-align:center;">No student requests yet</td></tr>'}
+          </tbody>
+        </table>`;
+    }
+
+    initPortal();
+  </script>
+</body>
+</html>

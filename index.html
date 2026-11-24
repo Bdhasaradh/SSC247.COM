@@ -1,0 +1,2746 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ssc247.com — Free Mock Test &amp; Study Portal (SSC, RRB, TSLPRB, TSPSC, APPSC)</title>
+  <meta name="description" content="ssc247.com - Free Online Mock Test Portal & Study Notes PDF for SSC CGL, CHSL, GD, RRB, TSLPRB SI / Constable, TSPSC & APPSC Bilingual Preparation." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ssc247.com/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Telugu:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- PDF.js for Safe PDF Preview -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <!-- pdf-lib for Safe Watermarked PDF Download -->
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+
+  <style id="core-styles">
+    :root {
+      /* Portal Theme Variables (Updated dynamically by 20 Portal Themes) */
+      --bg-outer: linear-gradient(180deg, #1A1744 0%, #272262 32%, #48429A 68%, #9CA3DB 100%);
+      --bg-header: rgba(15, 23, 42, 0.94);
+      --bg-card: #FFFFFF;
+      --bg-card-soft: #F8FAFC;
+      --bg-input: #FFFFFF;
+      --border-color: #CBD5E1;
+      --border-card: rgba(255, 255, 255, 0.24);
+      --text-header: #FFFFFF;
+      --text-card: #0F172A;
+      --text-muted: #475569;
+      --accent-primary: #6D28D9;
+      --accent-secondary: #4F46E5;
+      --btn-gradient: linear-gradient(135deg, #312E81 0%, #6D28D9 100%);
+      --notice-bg: #FEF9C3;
+      --notice-border: #EAB308;
+      --notice-text: #713F12;
+
+      /* Exam Screen Theme Variables (Updated dynamically by 20 Exam Themes) */
+      --exam-header-bg: linear-gradient(135deg, #1E1B4B, #4C1D95);
+      --exam-bg: #F8FAFC;
+      --exam-card-bg: #FFFFFF;
+      --exam-text: #0F172A;
+      --exam-accent: #6D28D9;
+      --exam-border: #CBD5E1;
+    }
+
+    body.user-dark-mode {
+      --bg-outer: linear-gradient(180deg, #070B14 0%, #0F172A 45%, #1E1B4B 100%) !important;
+      --bg-header: rgba(9, 13, 22, 0.97) !important;
+      --bg-card: #162033 !important;
+      --bg-card-soft: #1E293B !important;
+      --bg-input: #0F172A !important;
+      --border-color: #334155 !important;
+      --text-card: #F1F5F9 !important;
+      --text-muted: #94A3B8 !important;
+      --notice-bg: #2A2410 !important;
+      --notice-border: #A16207 !important;
+      --notice-text: #FEF08A !important;
+    }
+
+    body.hide-site-borders .post-card,
+    body.hide-site-borders .request-card,
+    body.hide-site-borders .quote-box,
+    body.hide-site-borders .important-notice-box,
+    body.hide-site-borders .subject-box {
+      border-color: transparent !important;
+      box-shadow: none !important;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', 'Noto Sans Telugu', sans-serif;
+    }
+
+    html, body {
+      width: 100%;
+      max-width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: var(--bg-outer);
+      color: var(--text-card);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .portal-wrapper {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ================= TOP HEADER (ORIGINAL CLEAN STYLE) ================= */
+    .portal-header {
+      width: 100%;
+      background: var(--bg-header);
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+      position: sticky;
+      top: 0;
+      z-index: 900;
+    }
+
+    .brand-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .theme-switch {
+      display: inline-flex;
+      align-items: center;
+      width: 50px;
+      height: 26px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 3px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .theme-switch-knob {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #FDE047;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      transition: transform 0.25s ease;
+    }
+
+    body.user-dark-mode .theme-switch-knob {
+      transform: translateX(24px);
+      background: #38BDF8;
+    }
+
+    .brand-title {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #FFFFFF;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .official-badge {
+      background: linear-gradient(135deg, #6366F1, #8B5CF6);
+      color: #FFFFFF;
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 999px;
+      letter-spacing: 0.5px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.12);
+      color: #FFFFFF;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .nav-btn:hover {
+      background: rgba(255, 255, 255, 0.24);
+    }
+
+    .nav-btn.create-btn {
+      background: #16A34A;
+      border-color: #22C55E;
+    }
+
+    .nav-btn.create-btn:hover {
+      background: #15803D;
+    }
+
+    /* ================= MAIN CONTAINER (100% RESPONSIVE, ZERO CUTOFF) ================= */
+    .main-container {
+      width: 100%;
+      max-width: 100%;
+      padding: 20px 24px 30px;
+      margin: 0 auto;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    /* ================= HERO CENTERED (ORIGINAL STYLE) ================= */
+    .hero-block {
+      text-align: center;
+      color: #FFFFFF;
+      padding: 4px 8px;
+    }
+
+    .hero-block h1 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+      line-height: 1.3;
+    }
+
+    .hero-block p {
+      font-size: 0.9rem;
+      color: #E2E8F0;
+      margin-top: 6px;
+      line-height: 1.45;
+    }
+
+    .top-filter-pills {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .filter-pill-btn {
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(15, 23, 42, 0.45);
+      color: #F8FAFC;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-pill-btn.active {
+      background: #FFFFFF;
+      color: #1E1B4B;
+      border-color: #FFFFFF;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+    }
+
+    /* ================= SUBJECT SELECTOR BOX (ORIGINAL NEON BORDER STYLE) ================= */
+    .subject-box-outer {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2px;
+      border-radius: 14px;
+      background: linear-gradient(90deg, #F59E0B, #EC4899, #8B5CF6, #06B6D4);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    .subject-box {
+      width: 100%;
+      background: #17153B;
+      border-radius: 12px;
+      padding: 14px 16px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .subject-box-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      gap: 10px;
+    }
+
+    .subject-box-label {
+      color: #F8FAFC;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #4ADE80;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .live-badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4ADE80;
+      box-shadow: 0 0 8px #4ADE80;
+    }
+
+    .subject-select {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: 9px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-input);
+      color: var(--text-card);
+      font-size: 0.94rem;
+      font-weight: 700;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* ================= SIDE-BY-SIDE FEED (MOCK TEST LEFT | PDF RIGHT) ================= */
+    .content-feed-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+
+    .content-feed-grid.single-col {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .feed-column {
+      width: 100%;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .column-mini-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 4px;
+      color: #F8FAFC;
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .column-mini-count {
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+    }
+
+    /* ORIGINAL CRISP WHITE CARD STYLE WITH PROPER BORDERS & ZERO OVERFLOW */
+    .post-card {
+      width: 100%;
+      min-width: 0;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-left: 5px solid var(--accent-primary);
+      border-radius: 14px;
+      padding: 16px 18px;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .post-card.pdf-post-card {
+      border-left-color: #0284C7;
+    }
+
+    .post-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.22);
+    }
+
+    .post-card-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .post-meta-row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .post-index-circle {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent-primary);
+      color: #FFFFFF;
+      font-size: 0.78rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .pdf-post-card .post-index-circle {
+      background: #0284C7;
+    }
+
+    .post-subject-pill {
+      background: #EDE9FE;
+      color: #5B21B6;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid #DDD6FE;
+      max-width: 100%;
+      overflow-wrap: break-word;
+    }
+
+    .pdf-post-card .post-subject-pill {
+      background: #E0F2FE;
+      color: #0369A1;
+      border-color: #BAE6FD;
+    }
+
+    body.user-dark-mode .post-subject-pill {
+      background: #312E81;
+      color: #E0E7FF;
+      border-color: #4338CA;
+    }
+
+    body.user-dark-mode .pdf-post-card .post-subject-pill {
+      background: #0C4A6E;
+      color: #BAE6FD;
+      border-color: #0369A1;
+    }
+
+    .post-meta-note {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+
+    .post-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-card);
+      line-height: 1.45;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .post-snippet {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 5px;
+      line-height: 1.45;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    .post-card-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
+
+    .start-exam-btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      background: var(--btn-gradient);
+      color: #FFFFFF;
+      font-size: 0.86rem;
+      font-weight: 800;
+      cursor: pointer;
+      white-space: nowrap;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+
+    .start-exam-btn:hover {
+      transform: scale(1.03);
+      filter: brightness(1.08);
+    }
+
+    .pdf-view-btn {
+      padding: 8px 13px;
+      border-radius: 999px;
+      border: 1.5px solid #0284C7;
+      background: transparent;
+      color: #0284C7;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    body.user-dark-mode .pdf-view-btn {
+      color: #38BDF8;
+      border-color: #38BDF8;
+    }
+
+    .pdf-download-btn {
+      padding: 9px 15px;
+      border-radius: 999px;
+      border: none;
+      background: linear-gradient(135deg, #0284C7, #2563EB);
+      color: #FFFFFF;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .empty-card {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1.5px dashed rgba(255, 255, 255, 0.32);
+      border-radius: 14px;
+      padding: 26px 16px;
+      text-align: center;
+      color: #E2E8F0;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* ================= QUOTE, REQUEST FORM & NOTICE (ORIGINAL FULL WIDTH STYLE) ================= */
+    .quote-box {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.56);
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: 14px;
+      padding: 18px 20px;
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .quote-box p {
+      font-size: 0.98rem;
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.5;
+    }
+
+    .quote-box span {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.82rem;
+      color: #CBD5E1;
+    }
+
+    .request-card {
+      width: 100%;
+      background: var(--bg-card);
+      border: 1.5px solid var(--border-color);
+      border-radius: 16px;
+      padding: 20px 22px;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.16);
+    }
+
+    .request-card h3 {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--accent-primary);
+      margin-bottom: 14px;
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .form-input, .form-textarea, .form-select {
+      width: 100%;
+      min-width: 0;
+      padding: 11px 14px;
+      border-radius: 9px;
+      border: 1.5px solid var(--border-color);
+      background: var(--bg-input);
+      color: var(--text-card);
+      font-size: 0.92rem;
+      outline: none;
+    }
+
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.15);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 82px;
+      margin-bottom: 12px;
+    }
+
+    .submit-full-btn {
+      width: 100%;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: none;
+      background: var(--btn-gradient);
+      color: #FFFFFF;
+      font-size: 0.94rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .submit-full-btn:hover {
+      filter: brightness(1.07);
+    }
+
+    .important-notice-box {
+      width: 100%;
+      background: var(--notice-bg);
+      border: 1.5px solid var(--notice-border);
+      color: var(--notice-text);
+      border-radius: 14px;
+      padding: 15px 18px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    /* ================= FOOTER ================= */
+    .portal-footer {
+      width: 100%;
+      background: var(--bg-header);
+      color: #CBD5E1;
+      padding: 16px 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.84rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .footer-link-btn {
+      background: none;
+      border: none;
+      color: #C4B5FD;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+
+    /* ================= MODALS ================= */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 13, 22, 0.84);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-shell {
+      width: 100%;
+      max-width: 1320px;
+      max-height: 95vh;
+      background: var(--bg-card);
+      color: var(--text-card);
+      border-radius: 16px;
+      border: 1.5px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-shell.fullscreen {
+      max-width: 100%;
+      height: 96vh;
+      max-height: 96vh;
+    }
+
+    .modal-head {
+      padding: 14px 20px;
+      background: #1E1B4B;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .modal-close-btn {
+      padding: 7px 14px;
+      border-radius: 8px;
+      border: none;
+      background: #DC2626;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 0.84rem;
+      cursor: pointer;
+    }
+
+    .modal-content {
+      padding: 18px 20px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    /* ================= EXAM INTERFACE (USES 20 DYNAMIC EXAM THEMES) ================= */
+    #examModal .modal-head {
+      background: var(--exam-header-bg);
+    }
+
+    #examModal .modal-content {
+      background: var(--exam-bg);
+      color: var(--exam-text);
+    }
+
+    .exam-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 290px;
+      gap: 18px;
+    }
+
+    .exam-card-box {
+      background: var(--exam-card-bg);
+      color: var(--exam-text);
+      border: 1.5px solid var(--exam-border);
+      border-radius: 14px;
+      padding: 18px;
+    }
+
+    .exam-q-text {
+      font-size: 1.08rem;
+      font-weight: 800;
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    .exam-opt-btn {
+      width: 100%;
+      text-align: left;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+      border: 1.5px solid var(--exam-border);
+      background: var(--exam-card-bg);
+      color: var(--exam-text);
+      font-size: 0.94rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      transition: all 0.15s;
+    }
+
+    .exam-opt-btn.selected {
+      border-color: var(--exam-accent);
+      background: color-mix(in srgb, var(--exam-accent) 14%, var(--exam-card-bg));
+      box-shadow: 0 0 0 2px color-mix(in srgb, var(--exam-accent) 30%, transparent);
+    }
+
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .palette-btn {
+      padding: 8px 0;
+      border-radius: 8px;
+      border: 1.5px solid var(--exam-border);
+      background: var(--exam-card-bg);
+      color: var(--exam-text);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .palette-btn.answered {
+      background: #16A34A;
+      color: #FFFFFF;
+      border-color: #16A34A;
+    }
+
+    .palette-btn.current {
+      outline: 3px solid var(--exam-accent);
+    }
+
+    /* ================= ADMIN PANEL & 20-COLOR PALETTE GRIDS ================= */
+    .admin-tabs-bar {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+      border-bottom: 1.5px solid var(--border-color);
+    }
+
+    .admin-tab-btn {
+      white-space: nowrap;
+      padding: 9px 14px;
+      border-radius: 8px;
+      border: 1.5px solid var(--border-color);
+      background: var(--bg-card-soft);
+      color: var(--text-card);
+      font-weight: 700;
+      font-size: 0.84rem;
+      cursor: pointer;
+    }
+
+    .admin-tab-btn.active {
+      background: var(--accent-primary);
+      color: #FFFFFF;
+      border-color: var(--accent-primary);
+    }
+
+    .admin-section {
+      display: none;
+    }
+
+    .admin-section.active {
+      display: block;
+    }
+
+    .upload-mode-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .upload-mode-btn {
+      padding: 10px 8px;
+      border-radius: 9px;
+      border: 1.5px solid var(--border-color);
+      background: var(--bg-card-soft);
+      color: var(--text-card);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .upload-mode-btn.active {
+      background: #0284C7;
+      color: #FFFFFF;
+      border-color: #0284C7;
+    }
+
+    .upload-mode-pane {
+      display: none;
+      background: var(--bg-card-soft);
+      border: 1.5px solid var(--border-color);
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 14px;
+    }
+
+    .upload-mode-pane.active {
+      display: block;
+    }
+
+    .color-palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+      gap: 10px;
+      margin: 12px 0 18px;
+    }
+
+    .color-swatch-card {
+      border: 2px solid var(--border-color);
+      border-radius: 10px;
+      padding: 8px;
+      cursor: pointer;
+      background: var(--bg-card);
+      transition: transform 0.15s, border-color 0.15s;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .color-swatch-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .color-swatch-card.active {
+      border-color: #16A34A;
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.25);
+    }
+
+    .swatch-preview-bar {
+      height: 32px;
+      border-radius: 6px;
+      width: 100%;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+    }
+
+    .swatch-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-card);
+      text-align: center;
+    }
+
+    .live-preview-strip {
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+      border: 1.5px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .admin-table-wrap {
+      width: 100%;
+      overflow-x: auto;
+    }
+
+    table.admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    table.admin-table th, table.admin-table td {
+      border: 1px solid var(--border-color);
+      padding: 9px 10px;
+      text-align: left;
+    }
+
+    table.admin-table th {
+      background: var(--bg-card-soft);
+      font-weight: 800;
+    }
+
+    .code-editor-box {
+      width: 100%;
+      min-height: 110px;
+      font-family: monospace;
+      background: #0F172A;
+      color: #38BDF8;
+      border: 1.5px solid #334155;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 0.84rem;
+      margin-bottom: 12px;
+    }
+
+    .toast-box {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0F172A;
+      color: #FFFFFF;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border-left: 4px solid #22C55E;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      z-index: 4000;
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: none;
+    }
+
+    #pdfCanvasList canvas {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: #FFFFFF;
+    }
+
+    /* ================= MOBILE RESPONSIVE (NO CUTOFF, CLEAN STACK) ================= */
+    @media (max-width: 820px) {
+      .portal-header {
+        padding: 10px 12px;
+      }
+      .main-container {
+        padding: 14px 12px 24px;
+        gap: 14px;
+      }
+      .hero-block h1 {
+        font-size: 1.25rem;
+      }
+      .content-feed-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .post-card {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 14px;
+      }
+      .post-card-actions {
+        justify-content: flex-end;
+      }
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .exam-layout {
+        grid-template-columns: 1fr;
+      }
+      .upload-mode-bar {
+        grid-template-columns: 1fr 1fr;
+      }
+      .portal-footer {
+        padding: 14px 12px;
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <style id="live-custom-css"></style>
+</head>
+<body>
+  <div class="portal-wrapper">
+    <!-- ================= TOP HEADER ================= -->
+    <header class="portal-header">
+      <div class="brand-left">
+        <button class="theme-switch" id="themeToggleBtn" title="Switch Dark / Light Mode" aria-label="Switch Theme">
+          <span class="theme-switch-knob" id="themeKnob">☀️</span>
+        </button>
+        <a class="brand-title" onclick="goHome()">
+          <span>ssc247.com</span>
+          <span class="official-badge">OFFICIAL</span>
+        </a>
+      </div>
+
+      <nav class="header-actions">
+        <button class="nav-btn" onclick="goHome()">Home</button>
+        <button class="nav-btn create-btn" onclick="openAdminPanel(1)">+ Create Post</button>
+        <button class="nav-btn" onclick="openAdminPanel(2)">Admin Panel</button>
+      </nav>
+    </header>
+
+    <!-- ================= MAIN PORTAL BODY ================= -->
+    <main class="main-container">
+      <!-- HERO SECTION -->
+      <section class="hero-block">
+        <h1>ssc247.com — Free Mock Test &amp; Study Portal</h1>
+        <p>SSC CGL, CHSL, GD, RRB, TSLPRB SI / Constable, TSPSC &amp; APPSC Bilingual Preparation</p>
+
+        <div class="top-filter-pills">
+          <button class="filter-pill-btn active" id="pillBoth" onclick="setFeedMode('both')">Mock Tests &amp; PDFs (Side-by-Side)</button>
+          <button class="filter-pill-btn" id="pillTests" onclick="setFeedMode('tests')">Online Mock Tests</button>
+          <button class="filter-pill-btn" id="pillPdfs" onclick="setFeedMode('pdfs')">Study Notes &amp; PDFs</button>
+        </div>
+      </section>
+
+      <!-- SUBJECT SELECTOR (ORIGINAL NEON-BORDER DESIGN) -->
+      <section class="subject-box-outer">
+        <div class="subject-box">
+          <div class="subject-box-top">
+            <span class="subject-box-label">CHOOSE YOUR SUBJECT</span>
+            <span class="live-badge">LIVE</span>
+          </div>
+          <select id="subjectSelect" class="subject-select" onchange="onSubjectChange(this.value)"></select>
+        </div>
+      </section>
+
+      <!-- CUSTOM HTML LIVE SLOT -->
+      <div id="liveCustomHtmlSlot"></div>
+
+      <!-- SIDE-BY-SIDE FEED: LEFT = MOCK TESTS, RIGHT = MATCHING SUBJECT STUDY PDFs -->
+      <section class="content-feed-grid" id="contentFeedGrid">
+        <div class="feed-column" id="mockTestsColumn">
+          <div class="column-mini-label">
+            <span>📝 Online Mock Tests</span>
+            <span class="column-mini-count" id="mockCountBadge">0 Available</span>
+          </div>
+          <div id="mockTestsFeed" style="display:flex; flex-direction:column; gap:12px;"></div>
+        </div>
+
+        <div class="feed-column" id="studyPdfsColumn">
+          <div class="column-mini-label">
+            <span>📄 Study Notes &amp; PDFs</span>
+            <span class="column-mini-count" id="pdfCountBadge">0 Available</span>
+          </div>
+          <div id="studyPdfsFeed" style="display:flex; flex-direction:column; gap:12px;"></div>
+        </div>
+      </section>
+
+      <!-- MOTIVATIONAL QUOTE -->
+      <section class="quote-box">
+        <p id="portalQuoteText">"Discipline in your study schedule turns an ordinary aspirant into a top ranker."</p>
+        <span id="portalQuoteAuthor">— Aspirant Mindset</span>
+      </section>
+
+      <!-- REQUEST FORM -->
+      <section class="request-card">
+        <h3>Request a Mock Test / Study Note</h3>
+        <form id="requestForm" onsubmit="submitUserRequest(event)">
+          <div class="form-grid-2">
+            <input type="text" id="reqName" class="form-input" placeholder="Your Name *" required />
+            <input type="email" id="reqEmail" class="form-input" placeholder="Your Email ID *" required />
+          </div>
+          <textarea id="reqDetails" class="form-textarea" placeholder="Write topic name or exam details... *" required></textarea>
+          <button type="submit" class="submit-full-btn">Send Request to Admin</button>
+        </form>
+      </section>
+
+      <!-- IMPORTANT NOTICE -->
+      <section class="important-notice-box" id="portalNoticeText">
+        <strong>Important Notice:</strong> ssc247.com is an independent educational preparation platform and is NOT affiliated with SSC (ssc.gov.in / ssc.nic.in), RRB, TSPSC, APPSC, or any government organization.
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="portal-footer">
+      <div>&copy; <span id="currentYear"></span> <strong>ssc247.com</strong> — All Rights Reserved.</div>
+      <div class="footer-links" id="footerLinksContainer"></div>
+    </footer>
+  </div>
+
+  <!-- ================= MOCK TEST EXAM MODAL ================= -->
+  <div class="modal-overlay" id="examModal">
+    <div class="modal-shell fullscreen">
+      <div class="modal-head">
+        <div>
+          <strong id="examModalTitle">Mock Test</strong>
+          <div style="font-size:0.8rem; opacity:0.88;" id="examModalSub">Subject</div>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+          <select id="examQuickThemeSelect" class="form-select" style="width:auto; padding:6px 10px; font-size:0.78rem; background:#FFFFFF; color:#0F172A;" onchange="applyExamThemeByIndex(this.value, true)" title="Exam Color Theme"></select>
+          <span id="examTimerBadge" style="background:#F59E0B; color:#111827; padding:6px 12px; border-radius:999px; font-weight:800; font-size:0.85rem;">00:00</span>
+          <button class="modal-close-btn" onclick="closeExamModal()">Exit Exam ✕</button>
+        </div>
+      </div>
+      <div class="modal-content" id="examModalBody"></div>
+    </div>
+  </div>
+
+  <!-- ================= STUDY NOTE / PDF / HTML / DRIVE VIEWER MODAL ================= -->
+  <div class="modal-overlay" id="noteViewerModal">
+    <div class="modal-shell fullscreen">
+      <div class="modal-head">
+        <div>
+          <strong id="noteModalTitle">Study Note Preview</strong>
+          <div style="font-size:0.8rem; color:#BAE6FD;" id="noteModalSub">Preview</div>
+        </div>
+        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+          <button class="pdf-download-btn" id="noteModalDownloadBtn">⬇ Download</button>
+          <button class="modal-close-btn" onclick="closeModal('noteViewerModal')">Close ✕</button>
+        </div>
+      </div>
+      <div class="modal-content" id="noteViewerBody">
+        <div id="noteViewerStatus" style="margin-bottom:10px; font-weight:700; color:var(--text-muted);"></div>
+        <div id="pdfCanvasList"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= FOOTER PAGE MODAL ================= -->
+  <div class="modal-overlay" id="footerPageModal">
+    <div class="modal-shell" style="max-width:780px;">
+      <div class="modal-head">
+        <strong id="footerPageTitle">Page</strong>
+        <button class="modal-close-btn" onclick="closeModal('footerPageModal')">Close ✕</button>
+      </div>
+      <div class="modal-content" id="footerPageBody" style="line-height:1.7;"></div>
+    </div>
+  </div>
+
+  <!-- ================= SECURE ADMIN LOGIN MODAL (ZERO PASSWORD HINTS) ================= -->
+  <div class="modal-overlay" id="adminLoginModal">
+    <div class="modal-shell" style="max-width:400px;">
+      <div class="modal-head">
+        <strong>Admin Login</strong>
+        <button class="modal-close-btn" onclick="closeModal('adminLoginModal')">Close ✕</button>
+      </div>
+      <div class="modal-content">
+        <label style="display:block; font-size:0.86rem; font-weight:700; margin-bottom:8px;">Administrator Password</label>
+        <input type="password" id="adminPassInput" class="form-input" autocomplete="current-password" placeholder="Enter Admin Password" onkeydown="if(event.key==='Enter') verifyAdminLogin()" style="margin-bottom:14px;" />
+        <button class="submit-full-btn" onclick="verifyAdminLogin()">Sign In</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= MASTER ADMIN CONTROL PANEL ================= -->
+  <div class="modal-overlay" id="adminPanelModal">
+    <div class="modal-shell fullscreen">
+      <div class="modal-head" id="adminModalHeaderBar">
+        <div>
+          <strong>Master Admin Control Panel</strong>
+          <span style="margin-left:10px; background:#16A34A; padding:3px 10px; border-radius:999px; font-size:0.74rem;">Lifelong Backup &amp; Live Sync Active</span>
+        </div>
+        <button class="modal-close-btn" onclick="closeModal('adminPanelModal')">Close Admin ✕</button>
+      </div>
+
+      <div class="modal-content">
+        <div class="admin-tabs-bar">
+          <button class="admin-tab-btn" id="atab1" onclick="switchAdminTab(1)">1. Create New Post</button>
+          <button class="admin-tab-btn" id="atab2" onclick="switchAdminTab(2)">2. Manage Posts &amp; Backup</button>
+          <button class="admin-tab-btn" id="atab3" onclick="switchAdminTab(3)">3. Study Notes, PDF &amp; Drive</button>
+          <button class="admin-tab-btn" id="atab4" onclick="switchAdminTab(4)">4. Subjects &amp; Requests</button>
+          <button class="admin-tab-btn" id="atab5" onclick="switchAdminTab(5)">5. Footer Pages</button>
+          <button class="admin-tab-btn" id="atab6" onclick="switchAdminTab(6)">6. 20 Portal + 20 Exam Colors &amp; Borders</button>
+          <button class="admin-tab-btn" id="atab7" onclick="switchAdminTab(7)">7. Live Code &amp; Security</button>
+        </div>
+
+        <!-- TAB 1: CREATE / EDIT MOCK TEST -->
+        <div class="admin-section" id="asec1">
+          <h3 style="margin-bottom:12px;" id="postFormHeading">Create New Mock Test Post</h3>
+          <input type="hidden" id="editPostId" />
+          <div class="form-grid-2">
+            <div>
+              <label style="font-size:0.82rem; font-weight:700;">Subject *</label>
+              <select id="postSubjectSelect" class="form-select" style="margin-top:4px;"></select>
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:700;">Duration (Minutes) *</label>
+              <input type="number" id="postDuration" class="form-input" value="15" min="1" style="margin-top:4px;" />
+            </div>
+          </div>
+          <div style="margin-bottom:12px;">
+            <label style="font-size:0.82rem; font-weight:700;">Mock Test Title (Telugu / English) *</label>
+            <input type="text" id="postTitleInput" class="form-input" placeholder="Ex: ఆసిఫ్ జాహీ వంశం హైదరాబాద్ నిజాంలు - Free Mock Test" style="margin-top:4px;" />
+          </div>
+
+          <div style="background:var(--bg-card-soft); padding:14px; border-radius:10px; border:1.5px solid var(--border-color); margin-bottom:14px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <strong>Questions Builder</strong>
+              <button type="button" class="nav-btn create-btn" style="padding:6px 12px; font-size:0.8rem;" onclick="addQuestionEditorRow()">+ Add Question</button>
+            </div>
+            <div id="questionsBuilderList"></div>
+          </div>
+
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <button type="button" class="submit-full-btn" style="max-width:260px;" onclick="saveMockTestPost()">Save &amp; Publish Mock Test</button>
+            <button type="button" class="nav-btn" style="background:#64748B;" onclick="resetPostEditor()">Reset Form</button>
+          </div>
+        </div>
+
+        <!-- TAB 2: MANAGE POSTS & LIFELONG BACKUP -->
+        <div class="admin-section" id="asec2">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <h3>Active Published Mock Tests</h3>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button class="nav-btn create-btn" onclick="exportFullBackup()">⬇ Export JSON Backup</button>
+              <label class="nav-btn" style="background:#4F46E5; cursor:pointer;">
+                ⬆ Import JSON Backup
+                <input type="file" accept=".json" style="display:none;" onchange="importFullBackup(event)" />
+              </label>
+            </div>
+          </div>
+          <div class="admin-table-wrap" id="adminPostsTableWrap"></div>
+
+          <h3 style="margin:22px 0 10px;">Lifelong Backup Vault (Deleted Posts)</h3>
+          <div class="admin-table-wrap" id="adminVaultTableWrap"></div>
+        </div>
+
+        <!-- TAB 3: STUDY NOTES, PDF UPLOAD, GOOGLE DRIVE LINK, TEXT & HTML UPLOAD -->
+        <div class="admin-section" id="asec3">
+          <h3 style="margin-bottom:12px;">Add Study Note / PDF (Automatically Appears Beside Matching Subject Mock Test)</h3>
+
+          <div class="form-grid-2">
+            <div>
+              <label style="font-size:0.82rem; font-weight:700;">Subject *</label>
+              <select id="pdfSubjectSelect" class="form-select" style="margin-top:4px;"></select>
+            </div>
+            <div>
+              <label style="font-size:0.82rem; font-weight:700;">Note / PDF Title *</label>
+              <input type="text" id="pdfTitleInput" class="form-input" placeholder="Ex: Police Acts / Telangana History Notes" style="margin-top:4px;" />
+            </div>
+          </div>
+
+          <label style="display:block; font-size:0.82rem; font-weight:700; margin-bottom:6px;">Choose Upload Source Type:</label>
+          <div class="upload-mode-bar">
+            <button type="button" class="upload-mode-btn active" id="umBtn_pdf" onclick="selectUploadMode('pdf')">📄 1. PDF File Upload</button>
+            <button type="button" class="upload-mode-btn" id="umBtn_drive" onclick="selectUploadMode('drive')">☁️ 2. Google Drive / Direct Link</button>
+            <button type="button" class="upload-mode-btn" id="umBtn_text" onclick="selectUploadMode('text')">📝 3. Text Notes Upload</button>
+            <button type="button" class="upload-mode-btn" id="umBtn_html" onclick="selectUploadMode('html')">💻 4. HTML Code Upload</button>
+          </div>
+
+          <!-- MODE 1: PDF FILE -->
+          <div class="upload-mode-pane active" id="umPane_pdf">
+            <label style="font-size:0.82rem; font-weight:700;">Select PDF File from Device *</label>
+            <input type="file" id="pdfFileInput" accept="application/pdf" class="form-input" style="margin-top:6px;" />
+            <p style="font-size:0.78rem; color:var(--text-muted); margin-top:6px;">Safe local storage PDF upload with automatic watermark &amp; zero 404 error.</p>
+          </div>
+
+          <!-- MODE 2: GOOGLE DRIVE LINK -->
+          <div class="upload-mode-pane" id="umPane_drive">
+            <label style="font-size:0.82rem; font-weight:700;">Paste Google Drive Share Link or Direct PDF URL *</label>
+            <input type="text" id="pdfDriveUrlInput" class="form-input" placeholder="https://drive.google.com/file/d/FILE_ID/view?usp=sharing" style="margin-top:6px;" />
+            <p style="font-size:0.78rem; color:var(--text-muted); margin-top:6px;">Google Drive లింక్ ఇస్తే ఆటోమేటిక్‌గా Direct Download &amp; Preview లింక్‌గా కన్వర్ట్ అవుతుంది (కోలన్ / 404 ఎర్రర్ రాదు).</p>
+          </div>
+
+          <!-- MODE 3: TEXT NOTES -->
+          <div class="upload-mode-pane" id="umPane_text">
+            <label style="font-size:0.82rem; font-weight:700;">Enter Complete Study Notes Text (Telugu / English) *</label>
+            <textarea id="pdfTextContentInput" class="form-textarea" style="min-height:130px; margin-top:6px;" placeholder="Write or paste complete study notes here..."></textarea>
+          </div>
+
+          <!-- MODE 4: HTML CODE -->
+          <div class="upload-mode-pane" id="umPane_html">
+            <label style="font-size:0.82rem; font-weight:700;">Paste HTML Code for Study Notes / Tables / Charts *</label>
+            <textarea id="pdfHtmlContentInput" class="code-editor-box" style="margin-top:6px;" placeholder="<h2>Study Notes</h2><p>Your formatted HTML content...</p>"></textarea>
+          </div>
+
+          <button type="button" class="submit-full-btn" style="max-width:290px; margin-bottom:20px;" onclick="saveStudyNote()">Save &amp; Publish Study Note</button>
+
+          <hr style="border:none; border-top:1.5px solid var(--border-color); margin:16px 0;" />
+
+          <h4 style="margin-bottom:8px;">PDF Download Watermark Text</h4>
+          <div style="display:flex; gap:10px; max-width:520px; margin-bottom:20px;">
+            <input type="text" id="watermarkInput" class="form-input" placeholder="ssc247.com Official Study Material" />
+            <button type="button" class="nav-btn" style="background:#4F46E5;" onclick="saveWatermark()">Save</button>
+          </div>
+
+          <h3 style="margin-bottom:10px;">Published Study Notes &amp; PDFs</h3>
+          <div class="admin-table-wrap" id="adminPdfsTableWrap"></div>
+        </div>
+
+        <!-- TAB 4: SUBJECTS & USER REQUESTS -->
+        <div class="admin-section" id="asec4">
+          <h3 style="margin-bottom:10px;">Manage Subjects</h3>
+          <div style="display:flex; gap:10px; max-width:520px; margin-bottom:14px;">
+            <input type="text" id="newSubjectInput" class="form-input" placeholder="Add New Subject Name..." />
+            <button type="button" class="nav-btn create-btn" onclick="addNewSubject()">+ Add</button>
+          </div>
+          <div id="adminSubjectsList" style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px;"></div>
+
+          <h3 style="margin-bottom:10px;">Student Mock Test / PDF Requests</h3>
+          <div class="admin-table-wrap" id="adminRequestsTableWrap"></div>
+        </div>
+
+        <!-- TAB 5: FOOTER PAGES -->
+        <div class="admin-section" id="asec5">
+          <h3 style="margin-bottom:10px;">Edit Footer Pages</h3>
+          <div class="form-grid-2">
+            <select id="footerPageSelect" class="form-select" onchange="loadFooterPageEditor()"></select>
+            <input type="text" id="footerPageTitleInput" class="form-input" placeholder="Page Title" />
+          </div>
+          <textarea id="footerPageContentInput" class="form-textarea" style="min-height:150px;" placeholder="Page content..."></textarea>
+          <button type="button" class="submit-full-btn" style="max-width:240px;" onclick="saveFooterPage()">Save Footer Page</button>
+        </div>
+
+        <!-- TAB 6: 20 PORTAL COLORS + 20 EXAM COLORS + BORDERS + QUOTE & NOTICE -->
+        <div class="admin-section" id="asec6">
+          <div class="live-preview-strip" id="adminPortalLivePreview">
+            <div>
+              <strong style="color:#FFFFFF;">Live Portal Color Preview: <span id="activePortalThemeName">Classic Royal Indigo</span></strong>
+              <div style="font-size:0.78rem; color:rgba(255,255,255,0.85);">Click any of the 20 colors below to apply instantly across the portal!</div>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button type="button" class="nav-btn" onclick="toggleBorderVisibility()">Toggle Card Borders</button>
+              <button type="button" class="nav-btn" onclick="toggleTheme()">Light / Dark Mode</button>
+            </div>
+          </div>
+
+          <h3>🎨 20 Portal Color Themes (Instant Live Apply)</h3>
+          <div class="color-palette-grid" id="portalThemesGrid"></div>
+
+          <hr style="border:none; border-top:1.5px solid var(--border-color); margin:18px 0;" />
+
+          <div class="live-preview-strip" id="adminExamLivePreview">
+            <div>
+              <strong id="activeExamThemeTitle">Live Exam Screen Color Preview: Classic Purple Exam</strong>
+              <div style="font-size:0.78rem; opacity:0.88;">Click any of the 20 Exam colors below — students immediately see this color inside Mock Tests!</div>
+            </div>
+            <span id="examPreviewBadge" style="padding:5px 12px; border-radius:999px; font-weight:800; font-size:0.78rem; color:#FFFFFF;">Sample Button</span>
+          </div>
+
+          <h3>📝 20 Mock Test Exam Interface Colors (Instant Live Apply)</h3>
+          <div class="color-palette-grid" id="examThemesGrid"></div>
+
+          <hr style="border:none; border-top:1.5px solid var(--border-color); margin:18px 0;" />
+
+          <h3 style="margin-bottom:10px;">Quote &amp; Important Notice</h3>
+          <label style="font-size:0.82rem; font-weight:700;">Motivational Quote</label>
+          <input type="text" id="adminQuoteInput" class="form-input" style="margin:4px 0 12px;" />
+          <label style="font-size:0.82rem; font-weight:700;">Important Notice Banner Text</label>
+          <textarea id="adminNoticeInput" class="form-textarea" style="margin-top:4px;"></textarea>
+          <button type="button" class="submit-full-btn" style="max-width:240px;" onclick="savePortalTexts()">Update Quote &amp; Notice</button>
+        </div>
+
+        <!-- TAB 7: LIVE CODE UPDATER & ENCRYPTED PASSWORD CHANGE (SECRET CODE REQUIRED) -->
+        <div class="admin-section" id="asec7">
+          <div style="background:var(--bg-card-soft); border:1.5px solid var(--border-color); border-radius:12px; padding:16px; margin-bottom:20px;">
+            <h3 style="margin-bottom:10px;">Change Admin Password (Encrypted — Requires Secret Code)</h3>
+            <div class="form-grid-2">
+              <input type="password" id="secretCodeInput" class="form-input" autocomplete="off" placeholder="Enter Secret Code *" />
+              <input type="password" id="newAdminPassInput" class="form-input" autocomplete="new-password" placeholder="Enter New Admin Password *" />
+            </div>
+            <button type="button" class="submit-full-btn" style="max-width:280px;" onclick="updateAdminPassword()">Update Encrypted Password</button>
+          </div>
+
+          <h3 style="margin-bottom:10px;">Live Code Updater (Zero GitHub Push Needed)</h3>
+          <label style="font-size:0.82rem; font-weight:700;">Custom HTML Block:</label>
+          <textarea id="customHtmlInput" class="code-editor-box" placeholder="<!-- Optional custom HTML -->"></textarea>
+
+          <label style="font-size:0.82rem; font-weight:700;">Custom CSS Styles:</label>
+          <textarea id="customCssInput" class="code-editor-box" placeholder="/* Optional custom CSS */"></textarea>
+
+          <label style="font-size:0.82rem; font-weight:700;">Custom JavaScript Code:</label>
+          <textarea id="customJsInput" class="code-editor-box" placeholder="// Optional custom JS"></textarea>
+
+          <button type="button" class="submit-full-btn" style="max-width:280px; background:#16A34A;" onclick="saveLiveCode()">Submit &amp; Update Live Portal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast-box" id="toastBox"></div>
+
+  <script>
+    if (window.pdfjsLib) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+
+    // ================= DETERMINISTIC HASH (NO PLAINTEXT PASSWORDS IN UI) =================
+    function secureHash(input) {
+      const str = 'SSC247::SALT::' + String(input || '');
+      let h1 = 0xdeadbeef ^ str.length;
+      let h2 = 0x41c6ce57 ^ str.length;
+      for (let i = 0; i < str.length; i++) {
+        const ch = str.charCodeAt(i);
+        h1 = Math.imul(h1 ^ ch, 2654435761);
+        h2 = Math.imul(h2 ^ ch, 1597334677);
+      }
+      h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+      h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+      return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(36);
+    }
+
+    // Secret Code hash for password reset (never shown in UI)
+    const SECRET_RESET_HASH = secureHash('8525');
+    // Default initial login password hash (never shown in UI)
+    const INITIAL_LOGIN_HASH = secureHash('ssc247@admin');
+
+    // ================= 20 PORTAL COLOR THEMES =================
+    const PORTAL_THEMES = [
+      { name: '1. Classic Royal Indigo', bg: 'linear-gradient(180deg,#1A1744 0%,#272262 34%,#48429A 68%,#9CA3DB 100%)', header: '#0F172A', accent: '#6D28D9', btn: 'linear-gradient(135deg,#312E81,#6D28D9)' },
+      { name: '2. Deep Ocean Blue', bg: 'linear-gradient(180deg,#082F49 0%,#0C4A6E 40%,#0284C7 75%,#BAE6FD 100%)', header: '#082F49', accent: '#0284C7', btn: 'linear-gradient(135deg,#075985,#0284C7)' },
+      { name: '3. Emerald Forest', bg: 'linear-gradient(180deg,#052E16 0%,#065F46 40%,#059669 75%,#A7F3D0 100%)', header: '#022C22', accent: '#059669', btn: 'linear-gradient(135deg,#065F46,#10B981)' },
+      { name: '4. Midnight Sapphire', bg: 'linear-gradient(180deg,#0F172A 0%,#1E3A8A 45%,#3B82F6 80%,#DBEAFE 100%)', header: '#0F172A', accent: '#2563EB', btn: 'linear-gradient(135deg,#1E3A8A,#2563EB)' },
+      { name: '5. Imperial Plum', bg: 'linear-gradient(180deg,#3B0764 0%,#6B21A8 42%,#9333EA 76%,#E9D5FF 100%)', header: '#2E1065', accent: '#7E22CE', btn: 'linear-gradient(135deg,#581C87,#9333EA)' },
+      { name: '6. Crimson Scholar', bg: 'linear-gradient(180deg,#450A0A 0%,#991B1B 42%,#DC2626 78%,#FECACA 100%)', header: '#450A0A', accent: '#DC2626', btn: 'linear-gradient(135deg,#7F1D1D,#DC2626)' },
+      { name: '7. Teal Academy', bg: 'linear-gradient(180deg,#042F2E 0%,#115E59 42%,#0D9488 76%,#99F6E4 100%)', header: '#042F2E', accent: '#0D9488', btn: 'linear-gradient(135deg,#115E59,#0D9488)' },
+      { name: '8. Sunset Amber', bg: 'linear-gradient(180deg,#451A03 0%,#92400E 42%,#D97706 76%,#FDE68A 100%)', header: '#451A03', accent: '#D97706', btn: 'linear-gradient(135deg,#78350F,#D97706)' },
+      { name: '9. Slate Charcoal', bg: 'linear-gradient(180deg,#0F172A 0%,#334155 45%,#64748B 80%,#E2E8F0 100%)', header: '#0F172A', accent: '#334155', btn: 'linear-gradient(135deg,#1E293B,#475569)' },
+      { name: '10. Rose Velvet', bg: 'linear-gradient(180deg,#4C0519 0%,#9F1239 42%,#E11D48 76%,#FECDD3 100%)', header: '#4C0519', accent: '#E11D48', btn: 'linear-gradient(135deg,#881337,#E11D48)' },
+      { name: '11. Cyber Violet', bg: 'linear-gradient(180deg,#1E1B4B 0%,#4338CA 42%,#7C3AED 76%,#DDD6FE 100%)', header: '#1E1B4B', accent: '#7C3AED', btn: 'linear-gradient(135deg,#3730A3,#7C3AED)' },
+      { name: '12. Turquoise Wave', bg: 'linear-gradient(180deg,#083344 0%,#155E75 42%,#0891B2 76%,#A5F3FC 100%)', header: '#083344', accent: '#0891B2', btn: 'linear-gradient(135deg,#164E63,#06B6D4)' },
+      { name: '13. Olive Military', bg: 'linear-gradient(180deg,#1A2E05 0%,#3F6212 42%,#65A30D 76%,#D9F99D 100%)', header: '#1A2E05', accent: '#4D7C0F', btn: 'linear-gradient(135deg,#365314,#65A30D)' },
+      { name: '14. Magenta Glow', bg: 'linear-gradient(180deg,#4A044E 0%,#86198F 42%,#C026D3 76%,#F5D0FE 100%)', header: '#4A044E', accent: '#A21CAF', btn: 'linear-gradient(135deg,#701A75,#C026D3)' },
+      { name: '15. Copper Bronze', bg: 'linear-gradient(180deg,#431407 0%,#9A3412 42%,#EA580C 76%,#FED7AA 100%)', header: '#431407', accent: '#EA580C', btn: 'linear-gradient(135deg,#7C2D12,#EA580C)' },
+      { name: '16. Cobalt Navy', bg: 'linear-gradient(180deg,#172554 0%,#1D4ED8 42%,#3B82F6 76%,#BFDBFE 100%)', header: '#172554', accent: '#1D4ED8', btn: 'linear-gradient(135deg,#1E3A8A,#2563EB)' },
+      { name: '17. Jade Mint', bg: 'linear-gradient(180deg,#022C22 0%,#047857 42%,#10B981 76%,#D1FAE5 100%)', header: '#022C22', accent: '#047857', btn: 'linear-gradient(135deg,#064E3B,#10B981)' },
+      { name: '18. Midnight Steel', bg: 'linear-gradient(180deg,#18181B 0%,#3F3F46 44%,#71717A 78%,#E4E4E7 100%)', header: '#18181B', accent: '#4F46E5', btn: 'linear-gradient(135deg,#27272A,#4F46E5)' },
+      { name: '19. Berry Indigo', bg: 'linear-gradient(180deg,#2E1065 0%,#831843 44%,#BE185D 78%,#FBCFE8 100%)', header: '#2E1065', accent: '#BE185D', btn: 'linear-gradient(135deg,#500724,#DB2777)' },
+      { name: '20. Sky Clean Light', bg: 'linear-gradient(180deg,#1E3A8A 0%,#2563EB 32%,#60A5FA 68%,#EFF6FF 100%)', header: '#1E3A8A', accent: '#2563EB', btn: 'linear-gradient(135deg,#1D4ED8,#3B82F6)' }
+    ];
+
+    // ================= 20 EXAM INTERFACE COLOR THEMES =================
+    const EXAM_THEMES = [
+      { name: '1. Classic Purple Exam', head: 'linear-gradient(135deg,#1E1B4B,#6D28D9)', bg: '#F8FAFC', card: '#FFFFFF', text: '#0F172A', accent: '#6D28D9', border: '#CBD5E1' },
+      { name: '2. SSC Official Blue', head: 'linear-gradient(135deg,#1E3A8A,#2563EB)', bg: '#EFF6FF', card: '#FFFFFF', text: '#0F172A', accent: '#2563EB', border: '#BFDBFE' },
+      { name: '3. Emerald Focus', head: 'linear-gradient(135deg,#064E3B,#059669)', bg: '#ECFDF5', card: '#FFFFFF', text: '#064E3B', accent: '#059669', border: '#A7F3D0' },
+      { name: '4. Night Dark Mode', head: 'linear-gradient(135deg,#020617,#1E293B)', bg: '#0F172A', card: '#1E293B', text: '#F8FAFC', accent: '#38BDF8', border: '#334155' },
+      { name: '5. Eye-Care Warm Sepia', head: 'linear-gradient(135deg,#78350F,#B45309)', bg: '#FEF3C7', card: '#FFFBEB', text: '#451A03', accent: '#B45309', border: '#FCD34D' },
+      { name: '6. Ocean Teal', head: 'linear-gradient(135deg,#134E4A,#0D9488)', bg: '#F0FDFA', card: '#FFFFFF', text: '#134E4A', accent: '#0D9488', border: '#99F6E4' },
+      { name: '7. Crimson Alert', head: 'linear-gradient(135deg,#7F1D1D,#DC2626)', bg: '#FEF2F2', card: '#FFFFFF', text: '#450A0A', accent: '#DC2626', border: '#FECACA' },
+      { name: '8. Soft Lavender', head: 'linear-gradient(135deg,#4C1D95,#7C3AED)', bg: '#F5F3FF', card: '#FFFFFF', text: '#2E1065', accent: '#7C3AED', border: '#DDD6FE' },
+      { name: '9. Minimal Pure White', head: 'linear-gradient(135deg,#18181B,#3F3F46)', bg: '#FFFFFF', card: '#FAFAFA', text: '#18181B', accent: '#18181B', border: '#D4D4D8' },
+      { name: '10. Dark Violet Pro', head: 'linear-gradient(135deg,#2E1065,#5B21B6)', bg: '#130D2E', card: '#1F1646', text: '#F5F3FF', accent: '#A78BFA', border: '#4C1D95' },
+      { name: '11. Sky Fresh', head: 'linear-gradient(135deg,#075985,#0284C7)', bg: '#F0F9FF', card: '#FFFFFF', text: '#0C4A6E', accent: '#0284C7', border: '#BAE6FD' },
+      { name: '12. Rose Modern', head: 'linear-gradient(135deg,#881337,#E11D48)', bg: '#FFF1F2', card: '#FFFFFF', text: '#4C0519', accent: '#E11D48', border: '#FECDD3' },
+      { name: '13. Forest Dark', head: 'linear-gradient(135deg,#022C22,#065F46)', bg: '#062019', card: '#0C3328', text: '#ECFDF5', accent: '#34D399', border: '#065F46' },
+      { name: '14. Indigo Slate', head: 'linear-gradient(135deg,#312E81,#4F46E5)', bg: '#EEF2FF', card: '#FFFFFF', text: '#1E1B4B', accent: '#4F46E5', border: '#C7D2FE' },
+      { name: '15. Sunset Orange', head: 'linear-gradient(135deg,#7C2D12,#EA580C)', bg: '#FFF7ED', card: '#FFFFFF', text: '#431407', accent: '#EA580C', border: '#FED7AA' },
+      { name: '16. Cyan Mint', head: 'linear-gradient(135deg,#164E63,#0891B2)', bg: '#ECFEFF', card: '#FFFFFF', text: '#164E63', accent: '#0891B2', border: '#A5F3FC' },
+      { name: '17. Olive Calm', head: 'linear-gradient(135deg,#365314,#4D7C0F)', bg: '#F7FEE7', card: '#FFFFFF', text: '#1A2E05', accent: '#4D7C0F', border: '#D9F99D' },
+      { name: '18. Midnight OLED', head: 'linear-gradient(135deg,#000000,#1E1B4B)', bg: '#000000', card: '#111827', text: '#F9FAFB', accent: '#818CF8', border: '#374151' },
+      { name: '19. Berry Pink', head: 'linear-gradient(135deg,#701A75,#C026D3)', bg: '#FDF4FF', card: '#FFFFFF', text: '#4A044E', accent: '#C026D3', border: '#F5D0FE' },
+      { name: '20. Steel Gray Study', head: 'linear-gradient(135deg,#1E293B,#475569)', bg: '#F1F5F9', card: '#FFFFFF', text: '#0F172A', accent: '#334155', border: '#CBD5E1' }
+    ];
+
+    const STORAGE_KEY = 'ssc247_portal_v3_secure';
+
+    const DEFAULT_STATE = {
+      passwordHash: INITIAL_LOGIN_HASH,
+      darkMode: false,
+      hideBorders: false,
+      portalThemeIndex: 0,
+      examThemeIndex: 0,
+      watermarkText: 'ssc247.com Official Study Material',
+      quote: '"Discipline in your study schedule turns an ordinary aspirant into a top ranker."',
+      quoteAuthor: '— Aspirant Mindset',
+      notice: 'Important Notice: ssc247.com is an independent educational preparation platform and is NOT affiliated with SSC (ssc.gov.in / ssc.nic.in), RRB, TSPSC, APPSC, or any government organization.',
+      customHtml: '',
+      customCss: '',
+      customJs: '',
+      subjects: [
+        'Telangana History',
+        'General Science',
+        'Current Affairs',
+        'History of India',
+        'Geography',
+        'Indian Polity and Economy',
+        'Telangana Movement and State Formation',
+        'Arithmetic & Reasoning',
+        'Police Acts'
+      ],
+      posts: [
+        {
+          id: 'SYNC-8492A',
+          subject: 'Telangana History',
+          title: 'ఆసిఫ్ జాహీ వంశం హైదరాబాద్ నిజాంలు - Free Mock Test',
+          duration: 10,
+          createdAt: '2026-11-24',
+          questions: [
+            {
+              q: 'హైదరాబాద్‌లో ఆసిఫ్ జాహీ వంశాన్ని (నిజాం రాజ్యాన్ని) 1724లో స్థాపించింది ఎవరు?',
+              options: [
+                'మీర్ ఖమరుద్దీన్ ఖాన్ (నిజాం-ఉల్-ముల్క్)',
+                'నాసిర్ జంగ్',
+                'సలాబత్ జంగ్',
+                'మీర్ ఉస్మాన్ అలీ ఖాన్'
+              ],
+              ans: 0,
+              exp: 'మీర్ ఖమరుద్దీన్ ఖాన్ (ఆసిఫ్ జా I) 1724 శకర్ ఖేడా యుద్ధం తర్వాత స్వతంత్ర హైదరాబాద్ రాజ్యాన్ని స్థాపించారు.'
+            }
+          ]
+        }
+      ],
+      vault: [],
+      pdfs: [
+        {
+          id: 'NOTE-1001',
+          subject: 'Telangana History',
+          title: 'ఆసిఫ్ జాహీ వంశం — Complete Study Notes PDF',
+          sourceType: 'text',
+          fileData: '',
+          driveUrl: '',
+          textContent: 'Asaf Jahi Dynasty (1724 - 1948) Important Exam Points:\n1. Founder: Mir Qamar-ud-din Khan (Asaf Jah I / Nizam-ul-Mulk) in 1724.\n2. Battle of Shakar Kheda (1724) established independent Hyderabad State.\n3. Nizam Ali Khan (Asaf Jah II) shifted capital from Aurangabad to Hyderabad in 1769.\n4. Osmania University was established in 1918 by Mir Osman Ali Khan (7th Nizam).\n5. Hyderabad merged into Indian Union on 17 September 1948 via Operation Polo.',
+          htmlContent: '',
+          createdAt: '2026-11-24'
+        }
+      ],
+      requests: [],
+      footerPages: {
+        about: {
+          title: 'About Us',
+          content: 'ssc247.com is a free bilingual exam preparation portal providing Mock Tests and Study Notes PDFs for SSC, RRB, TSLPRB SI / Constable, TSPSC, and APPSC.'
+        },
+        privacy: {
+          title: 'Privacy Policy',
+          content: 'We respect your privacy. Request details submitted on ssc247.com are strictly used for uploading requested exams and notes.'
+        },
+        contact: {
+          title: 'Contact',
+          content: 'To request any topic or PDF, please submit the Request Form on the homepage.'
+        }
+      }
+    };
+
+    let state = loadState();
+    let selectedSubject = 'ALL';
+    let feedMode = 'both';
+    let currentUploadMode = 'pdf';
+    let isAdminUnlocked = false;
+    let pendingAdminTab = 2;
+
+    // Exam runtime variables
+    let activeExam = null;
+    let examCurrentIdx = 0;
+    let examAnswers = {};
+    let examTimerInterval = null;
+    let examSecondsLeft = 0;
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return structuredClone(DEFAULT_STATE);
+        const parsed = JSON.parse(raw);
+        return {
+          ...structuredClone(DEFAULT_STATE),
+          ...parsed,
+          passwordHash: parsed.passwordHash || INITIAL_LOGIN_HASH,
+          footerPages: { ...DEFAULT_STATE.footerPages, ...(parsed.footerPages || {}) }
+        };
+      } catch (e) {
+        return structuredClone(DEFAULT_STATE);
+      }
+    }
+
+    function persistState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {
+        showToast('Storage full! Use Google Drive Link for large PDFs.');
+      }
+    }
+
+    function showToast(msg) {
+      const box = document.getElementById('toastBox');
+      box.textContent = msg;
+      box.style.display = 'block';
+      clearTimeout(box._t);
+      box._t = setTimeout(() => { box.style.display = 'none'; }, 3200);
+    }
+
+    function escapeHtml(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // ================= URL & COLON SANITIZER (FIXES 404 ERRORS) =================
+    function sanitizeExternalUrl(rawUrl) {
+      let url = String(rawUrl || '').trim();
+      // Remove accidental leading colons or slashes like ":police-acts"
+      url = url.replace(/^[:/\s]+/, '');
+      if (!url) return '';
+      if (!/^https?:\/\//i.test(url)) {
+        url = 'https://' + url;
+      }
+      return url;
+    }
+
+    function parseGoogleDriveUrls(rawUrl) {
+      const clean = sanitizeExternalUrl(rawUrl);
+      if (!clean) return { downloadUrl: '', previewUrl: '', isDrive: false };
+
+      let fileId = '';
+      const m1 = clean.match(/\/file\/d\/([a-zA-Z0-9_-]+)/);
+      const m2 = clean.match(/[?&]id=([a-zA-Z0-9_-]+)/);
+      const m3 = clean.match(/\/d\/([a-zA-Z0-9_-]+)/);
+      if (m1) fileId = m1[1];
+      else if (m2) fileId = m2[1];
+      else if (m3 && clean.includes('drive.google.com')) fileId = m3[1];
+
+      if (fileId) {
+        return {
+          isDrive: true,
+          downloadUrl: `https://drive.google.com/uc?export=download&id=${fileId}`,
+          previewUrl: `https://drive.google.com/file/d/${fileId}/preview`
+        };
+      }
+      return { isDrive: false, downloadUrl: clean, previewUrl: clean };
+    }
+
+    function safeFilename(title, ext = '.pdf') {
+      const clean = String(title || 'ssc247_study_note')
+        .replace(/[:\\/*?"<>|]+/g, '')
+        .replace(/\s+/g, '_')
+        .slice(0, 65);
+      return (clean || 'ssc247_study_note') + ext;
+    }
+
+    function safeAscii(text) {
+      return String(text || 'ssc247.com').replace(/[^\x20-\x7E]/g, '').trim() || 'ssc247.com Official';
+    }
+
+    // ================= PORTAL & EXAM 20-THEME ENGINE =================
+    function applyPortalThemeByIndex(idx, save = false) {
+      const safeIdx = Math.max(0, Math.min(PORTAL_THEMES.length - 1, Number(idx) || 0));
+      const t = PORTAL_THEMES[safeIdx];
+      const root = document.documentElement;
+      root.style.setProperty('--bg-outer', t.bg);
+      root.style.setProperty('--bg-header', t.header);
+      root.style.setProperty('--accent-primary', t.accent);
+      root.style.setProperty('--btn-gradient', t.btn);
+
+      // Update live preview bar inside Admin Panel
+      const adminHeader = document.getElementById('adminModalHeaderBar');
+      if (adminHeader) adminHeader.style.background = t.btn;
+
+      const previewBar = document.getElementById('adminPortalLivePreview');
+      if (previewBar) previewBar.style.background = t.bg;
+      const nameEl = document.getElementById('activePortalThemeName');
+      if (nameEl) nameEl.textContent = t.name;
+
+      if (save) {
+        state.portalThemeIndex = safeIdx;
+        persistState();
+        renderThemeSwatches();
+        showToast('Portal Color Updated: ' + t.name);
+      }
+    }
+
+    function applyExamThemeByIndex(idx, save = false) {
+      const safeIdx = Math.max(0, Math.min(EXAM_THEMES.length - 1, Number(idx) || 0));
+      const t = EXAM_THEMES[safeIdx];
+      const root = document.documentElement;
+      root.style.setProperty('--exam-header-bg', t.head);
+      root.style.setProperty('--exam-bg', t.bg);
+      root.style.setProperty('--exam-card-bg', t.card);
+      root.style.setProperty('--exam-text', t.text);
+      root.style.setProperty('--exam-accent', t.accent);
+      root.style.setProperty('--exam-border', t.border);
+
+      const previewBar = document.getElementById('adminExamLivePreview');
+      if (previewBar) {
+        previewBar.style.background = t.bg;
+        previewBar.style.color = t.text;
+        previewBar.style.borderColor = t.accent;
+      }
+      const titleEl = document.getElementById('activeExamThemeTitle');
+      if (titleEl) titleEl.textContent = 'Live Exam Screen Color Preview: ' + t.name;
+      const badgeEl = document.getElementById('examPreviewBadge');
+      if (badgeEl) badgeEl.style.background = t.accent;
+
+      const quickSel = document.getElementById('examQuickThemeSelect');
+      if (quickSel) quickSel.value = String(safeIdx);
+
+      if (save) {
+        state.examThemeIndex = safeIdx;
+        persistState();
+        renderThemeSwatches();
+        showToast('Exam Color Updated: ' + t.name);
+      }
+    }
+
+    function renderThemeSwatches() {
+      const pGrid = document.getElementById('portalThemesGrid');
+      if (pGrid) {
+        pGrid.innerHTML = PORTAL_THEMES.map((t, i) => `
+          <div class="color-swatch-card ${state.portalThemeIndex === i ? 'active' : ''}" onclick="applyPortalThemeByIndex(${i}, true)">
+            <div class="swatch-preview-bar" style="background:${t.bg};"></div>
+            <div class="swatch-name">${escapeHtml(t.name)}</div>
+          </div>
+        `).join('');
+      }
+
+      const eGrid = document.getElementById('examThemesGrid');
+      if (eGrid) {
+        eGrid.innerHTML = EXAM_THEMES.map((t, i) => `
+          <div class="color-swatch-card ${state.examThemeIndex === i ? 'active' : ''}" onclick="applyExamThemeByIndex(${i}, true)">
+            <div class="swatch-preview-bar" style="background:${t.head}; border-bottom:6px solid ${t.bg};"></div>
+            <div class="swatch-name">${escapeHtml(t.name)}</div>
+          </div>
+        `).join('');
+      }
+
+      const quickSel = document.getElementById('examQuickThemeSelect');
+      if (quickSel) {
+        quickSel.innerHTML = EXAM_THEMES.map((t, i) => `<option value="${i}" ${state.examThemeIndex === i ? 'selected' : ''}>🎨 ${escapeHtml(t.name)}</option>`).join('');
+      }
+    }
+
+    // ================= INIT PORTAL =================
+    function initPortal() {
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+      applyPortalThemeByIndex(state.portalThemeIndex, false);
+      applyExamThemeByIndex(state.examThemeIndex, false);
+      applyDarkAndBorders();
+      applyPortalTexts();
+      applyLiveCustomCode();
+      renderSubjectDropdown();
+      renderFeed();
+      renderFooterLinks();
+      renderThemeSwatches();
+    }
+
+    function applyDarkAndBorders() {
+      document.body.classList.toggle('user-dark-mode', !!state.darkMode);
+      document.body.classList.toggle('hide-site-borders', !!state.hideBorders);
+      document.getElementById('themeKnob').textContent = state.darkMode ? '🌙' : '☀️';
+    }
+
+    function toggleTheme() {
+      state.darkMode = !state.darkMode;
+      persistState();
+      applyDarkAndBorders();
+    }
+    document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);
+
+    function toggleBorderVisibility() {
+      state.hideBorders = !state.hideBorders;
+      persistState();
+      applyDarkAndBorders();
+      showToast(state.hideBorders ? 'Borders Hidden' : 'Borders Enabled');
+    }
+
+    function applyPortalTexts() {
+      document.getElementById('portalQuoteText').textContent = state.quote;
+      document.getElementById('portalQuoteAuthor').textContent = state.quoteAuthor || '— Aspirant Mindset';
+      document.getElementById('portalNoticeText').innerHTML = escapeHtml(state.notice);
+    }
+
+    function applyLiveCustomCode() {
+      document.getElementById('liveCustomHtmlSlot').innerHTML = state.customHtml || '';
+      document.getElementById('live-custom-css').textContent = state.customCss || '';
+      if (state.customJs && state.customJs.trim()) {
+        try { new Function(state.customJs)(); } catch (e) { console.warn('Custom JS ignored:', e); }
+      }
+    }
+
+    function goHome() {
+      selectedSubject = 'ALL';
+      setFeedMode('both');
+      renderSubjectDropdown();
+      renderFeed();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function setFeedMode(mode) {
+      feedMode = mode;
+      const grid = document.getElementById('contentFeedGrid');
+      const mockCol = document.getElementById('mockTestsColumn');
+      const pdfCol = document.getElementById('studyPdfsColumn');
+
+      document.getElementById('pillBoth').classList.toggle('active', mode === 'both');
+      document.getElementById('pillTests').classList.toggle('active', mode === 'tests');
+      document.getElementById('pillPdfs').classList.toggle('active', mode === 'pdfs');
+
+      if (mode === 'both') {
+        grid.classList.remove('single-col');
+        mockCol.style.display = 'flex';
+        pdfCol.style.display = 'flex';
+      } else if (mode === 'tests') {
+        grid.classList.add('single-col');
+        mockCol.style.display = 'flex';
+        pdfCol.style.display = 'none';
+      } else {
+        grid.classList.add('single-col');
+        mockCol.style.display = 'none';
+        pdfCol.style.display = 'flex';
+      }
+    }
+
+    // ================= SUBJECT DROPDOWN & SIDE-BY-SIDE FEED =================
+    function renderSubjectDropdown() {
+      const sel = document.getElementById('subjectSelect');
+      const availableSubjs = new Set([
+        ...state.posts.map(p => p.subject),
+        ...state.pdfs.map(d => d.subject)
+      ]);
+      let html = `<option value="ALL">-- Select Subject (${availableSubjs.size} Available) --</option>`;
+      state.subjects.forEach(s => {
+        const cnt = state.posts.filter(p => p.subject === s).length + state.pdfs.filter(d => d.subject === s).length;
+        html += `<option value="${escapeHtml(s)}" ${selectedSubject === s ? 'selected' : ''}>${escapeHtml(s)}${cnt > 0 ? ` (${cnt})` : ''}</option>`;
+      });
+      sel.innerHTML = html;
+      sel.value = selectedSubject;
+    }
+
+    function onSubjectChange(val) {
+      selectedSubject = val;
+      renderFeed();
+    }
+
+    function renderFeed() {
+      const posts = state.posts.filter(p => selectedSubject === 'ALL' || p.subject === selectedSubject);
+      const pdfs = state.pdfs.filter(d => selectedSubject === 'ALL' || d.subject === selectedSubject);
+
+      document.getElementById('mockCountBadge').textContent = `${posts.length} Available`;
+      document.getElementById('pdfCountBadge').textContent = `${pdfs.length} Available`;
+
+      const mockFeed = document.getElementById('mockTestsFeed');
+      if (!posts.length) {
+        mockFeed.innerHTML = `<div class="empty-card">ఈ సబ్జెక్ట్‌లో ఇంకా Mock Tests లేవు.</div>`;
+      } else {
+        mockFeed.innerHTML = posts.map((post, idx) => `
+          <article class="post-card">
+            <div class="post-card-info">
+              <div class="post-meta-row">
+                <span class="post-index-circle">${idx + 1}</span>
+                <span class="post-subject-pill">${escapeHtml(post.subject)}</span>
+                <span class="post-meta-note">${post.questions.length} Qs • ${post.duration || 10} Min</span>
+              </div>
+              <div class="post-title">${escapeHtml(post.title)}</div>
+            </div>
+            <div class="post-card-actions">
+              <button type="button" class="start-exam-btn" onclick="startExam('${post.id}')">Start Exam →</button>
+            </div>
+          </article>
+        `).join('');
+      }
+
+      const pdfFeed = document.getElementById('studyPdfsFeed');
+      if (!pdfs.length) {
+        pdfFeed.innerHTML = `<div class="empty-card">ఈ సబ్జెక్ట్‌లో ఇంకా Study Notes / PDFs లేవు.</div>`;
+      } else {
+        const typeLabels = { pdf: 'PDF File', drive: 'Drive PDF Link', text: 'Text Study Note', html: 'HTML Study Note' };
+        pdfFeed.innerHTML = pdfs.map((doc, idx) => `
+          <article class="post-card pdf-post-card">
+            <div class="post-card-info">
+              <div class="post-meta-row">
+                <span class="post-index-circle">${idx + 1}</span>
+                <span class="post-subject-pill">${escapeHtml(doc.subject)}</span>
+                <span class="post-meta-note">${typeLabels[doc.sourceType] || 'Study Note'}</span>
+              </div>
+              <div class="post-title">${escapeHtml(doc.title)}</div>
+              ${doc.sourceType === 'text' && doc.textContent ? `<div class="post-snippet">${escapeHtml(doc.textContent.slice(0, 95))}${doc.textContent.length > 95 ? '...' : ''}</div>` : ''}
+            </div>
+            <div class="post-card-actions">
+              <button type="button" class="pdf-view-btn" onclick="viewStudyNote('${doc.id}')">👁 View</button>
+              <button type="button" class="pdf-download-btn" onclick="downloadStudyNote('${doc.id}')">⬇ Download</button>
+            </div>
+          </article>
+        `).join('');
+      }
+    }
+
+    // ================= ZERO-404 VIEW & DOWNLOAD FOR ALL 4 NOTE TYPES =================
+    function dataUriToUint8Array(dataUri) {
+      const b64 = dataUri.includes(',') ? dataUri.split(',')[1] : dataUri;
+      const bin = atob(b64);
+      const out = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+      return out;
+    }
+
+    function triggerBlobDownload(bytesOrStr, filename, mime = 'application/pdf') {
+      const blob = new Blob([bytesOrStr], { type: mime });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }, 1200);
+    }
+
+    async function downloadStudyNote(id) {
+      const doc = state.pdfs.find(d => d.id === id);
+      if (!doc) return;
+
+      // 1. Google Drive / Direct URL (Zero colon / zero 404)
+      if (doc.sourceType === 'drive' && doc.driveUrl) {
+        const { downloadUrl } = parseGoogleDriveUrls(doc.driveUrl);
+        if (!downloadUrl) { showToast('Invalid link!'); return; }
+        window.open(downloadUrl, '_blank', 'noopener,noreferrer');
+        showToast('Direct Download లింక్ ఓపెన్ అయింది!');
+        return;
+      }
+
+      // 2. HTML Note Download
+      if (doc.sourceType === 'html') {
+        const htmlDoc = `<!DOCTYPE html><html lang="te"><head><meta charset="UTF-8"><title>${escapeHtml(doc.title)}</title><style>body{font-family:sans-serif;padding:24px;line-height:1.7;}</style></head><body><h1>${escapeHtml(doc.title)}</h1><p><strong>ssc247.com</strong> — ${escapeHtml(doc.subject)}</p><hr/>${doc.htmlContent || ''}</body></html>`;
+        triggerBlobDownload(htmlDoc, safeFilename(doc.title, '.html'), 'text/html;charset=utf-8');
+        showToast('HTML Study Note డౌన్‌లోడ్ అయింది!');
+        return;
+      }
+
+      // 3. Uploaded PDF File (With Safe Watermark + Direct Fallback)
+      if (doc.sourceType === 'pdf' && doc.fileData) {
+        const filename = safeFilename(doc.title, '.pdf');
+        const rawBytes = dataUriToUint8Array(doc.fileData);
+        try {
+          if (window.PDFLib) {
+            const { PDFDocument, StandardFonts, rgb, degrees } = PDFLib;
+            const pdfDoc = await PDFDocument.load(rawBytes, { ignoreEncryption: true });
+            const wmFont = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+            const wmText = safeAscii(state.watermarkText || 'ssc247.com Official');
+            pdfDoc.getPages().forEach(p => {
+              const { width, height } = p.getSize();
+              p.drawText(wmText, {
+                x: Math.max(36, width * 0.14),
+                y: height * 0.45,
+                size: 26,
+                font: wmFont,
+                color: rgb(0.58, 0.58, 0.68),
+                opacity: 0.18,
+                rotate: degrees(32)
+              });
+            });
+            const stamped = await pdfDoc.save();
+            triggerBlobDownload(stamped, filename, 'application/pdf');
+            showToast('PDF విజయవంతంగా డౌన్‌లోడ్ అయింది!');
+            return;
+          }
+        } catch (err) {
+          console.warn('Watermark skipped safely:', err);
+        }
+        triggerBlobDownload(rawBytes, filename, 'application/pdf');
+        showToast('PDF డౌన్‌లోడ్ అయింది!');
+        return;
+      }
+
+      // 4. Text Study Note -> Clean PDF Download (or Print-to-PDF for full Telugu Unicode)
+      const filename = safeFilename(doc.title, '.pdf');
+      try {
+        if (window.PDFLib && /^[\x00-\x7F\s]*$/.test(doc.textContent || '')) {
+          const { PDFDocument, StandardFonts, rgb } = PDFLib;
+          const pdfDoc = await PDFDocument.create();
+          const page = pdfDoc.addPage([595, 842]);
+          const fBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold);
+          const fReg = await pdfDoc.embedFont(StandardFonts.Helvetica);
+
+          page.drawText('ssc247.com - Free Study Notes', { x: 40, y: 795, size: 15, font: fBold, color: rgb(0.24, 0.14, 0.56) });
+          page.drawText('Subject: ' + safeAscii(doc.subject), { x: 40, y: 768, size: 11, font: fBold });
+          page.drawText('Title: ' + safeAscii(doc.title), { x: 40, y: 748, size: 11, font: fBold });
+
+          const lines = safeAscii(doc.textContent).match(/.{1,78}(\s|$)/g) || [];
+          let y = 714;
+          lines.forEach(line => {
+            if (y > 50) {
+              page.drawText(line.trim(), { x: 40, y, size: 10.5, font: fReg });
+              y -= 17;
+            }
+          });
+          triggerBlobDownload(await pdfDoc.save(), filename, 'application/pdf');
+          showToast('PDF డౌన్‌లోడ్ అయింది!');
+          return;
+        }
+      } catch (e) {}
+
+      // Unicode-safe Telugu/English Printable PDF window
+      const printWin = window.open('', '_blank');
+      if (printWin) {
+        printWin.document.write(`<!DOCTYPE html><html lang="te"><head><meta charset="UTF-8"><title>${escapeHtml(doc.title)}</title><style>body{font-family:'Noto Sans Telugu',sans-serif;padding:28px;line-height:1.8;}h1{color:#312E81;font-size:20px;}pre{white-space:pre-wrap;font-family:inherit;font-size:15px;}</style></head><body><h1>${escapeHtml(doc.title)}</h1><p><strong>ssc247.com</strong> | ${escapeHtml(doc.subject)}</p><hr/><pre>${escapeHtml(doc.textContent || '')}</pre><script>window.onload=function(){window.print();}<\/script></body></html>`);
+        printWin.document.close();
+      } else {
+        triggerBlobDownload(doc.textContent || '', safeFilename(doc.title, '.txt'), 'text/plain;charset=utf-8');
+      }
+    }
+
+    async function viewStudyNote(id) {
+      const doc = state.pdfs.find(d => d.id === id);
+      if (!doc) return;
+
+      document.getElementById('noteModalTitle').textContent = doc.title;
+      document.getElementById('noteModalSub').textContent = `Subject: ${doc.subject}`;
+      document.getElementById('noteModalDownloadBtn').onclick = () => downloadStudyNote(id);
+
+      const statusEl = document.getElementById('noteViewerStatus');
+      const container = document.getElementById('pdfCanvasList');
+      container.innerHTML = '';
+      openModal('noteViewerModal');
+
+      // Case A: Google Drive / Direct URL
+      if (doc.sourceType === 'drive' && doc.driveUrl) {
+        const { previewUrl } = parseGoogleDriveUrls(doc.driveUrl);
+        statusEl.textContent = 'Google Drive / Online PDF Preview:';
+        container.innerHTML = `<iframe src="${escapeHtml(previewUrl)}" style="width:100%; height:75vh; border:1px solid var(--border-color); border-radius:10px; background:#FFF;" allow="autoplay"></iframe>`;
+        return;
+      }
+
+      // Case B: HTML Code Note
+      if (doc.sourceType === 'html') {
+        statusEl.textContent = 'Formatted HTML Study Note:';
+        container.innerHTML = `<div style="background:var(--bg-card-soft); padding:20px; border-radius:12px; border:1px solid var(--border-color); line-height:1.75; overflow-x:auto;">${doc.htmlContent || ''}</div>`;
+        return;
+      }
+
+      // Case C: Text Study Note
+      if (doc.sourceType === 'text' || !doc.fileData) {
+        statusEl.textContent = 'Study Notes Preview:';
+        container.innerHTML = `<div style="background:var(--bg-card-soft); padding:20px; border-radius:12px; border:1px solid var(--border-color); white-space:pre-wrap; line-height:1.8; font-size:0.98rem;">${escapeHtml(doc.textContent || 'No content available.')}</div>`;
+        return;
+      }
+
+      // Case D: Uploaded PDF File via PDF.js
+      statusEl.textContent = 'Rendering PDF pages...';
+      try {
+        const pdf = await pdfjsLib.getDocument({ data: dataUriToUint8Array(doc.fileData) }).promise;
+        statusEl.textContent = `Total Pages: ${pdf.numPages}`;
+        for (let pNum = 1; pNum <= Math.min(pdf.numPages, 30); pNum++) {
+          const page = await pdf.getPage(pNum);
+          const vp = page.getViewport({ scale: 1.4 });
+          const canvas = document.createElement('canvas');
+          canvas.width = vp.width;
+          canvas.height = vp.height;
+          container.appendChild(canvas);
+          await page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+        }
+      } catch (err) {
+        statusEl.textContent = 'Preview could not render inline. Click Download above.';
+      }
+    }
+
+    // ================= MOCK TEST EXAM ENGINE =================
+    function startExam(postId) {
+      const post = state.posts.find(p => p.id === postId);
+      if (!post || !post.questions.length) {
+        showToast('ఈ టెస్ట్‌లో ప్రశ్నలు లేవు!');
+        return;
+      }
+      activeExam = post;
+      examCurrentIdx = 0;
+      examAnswers = {};
+      examSecondsLeft = (post.duration || 10) * 60;
+
+      document.getElementById('examModalTitle').textContent = post.title;
+      document.getElementById('examModalSub').textContent = `${post.subject} • ${post.questions.length} Questions`;
+      applyExamThemeByIndex(state.examThemeIndex, false);
+      openModal('examModal');
+      renderExamQuestion();
+
+      clearInterval(examTimerInterval);
+      updateExamTimer();
+      examTimerInterval = setInterval(() => {
+        examSecondsLeft--;
+        updateExamTimer();
+        if (examSecondsLeft <= 0) {
+          clearInterval(examTimerInterval);
+          submitExam();
+        }
+      }, 1000);
+    }
+
+    function updateExamTimer() {
+      const m = String(Math.floor(Math.max(0, examSecondsLeft) / 60)).padStart(2, '0');
+      const s = String(Math.max(0, examSecondsLeft) % 60).padStart(2, '0');
+      document.getElementById('examTimerBadge').textContent = `⏱ ${m}:${s}`;
+    }
+
+    function renderExamQuestion() {
+      const qObj = activeExam.questions[examCurrentIdx];
+      const chosen = examAnswers[examCurrentIdx];
+      const labels = ['A', 'B', 'C', 'D'];
+
+      const palette = activeExam.questions.map((_, i) => `
+        <button type="button" class="palette-btn ${examAnswers[i] !== undefined ? 'answered' : ''} ${i === examCurrentIdx ? 'current' : ''}" onclick="jumpExamQ(${i})">${i + 1}</button>
+      `).join('');
+
+      document.getElementById('examModalBody').innerHTML = `
+        <div class="exam-layout">
+          <div class="exam-card-box">
+            <div style="font-size:0.84rem; font-weight:800; color:var(--exam-accent); margin-bottom:8px;">
+              Question ${examCurrentIdx + 1} of ${activeExam.questions.length}
+            </div>
+            <div class="exam-q-text">${escapeHtml(qObj.q)}</div>
+            <div>
+              ${qObj.options.map((opt, idx) => `
+                <button type="button" class="exam-opt-btn ${chosen === idx ? 'selected' : ''}" onclick="chooseExamOption(${idx})">
+                  <strong>${labels[idx]}.</strong> <span>${escapeHtml(opt)}</span>
+                </button>
+              `).join('')}
+            </div>
+            <div style="display:flex; justify-content:space-between; gap:10px; margin-top:16px; flex-wrap:wrap;">
+              <button type="button" class="nav-btn" style="background:#475569;" onclick="jumpExamQ(${examCurrentIdx - 1})" ${examCurrentIdx === 0 ? 'disabled' : ''}>← Previous</button>
+              ${examCurrentIdx < activeExam.questions.length - 1
+                ? `<button type="button" class="nav-btn" style="background:var(--exam-accent);" onclick="jumpExamQ(${examCurrentIdx + 1})">Save &amp; Next →</button>`
+                : `<button type="button" class="nav-btn create-btn" onclick="submitExam()">Submit Exam ✓</button>`
+              }
+            </div>
+          </div>
+
+          <div class="exam-card-box">
+            <strong>Question Palette</strong>
+            <div class="palette-grid">${palette}</div>
+            <button type="button" class="submit-full-btn" style="margin-top:18px; background:#16A34A;" onclick="submitExam()">Finish &amp; View Result</button>
+          </div>
+        </div>
+      `;
+    }
+
+    function chooseExamOption(i) {
+      examAnswers[examCurrentIdx] = i;
+      renderExamQuestion();
+    }
+
+    function jumpExamQ(i) {
+      if (i < 0 || i >= activeExam.questions.length) return;
+      examCurrentIdx = i;
+      renderExamQuestion();
+    }
+
+    function submitExam() {
+      clearInterval(examTimerInterval);
+      let correct = 0, wrong = 0, skipped = 0;
+
+      const review = activeExam.questions.map((qObj, idx) => {
+        const u = examAnswers[idx];
+        const ok = u === qObj.ans;
+        if (u === undefined) skipped++;
+        else if (ok) correct++;
+        else wrong++;
+
+        return `
+          <div class="exam-card-box" style="margin-bottom:12px; border-left:5px solid ${u === undefined ? '#94A3B8' : ok ? '#16A34A' : '#DC2626'};">
+            <div style="font-weight:800; margin-bottom:6px;">Q${idx + 1}. ${escapeHtml(qObj.q)}</div>
+            <div style="font-size:0.88rem; margin-bottom:4px;">Your Answer: <strong>${u !== undefined ? escapeHtml(qObj.options[u]) : 'Not Attempted'}</strong></div>
+            <div style="font-size:0.88rem; color:#16A34A; font-weight:800;">Correct Answer: ${escapeHtml(qObj.options[qObj.ans])}</div>
+            ${qObj.exp ? `<div style="font-size:0.84rem; opacity:0.85; margin-top:6px;">Explanation: ${escapeHtml(qObj.exp)}</div>` : ''}
+          </div>
+        `;
+      }).join('');
+
+      const pct = activeExam.questions.length ? Math.round((correct / activeExam.questions.length) * 100) : 0;
+
+      document.getElementById('examModalBody').innerHTML = `
+        <div class="exam-card-box" style="text-align:center; margin-bottom:16px;">
+          <h2 style="color:var(--exam-accent); margin-bottom:8px;">Exam Result Summary</h2>
+          <div style="display:flex; justify-content:center; gap:18px; flex-wrap:wrap; font-weight:800;">
+            <span style="color:#16A34A;">Correct: ${correct}</span>
+            <span style="color:#DC2626;">Wrong: ${wrong}</span>
+            <span style="color:#64748B;">Skipped: ${skipped}</span>
+            <span style="color:var(--exam-accent);">Score: ${pct}%</span>
+          </div>
+        </div>
+        ${review}
+      `;
+    }
+
+    function closeExamModal() {
+      clearInterval(examTimerInterval);
+      closeModal('examModal');
+    }
+
+    // ================= USER REQUEST FORM & FOOTER =================
+    function submitUserRequest(e) {
+      e.preventDefault();
+      const name = document.getElementById('reqName').value.trim();
+      const email = document.getElementById('reqEmail').value.trim();
+      const details = document.getElementById('reqDetails').value.trim();
+      if (!name || !email || !details) return;
+
+      state.requests.unshift({
+        id: 'REQ-' + Date.now().toString().slice(-5),
+        name, email, details,
+        date: new Date().toLocaleDateString('en-IN')
+      });
+      persistState();
+      e.target.reset();
+      showToast('మీ రిక్వెస్ట్ అడ్మిన్‌కు పంపబడింది!');
+    }
+
+    function renderFooterLinks() {
+      document.getElementById('footerLinksContainer').innerHTML = Object.keys(state.footerPages).map(k => `
+        <button type="button" class="footer-link-btn" onclick="openFooterPage('${k}')">${escapeHtml(state.footerPages[k].title)}</button>
+      `).join('');
+    }
+
+    function openFooterPage(key) {
+      const p = state.footerPages[key];
+      if (!p) return;
+      document.getElementById('footerPageTitle').textContent = p.title;
+      document.getElementById('footerPageBody').innerHTML = `<p style="white-space:pre-wrap;">${escapeHtml(p.content)}</p>`;
+      openModal('footerPageModal');
+    }
+
+    // ================= MODAL CONTROLS & SECURE ADMIN AUTH =================
+    function openModal(id) { document.getElementById(id).classList.add('open'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+
+    function openAdminPanel(tabNum = 2) {
+      pendingAdminTab = tabNum;
+      if (isAdminUnlocked) {
+        launchAdminUi(tabNum);
+      } else {
+        document.getElementById('adminPassInput').value = '';
+        openModal('adminLoginModal');
+        setTimeout(() => document.getElementById('adminPassInput').focus(), 100);
+      }
+    }
+
+    function verifyAdminLogin() {
+      const entered = document.getElementById('adminPassInput').value;
+      if (!entered) {
+        showToast('దయచేసి పాస్‌వర్డ్ నమోదు చేయండి.');
+        return;
+      }
+      if (secureHash(entered) === state.passwordHash) {
+        isAdminUnlocked = true;
+        document.getElementById('adminPassInput').value = '';
+        closeModal('adminLoginModal');
+        launchAdminUi(pendingAdminTab);
+      } else {
+        showToast('Invalid Admin Password!');
+      }
+    }
+
+    function launchAdminUi(tabNum) {
+      populateAdminDropdowns();
+      refreshAllAdminTables();
+      renderThemeSwatches();
+      applyPortalThemeByIndex(state.portalThemeIndex, false);
+      applyExamThemeByIndex(state.examThemeIndex, false);
+
+      document.getElementById('watermarkInput').value = state.watermarkText || '';
+      document.getElementById('adminQuoteInput').value = state.quote || '';
+      document.getElementById('adminNoticeInput').value = state.notice || '';
+      document.getElementById('customHtmlInput').value = state.customHtml || '';
+      document.getElementById('customCssInput').value = state.customCss || '';
+      document.getElementById('customJsInput').value = state.customJs || '';
+
+      if (!document.getElementById('questionsBuilderList').children.length) {
+        addQuestionEditorRow();
+      }
+      openModal('adminPanelModal');
+      switchAdminTab(tabNum);
+    }
+
+    function switchAdminTab(num) {
+      for (let i = 1; i <= 7; i++) {
+        document.getElementById('atab' + i).classList.toggle('active', i === num);
+        document.getElementById('asec' + i).classList.toggle('active', i === num);
+      }
+      if (num === 5) loadFooterPageEditor();
+    }
+
+    function populateAdminDropdowns() {
+      const opts = state.subjects.map(s => `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join('');
+      document.getElementById('postSubjectSelect').innerHTML = opts;
+      document.getElementById('pdfSubjectSelect').innerHTML = opts;
+      document.getElementById('footerPageSelect').innerHTML = Object.keys(state.footerPages).map(k => `<option value="${k}">${escapeHtml(state.footerPages[k].title)}</option>`).join('');
+    }
+
+    // ---- TAB 1: QUESTION BUILDER ----
+    function addQuestionEditorRow(qData = null) {
+      const list = document.getElementById('questionsBuilderList');
+      const idx = list.children.length + 1;
+      const div = document.createElement('div');
+      div.className = 'q-editor-item';
+      div.style.cssText = 'background:var(--bg-card); border:1.5px solid var(--border-color); border-radius:10px; padding:12px; margin-bottom:10px;';
+      div.innerHTML = `
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <strong>Question #${idx}</strong>
+          <button type="button" onclick="this.closest('.q-editor-item').remove()" style="background:#DC2626; color:#FFF; border:none; border-radius:6px; padding:4px 9px; cursor:pointer; font-size:0.76rem;">Remove</button>
+        </div>
+        <input type="text" class="form-input qe-q" placeholder="Question text (Telugu / English) *" value="${qData ? escapeHtml(qData.q) : ''}" style="margin-bottom:8px;" />
+        <div class="form-grid-2">
+          <input type="text" class="form-input qe-o0" placeholder="Option A *" value="${qData ? escapeHtml(qData.options[0]) : ''}" />
+          <input type="text" class="form-input qe-o1" placeholder="Option B *" value="${qData ? escapeHtml(qData.options[1]) : ''}" />
+          <input type="text" class="form-input qe-o2" placeholder="Option C *" value="${qData ? escapeHtml(qData.options[2]) : ''}" />
+          <input type="text" class="form-input qe-o3" placeholder="Option D *" value="${qData ? escapeHtml(qData.options[3]) : ''}" />
+        </div>
+        <div class="form-grid-2">
+          <select class="form-select qe-ans">
+            <option value="0" ${qData && qData.ans === 0 ? 'selected' : ''}>Correct Answer: Option A</option>
+            <option value="1" ${qData && qData.ans === 1 ? 'selected' : ''}>Correct Answer: Option B</option>
+            <option value="2" ${qData && qData.ans === 2 ? 'selected' : ''}>Correct Answer: Option C</option>
+            <option value="3" ${qData && qData.ans === 3 ? 'selected' : ''}>Correct Answer: Option D</option>
+          </select>
+          <input type="text" class="form-input qe-exp" placeholder="Explanation (Optional)" value="${qData ? escapeHtml(qData.exp || '') : ''}" />
+        </div>
+      `;
+      list.appendChild(div);
+    }
+
+    function resetPostEditor() {
+      document.getElementById('editPostId').value = '';
+      document.getElementById('postFormHeading').textContent = 'Create New Mock Test Post';
+      document.getElementById('postTitleInput').value = '';
+      document.getElementById('postDuration').value = 15;
+      document.getElementById('questionsBuilderList').innerHTML = '';
+      addQuestionEditorRow();
+    }
+
+    function saveMockTestPost() {
+      const subject = document.getElementById('postSubjectSelect').value;
+      const title = document.getElementById('postTitleInput').value.trim();
+      const duration = parseInt(document.getElementById('postDuration').value, 10) || 10;
+      const editId = document.getElementById('editPostId').value;
+      if (!title) { showToast('Mock Test Title నమోదు చేయండి.'); return; }
+
+      const rows = Array.from(document.querySelectorAll('.q-editor-item'));
+      const questions = [];
+      rows.forEach(r => {
+        const q = r.querySelector('.qe-q').value.trim();
+        const opts = [
+          r.querySelector('.qe-o0').value.trim(),
+          r.querySelector('.qe-o1').value.trim(),
+          r.querySelector('.qe-o2').value.trim(),
+          r.querySelector('.qe-o3').value.trim()
+        ];
+        if (q && opts[0] && opts[1]) {
+          questions.push({
+            q,
+            options: opts.map((o, i) => o || `Option ${i + 1}`),
+            ans: parseInt(r.querySelector('.qe-ans').value, 10) || 0,
+            exp: r.querySelector('.qe-exp').value.trim()
+          });
+        }
+      });
+
+      if (!questions.length) { showToast('కనీసం 1 ప్రశ్న నమోదు చేయండి.'); return; }
+
+      if (editId) {
+        const idx = state.posts.findIndex(p => p.id === editId);
+        if (idx > -1) state.posts[idx] = { ...state.posts[idx], subject, title, duration, questions };
+      } else {
+        state.posts.unshift({
+          id: 'SYNC-' + Math.random().toString(36).substring(2, 7).toUpperCase(),
+          subject, title, duration, questions,
+          createdAt: new Date().toISOString().slice(0, 10)
+        });
+      }
+
+      persistState();
+      resetPostEditor();
+      renderSubjectDropdown();
+      renderFeed();
+      refreshAllAdminTables();
+      showToast('Mock Test సేవ్ అయింది!');
+    }
+
+    function editExistingPost(id) {
+      const post = state.posts.find(p => p.id === id);
+      if (!post) return;
+      document.getElementById('editPostId').value = post.id;
+      document.getElementById('postFormHeading').textContent = 'Edit Mock Test: ' + post.id;
+      document.getElementById('postSubjectSelect').value = post.subject;
+      document.getElementById('postTitleInput').value = post.title;
+      document.getElementById('postDuration').value = post.duration || 10;
+      document.getElementById('questionsBuilderList').innerHTML = '';
+      post.questions.forEach(q => addQuestionEditorRow(q));
+      switchAdminTab(1);
+    }
+
+    function deletePostToVault(id) {
+      const idx = state.posts.findIndex(p => p.id === id);
+      if (idx === -1) return;
+      const [removed] = state.posts.splice(idx, 1);
+      removed.deletedAt = new Date().toLocaleDateString('en-IN');
+      state.vault.unshift(removed);
+      persistState();
+      renderSubjectDropdown();
+      renderFeed();
+      refreshAllAdminTables();
+      showToast('Lifelong Backup Vault లోకి తరలించబడింది.');
+    }
+
+    function restoreFromVault(id) {
+      const idx = state.vault.findIndex(v => v.id === id);
+      if (idx === -1) return;
+      const [item] = state.vault.splice(idx, 1);
+      delete item.deletedAt;
+      state.posts.unshift(item);
+      persistState();
+      renderSubjectDropdown();
+      renderFeed();
+      refreshAllAdminTables();
+      showToast('పోస్ట్ Restore అయింది!');
+    }
+
+    function permanentDeleteVault(id) {
+      state.vault = state.vault.filter(v => v.id !== id);
+      persistState();
+      refreshAllAdminTables();
+    }
+
+    // ---- TAB 3: 4 UPLOAD MODES (PDF FILE, GOOGLE DRIVE LINK, TEXT, HTML) ----
+    function selectUploadMode(mode) {
+      currentUploadMode = mode;
+      ['pdf', 'drive', 'text', 'html'].forEach(m => {
+        document.getElementById('umBtn_' + m).classList.toggle('active', m === mode);
+        document.getElementById('umPane_' + m).classList.toggle('active', m === mode);
+      });
+    }
+
+    function saveStudyNote() {
+      const subject = document.getElementById('pdfSubjectSelect').value;
+      const title = document.getElementById('pdfTitleInput').value.trim();
+      if (!title) { showToast('దయచేసి Note / PDF Title నమోదు చేయండి.'); return; }
+
+      const finalize = (payload) => {
+        state.pdfs.unshift({
+          id: 'NOTE-' + Date.now().toString().slice(-5),
+          subject,
+          title,
+          sourceType: currentUploadMode,
+          fileData: payload.fileData || '',
+          driveUrl: payload.driveUrl || '',
+          textContent: payload.textContent || '',
+          htmlContent: payload.htmlContent || '',
+          createdAt: new Date().toISOString().slice(0, 10)
+        });
+        persistState();
+        document.getElementById('pdfTitleInput').value = '';
+        document.getElementById('pdfFileInput').value = '';
+        document.getElementById('pdfDriveUrlInput').value = '';
+        document.getElementById('pdfTextContentInput').value = '';
+        document.getElementById('pdfHtmlContentInput').value = '';
+        renderSubjectDropdown();
+        renderFeed();
+        refreshAllAdminTables();
+        showToast('Study Note విజయవంతంగా పోస్ట్ చేయబడింది!');
+      };
+
+      if (currentUploadMode === 'pdf') {
+        const fInput = document.getElementById('pdfFileInput');
+        if (!fInput.files || !fInput.files[0]) { showToast('PDF ఫైల్ సెలెక్ట్ చేయండి.'); return; }
+        const reader = new FileReader();
+        reader.onload = () => finalize({ fileData: reader.result });
+        reader.readAsDataURL(fInput.files[0]);
+      } else if (currentUploadMode === 'drive') {
+        const rawLink = document.getElementById('pdfDriveUrlInput').value.trim();
+        const cleanUrl = sanitizeExternalUrl(rawLink);
+        if (!cleanUrl) { showToast('Google Drive లేదా Direct PDF లింక్ పేస్ట్ చేయండి.'); return; }
+        finalize({ driveUrl: cleanUrl });
+      } else if (currentUploadMode === 'text') {
+        const txt = document.getElementById('pdfTextContentInput').value.trim();
+        if (!txt) { showToast('Text Study Notes నమోదు చేయండి.'); return; }
+        finalize({ textContent: txt });
+      } else if (currentUploadMode === 'html') {
+        const html = document.getElementById('pdfHtmlContentInput').value.trim();
+        if (!html) { showToast('HTML Code నమోదు చేయండి.'); return; }
+        finalize({ htmlContent: html });
+      }
+    }
+
+    function deletePdfNote(id) {
+      state.pdfs = state.pdfs.filter(d => d.id !== id);
+      persistState();
+      renderSubjectDropdown();
+      renderFeed();
+      refreshAllAdminTables();
+      showToast('తొలగించబడింది.');
+    }
+
+    function saveWatermark() {
+      state.watermarkText = document.getElementById('watermarkInput').value.trim() || 'ssc247.com Official';
+      persistState();
+      showToast('Watermark సేవ్ అయింది!');
+    }
+
+    // ---- TAB 4, 5, 6, 7 ----
+    function addNewSubject() {
+      const val = document.getElementById('newSubjectInput').value.trim();
+      if (!val) return;
+      if (!state.subjects.includes(val)) {
+        state.subjects.push(val);
+        persistState();
+        document.getElementById('newSubjectInput').value = '';
+        populateAdminDropdowns();
+        renderSubjectDropdown();
+        renderFeed();
+        refreshAllAdminTables();
+        showToast('కొత్త సబ్జెక్ట్ యాడ్ అయింది!');
+      }
+    }
+
+    function removeSubject(subj) {
+      state.subjects = state.subjects.filter(s => s !== subj);
+      if (selectedSubject === subj) selectedSubject = 'ALL';
+      persistState();
+      populateAdminDropdowns();
+      renderSubjectDropdown();
+      renderFeed();
+      refreshAllAdminTables();
+    }
+
+    function loadFooterPageEditor() {
+      const key = document.getElementById('footerPageSelect').value;
+      const p = state.footerPages[key];
+      if (!p) return;
+      document.getElementById('footerPageTitleInput').value = p.title;
+      document.getElementById('footerPageContentInput').value = p.content;
+    }
+
+    function saveFooterPage() {
+      const key = document.getElementById('footerPageSelect').value;
+      if (!state.footerPages[key]) return;
+      state.footerPages[key].title = document.getElementById('footerPageTitleInput').value.trim() || key;
+      state.footerPages[key].content = document.getElementById('footerPageContentInput').value.trim();
+      persistState();
+      renderFooterLinks();
+      populateAdminDropdowns();
+      showToast('Footer Page సేవ్ అయింది!');
+    }
+
+    function savePortalTexts() {
+      state.quote = document.getElementById('adminQuoteInput').value.trim() || DEFAULT_STATE.quote;
+      state.notice = document.getElementById('adminNoticeInput').value.trim() || DEFAULT_STATE.notice;
+      persistState();
+      applyPortalTexts();
+      showToast('Quote & Notice అప్‌డేట్ అయ్యాయి!');
+    }
+
+    // SECURE PASSWORD UPDATE (REQUIRES SECRET CODE 8525)
+    function updateAdminPassword() {
+      const secret = document.getElementById('secretCodeInput').value.trim();
+      const newPass = document.getElementById('newAdminPassInput').value.trim();
+
+      if (secureHash(secret) !== SECRET_RESET_HASH) {
+        showToast('తప్పు సీక్రెట్ కోడ్! పాస్‌వర్డ్ మార్చబడలేదు.');
+        return;
+      }
+      if (newPass.length < 4) {
+        showToast('కొత్త పాస్‌వర్డ్ కనీసం 4 అక్షరాలు ఉండాలి.');
+        return;
+      }
+
+      state.passwordHash = secureHash(newPass);
+      persistState();
+      document.getElementById('secretCodeInput').value = '';
+      document.getElementById('newAdminPassInput').value = '';
+      showToast('కొత్త Admin Password ఎన్‌క్రిప్ట్ చేసి సేవ్ చేయబడింది!');
+    }
+
+    function saveLiveCode() {
+      state.customHtml = document.getElementById('customHtmlInput').value;
+      state.customCss = document.getElementById('customCssInput').value;
+      state.customJs = document.getElementById('customJsInput').value;
+      persistState();
+      applyLiveCustomCode();
+      showToast('Live Code అప్‌డేట్ అయింది!');
+    }
+
+    // ---- BACKUP EXPORT / IMPORT ----
+    function exportFullBackup() {
+      const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `ssc247_backup_${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      showToast('Backup డౌన్‌లోడ్ అయింది!');
+    }
+
+    function importFullBackup(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const imported = JSON.parse(reader.result);
+          state = { ...structuredClone(DEFAULT_STATE), ...imported };
+          persistState();
+          initPortal();
+          refreshAllAdminTables();
+          showToast('Backup Restore అయింది!');
+        } catch (err) {
+          showToast('చెల్లని Backup ఫైల్!');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function refreshAllAdminTables() {
+      document.getElementById('adminPostsTableWrap').innerHTML = `
+        <table class="admin-table">
+          <thead><tr><th>#</th><th>ID</th><th>Subject</th><th>Title</th><th>Qs</th><th>Actions</th></tr></thead>
+          <tbody>
+            ${state.posts.map((p, i) => `
+              <tr>
+                <td>${i + 1}</td>
+                <td>${escapeHtml(p.id)}</td>
+                <td>${escapeHtml(p.subject)}</td>
+                <td>${escapeHtml(p.title)}</td>
+                <td>${p.questions.length}</td>
+                <td style="white-space:nowrap;">
+                  <button type="button" class="nav-btn" style="background:#4F46E5; padding:4px 10px; font-size:0.76rem;" onclick="editExistingPost('${p.id}')">Edit</button>
+                  <button type="button" class="modal-close-btn" style="padding:4px 10px; font-size:0.76rem;" onclick="deletePostToVault('${p.id}')">Delete</button>
+                </td>
+              </tr>
+            `).join('') || '<tr><td colspan="6" style="text-align:center;">No active posts</td></tr>'}
+          </tbody>
+        </table>`;
+
+      document.getElementById('adminVaultTableWrap').innerHTML = `
+        <table class="admin-table">
+          <thead><tr><th>ID</th><th>Subject</th><th>Title</th><th>Deleted On</th><th>Actions</th></tr></thead>
+          <tbody>
+            ${state.vault.map(v => `
+              <tr>
+                <td>${escapeHtml(v.id)}</td>
+                <td>${escapeHtml(v.subject)}</td>
+                <td>${escapeHtml(v.title)}</td>
+                <td>${escapeHtml(v.deletedAt || '-')}</td>
+                <td style="white-space:nowrap;">
+                  <button type="button" class="nav-btn create-btn" style="padding:4px 10px; font-size:0.76rem;" onclick="restoreFromVault('${v.id}')">Restore</button>
+                  <button type="button" class="modal-close-btn" style="padding:4px 10px; font-size:0.76rem;" onclick="permanentDeleteVault('${v.id}')">Delete Forever</button>
+                </td>
+              </tr>
+            `).join('') || '<tr><td colspan="5" style="text-align:center;">Vault is empty</td></tr>'}
+          </tbody>
+        </table>`;
+
+      document.getElementById('adminPdfsTableWrap').innerHTML = `
+        <table class="admin-table">
+          <thead><tr><th>#</th><th>Subject</th><th>Title</th><th>Type</th><th>Action</th></tr></thead>
+          <tbody>
+            ${state.pdfs.map((d, i) => `
+              <tr>
+                <td>${i + 1}</td>
+                <td>${escapeHtml(d.subject)}</td>
+                <td>${escapeHtml(d.title)}</td>
+                <td>${escapeHtml((d.sourceType || 'text').toUpperCase())}</td>
+                <td><button type="button" class="modal-close-btn" style="padding:4px 10px; font-size:0.76rem;" onclick="deletePdfNote('${d.id}')">Delete</button></td>
+              </tr>
+            `).join('') || '<tr><td colspan="5" style="text-align:center;">No Study Notes yet</td></tr>'}
+          </tbody>
+        </table>`;
+
+      document.getElementById('adminSubjectsList').innerHTML = state.subjects.map(s => `
+        <span style="background:var(--bg-card-soft); border:1px solid var(--border-color); padding:6px 12px; border-radius:999px; font-size:0.84rem; display:inline-flex; align-items:center; gap:8px;">
+          ${escapeHtml(s)}
+          <button type="button" onclick="removeSubject('${escapeHtml(s).replace(/'/g, "\\'")}')" style="background:none; border:none; color:#DC2626; font-weight:800; cursor:pointer;">✕</button>
+        </span>
+      `).join('');
+
+      document.getElementById('adminRequestsTableWrap').innerHTML = `
+        <table class="admin-table">
+          <thead><tr><th>Date</th><th>Name</th><th>Email</th><th>Requested Topic</th></tr></thead>
+          <tbody>
+            ${state.requests.map(r => `
+              <tr>
+                <td>${escapeHtml(r.date)}</td>
+                <td>${escapeHtml(r.name)}</td>
+                <td>${escapeHtml(r.email)}</td>
+                <td>${escapeHtml(r.details)}</td>
+              </tr>
+            `).join('') || '<tr><td colspan="4" style="text-align:center;">No student requests yet</td></tr>'}
+          </tbody>
+        </table>`;
+    }
+
+    initPortal();
+  </script>
+</body>
+</html>

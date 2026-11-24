@@ -999,7 +999,7 @@ Exp: డాక్టర్ బి.ఆర్. అంబేద్కర్ రా�
             activeEditingPostId = post.id;
 
             const cleanSlug = post.slug || post.title.toLowerCase().replace(/[^a-z0-9\u0C00-\u0C7F]+/g, "-");
-            window.history.replaceState({}, "", `/:${encodeURIComponent(cleanSlug)}`);
+            window.location.hash = "#:" + encodeURIComponent(cleanSlug);
 
             const exTheme = TWENTY_PREMIUM_THEMES.find(t => t.id === post.theme) || TWENTY_PREMIUM_THEMES[0];
             document.documentElement.style.setProperty("--exam-nav", exTheme.header);
@@ -2097,16 +2097,10 @@ Exp: డాక్టర్ బి.ఆర్. అంబేద్కర్ రా�
             showQuote();
             setInterval(showQuote, 10000);
 
-            const path = decodeURIComponent(window.location.pathname || "");
-            if (path.startsWith("/:")) {
-                const slug = path.slice(2);
-                const post = portalData.posts.find(p => p.slug === slug || p.id === slug);
-                if (post) { openMockTestPost(post.id); return; }
-                const note = portalData.studyNotes.find(n => n.title.toLowerCase().replace(/[^a-z0-9\u0C00-\u0C7F]+/g, "-") === slug);
-                if (note) { openStudyNoteReader(note.id); return; }
-                const page = portalData.staticPages.find(p => p.id === slug);
-                if (page) { openStaticPageById(page.id); return; }
-            }
+            if (hash.startsWith("#:")) {
+    const slug = hash.slice(2);
+}
+
             renderPortalHome();
         });
     </script>

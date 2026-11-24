@@ -1,0 +1,2130 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="seo-title">ssc247.com - Free Online Mock Test Portal &amp; Exam Engine</title>
+    <meta name="description" id="seo-desc" content="ssc247.com - Telugu & English Online Mock Test Portal with Instant Scorecard, Negative Marking Analysis & Verified PDF Solutions.">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Telugu:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style id="portal-core-styles">
+        :root {
+            --bg-page: #F5F3FF;
+            --bg-outer: linear-gradient(180deg, #1E1B4B 0%, #312E81 36%, #DDD6FE 78%, #F5F3FF 100%);
+            --bg-header: #1E1B4B;
+            --bg-card: rgba(255, 255, 255, 0.96);
+            --bg-input: #FFFFFF;
+            --border-color: #C4B5FD;
+            --text-header: #F5F3FF;
+            --text-card: #1E1B4B;
+            --text-muted: #5B21B6;
+            --accent-primary: #8B5CF6;
+            --accent-deep: #5B21B6;
+            --chip-bg: rgba(139, 92, 246, 0.14);
+            --success-green: #16a34a;
+            --danger-red: #dc2626;
+            --warning-amber: #d97706;
+        }
+
+        /* 20 Post Engine Themes */
+        body[data-post-theme="medical-mayo-clean"] { --p-blue:#006699; --p-dark:#004c73; --p-soft:#e6f3f8; --p-border:#b3d9eb; --p-nav1:#002b40; --p-nav2:#004466; }
+        body[data-post-theme="hospital-apollo-teal"] { --p-blue:#0d9488; --p-dark:#0f766e; --p-soft:#ccfbf1; --p-border:#99f6e4; --p-nav1:#042f2e; --p-nav2:#115e59; }
+        body[data-post-theme="tech-stripe-slate"] { --p-blue:#635bff; --p-dark:#4b45c6; --p-soft:#eeedff; --p-border:#c7c4ff; --p-nav1:#0a2540; --p-nav2:#1a365d; }
+        body[data-post-theme="edu-harvard-crimson"] { --p-blue:#a51c30; --p-dark:#7d1424; --p-soft:#fbecee; --p-border:#f3c4cb; --p-nav1:#2b070c; --p-nav2:#4a0d16; }
+        body[data-post-theme="edu-oxford-navy"] { --p-blue:#1e3a8a; --p-dark:#172554; --p-soft:#dbeafe; --p-border:#93c5fd; --p-nav1:#0b1536; --p-nav2:#172554; }
+        body[data-post-theme="gov-upsc-royal"] { --p-blue:#6d28d9; --p-dark:#5b21b6; --p-soft:#ede9fe; --p-border:#c4b5fd; --p-nav1:#1e1035; --p-nav2:#2e1065; }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', 'Noto Sans Telugu', sans-serif; }
+        body { background-color: var(--bg-page); color: var(--text-card); min-height: 100vh; padding: 0.75rem 0.65rem 3rem; transition: background-color 0.3s ease; }
+
+        /* ================= PORTAL HOME SHELL ================= */
+        .portal-wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+            background: var(--bg-outer);
+            border-radius: 1.35rem;
+            overflow: hidden;
+            box-shadow: 0 22px 45px -15px rgba(30, 27, 75, 0.28);
+            border: 1px solid var(--border-color);
+        }
+
+        .portal-header {
+            background: var(--bg-header);
+            padding: 0.95rem 1.25rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .brand-left { display: flex; align-items: center; gap: 0.65rem; flex-wrap: wrap; }
+        .brand-title { font-weight: 900; font-size: 1.15rem; color: #ffffff; letter-spacing: 0.02em; text-decoration: none; cursor: pointer; }
+        .brand-badge { background: var(--accent-primary); color: #fff; font-size: 0.68rem; padding: 0.16rem 0.5rem; border-radius: 0.35rem; font-weight: 800; }
+
+        .active-pill {
+            display: inline-flex; align-items: center; gap: 0.35rem;
+            background: rgba(34, 197, 94, 0.18); color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.45);
+            padding: 0.22rem 0.65rem; border-radius: 9999px; font-size: 0.72rem; font-weight: 700;
+        }
+        .visited-pill {
+            display: inline-flex; align-items: center; gap: 0.35rem;
+            background: rgba(255, 255, 255, 0.12); color: var(--text-header);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            padding: 0.22rem 0.72rem; border-radius: 9999px; font-size: 0.74rem; font-weight: 800;
+        }
+        .pulse-dot { width: 7px; height: 7px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 8px #22c55e; animation: blink 1.4s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+        .header-actions { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+        .nav-home-btn, .admin-btn {
+            background: rgba(255, 255, 255, 0.14); color: var(--text-header);
+            border: 1px solid rgba(255, 255, 255, 0.3); padding: 0.44rem 0.88rem;
+            border-radius: 0.55rem; font-size: 0.78rem; font-weight: 800; cursor: pointer;
+            text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.35rem;
+        }
+        .nav-home-btn:hover, .admin-btn:hover { background: var(--accent-primary); border-color: var(--accent-primary); color: #fff; }
+        .admin-btn.create-highlight { background: #16a34a; border-color: #22c55e; color: #fff; }
+
+        .section-banner { text-align: center; padding: 1.35rem 1rem 0.75rem; }
+        .section-banner h1 { font-size: 1.55rem; font-weight: 900; color: var(--text-header); text-shadow: 0 2px 10px rgba(0, 0, 0, 0.18); }
+        .section-banner p { font-size: 0.84rem; color: #DDD6FE; margin-top: 0.25rem; font-weight: 600; }
+
+        /* Neon Rotating Subject Selector */
+        .subject-selector-container { padding: 0.25rem 1.25rem 0.85rem; display: flex; flex-direction: column; align-items: center; }
+        .neon-subject-wrapper {
+            position: relative; width: 100%; max-width: 560px; border-radius: 0.95rem; padding: 3px;
+            overflow: hidden; animation: neon12GlowBlink 4s linear infinite;
+            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.25);
+        }
+        .neon-subject-wrapper::before {
+            content: ""; position: absolute; width: 680px; height: 680px; top: 50%; left: 50%;
+            background: conic-gradient(from 0deg, #ff0040, #ff5500, #ffaa00, #ffff00, #80ff00, #00ff66, #00ffff, #0080ff, #4000ff, #aa00ff, #ff00cc, #ff0066, #ff0040);
+            animation: spin360Limitless 3.2s linear infinite; z-index: 1;
+        }
+        .neon-subject-inner { position: relative; z-index: 2; background: var(--bg-header); border-radius: 0.8rem; padding: 0.78rem 1rem; display: flex; flex-direction: column; gap: 0.45rem; }
+        .choose-subject-label { font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #DDD6FE; display: flex; justify-content: space-between; }
+        .subject-select-dropdown { width: 100%; background: var(--bg-input); color: var(--text-card); border: 1.5px solid var(--border-color); border-radius: 0.6rem; padding: 0.72rem 0.9rem; font-size: 0.94rem; font-weight: 800; cursor: pointer; outline: none; }
+
+        /* Dual Subject Display Modes: Horizontal Slide Bar vs Vertical Drag-Ordered List */
+        .quick-nav-bar {
+            padding: 0.35rem 1.25rem 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            overflow-x: auto;
+            scrollbar-width: thin;
+        }
+        .quick-nav-bar.vertical-list-mode {
+            flex-direction: column;
+            align-items: stretch;
+            overflow-x: visible;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+        .nav-pill-btn {
+            background: rgba(255, 255, 255, 0.18); color: var(--text-header);
+            border: 1px solid rgba(255, 255, 255, 0.32); padding: 0.45rem 0.95rem;
+            border-radius: 9999px; font-size: 0.8rem; font-weight: 700;
+            white-space: nowrap; cursor: pointer; transition: all 0.2s ease; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+        }
+        .quick-nav-bar.vertical-list-mode .nav-pill-btn { border-radius: 0.65rem; padding: 0.65rem 1rem; }
+        .nav-pill-btn:hover { background: rgba(255, 255, 255, 0.32); }
+        .nav-pill-btn.active { background: #ffffff; color: var(--accent-deep); border-color: #ffffff; font-weight: 800; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18); }
+
+        .active-subject-header { padding: 0 1.25rem 0.65rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+        .active-subject-badge { background: var(--bg-card); border: 1px solid var(--border-color); color: var(--accent-deep); padding: 0.35rem 0.85rem; border-radius: 0.6rem; font-size: 0.84rem; font-weight: 800; }
+        .test-count-tag { background: rgba(255, 255, 255, 0.9); color: var(--accent-deep); padding: 0.26rem 0.7rem; border-radius: 9999px; font-size: 0.76rem; font-weight: 800; }
+
+        .tests-container { padding: 0.35rem 1.25rem 1.5rem; display: flex; flex-direction: column; gap: 0.95rem; min-height: 110px; }
+        .prompt-select-placeholder { text-align: center; padding: 1.85rem 1.15rem; background: var(--bg-card); color: var(--text-card); font-size: 0.92rem; font-weight: 800; border: 2px dashed var(--border-color); border-radius: 0.95rem; line-height: 1.6; }
+        .prompt-select-placeholder span { display: block; font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-top: 0.3rem; }
+
+        .test-card {
+            background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 0.95rem;
+            padding: 1.12rem 1.25rem; display: flex; justify-content: space-between; align-items: center;
+            gap: 1rem; box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.08); transition: transform 0.2s ease;
+        }
+        .test-card:hover { transform: translateY(-2px); border-color: var(--accent-primary); }
+        .test-info { display: flex; flex-direction: column; gap: 0.45rem; flex: 1; min-width: 0; }
+        .test-meta-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+        .test-num-badge { width: 28px; height: 28px; border-radius: 50%; background: var(--accent-deep); color: #fff; font-size: 0.8rem; font-weight: 800; display: inline-flex; align-items: center; justify-content: center; }
+        .card-subject-chip { font-size: 0.72rem; font-weight: 800; color: var(--accent-deep); background: var(--chip-bg); border: 1px solid var(--border-color); padding: 0.18rem 0.55rem; border-radius: 0.4rem; }
+        .test-title { font-size: 1.02rem; font-weight: 700; color: var(--text-card); line-height: 1.5; }
+
+        /* 12-Color Neon Button */
+        .neon-btn-wrapper { position: relative; display: inline-flex; align-items: center; justify-content: center; border-radius: 9999px; padding: 2.5px; overflow: hidden; flex-shrink: 0; animation: neon12GlowBlink 3.6s linear infinite; }
+        .neon-btn-wrapper::before {
+            content: ""; position: absolute; width: 230px; height: 230px; top: 50%; left: 50%;
+            background: conic-gradient(from 0deg, #ff0040, #ff5500, #ffaa00, #ffff00, #80ff00, #00ff66, #00ffff, #0080ff, #4000ff, #aa00ff, #ff00cc, #ff0066, #ff0040);
+            animation: spin360Limitless 2s linear infinite; z-index: 1;
+        }
+        @keyframes spin360Limitless { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+        @keyframes neon12GlowBlink {
+            0%, 100% { box-shadow: 0 0 12px #ff0040; } 25% { box-shadow: 0 0 10px #ffff00; }
+            50% { box-shadow: 0 0 14px #00ffff; } 75% { box-shadow: 0 0 10px #aa00ff; }
+        }
+        .start-exam-link {
+            position: relative; z-index: 2; background: var(--bg-header); color: #ffffff;
+            text-decoration: none; font-size: 0.85rem; font-weight: 800; padding: 0.62rem 1.2rem;
+            border-radius: 9999px; display: inline-flex; align-items: center; gap: 0.4rem; border: none; cursor: pointer;
+        }
+
+        /* Quotes & Rating & Feedback */
+        .quotes-neon-box { margin: 0.5rem 1.25rem 1.5rem; position: relative; border-radius: 0.95rem; padding: 2.5px; overflow: hidden; animation: neon12GlowBlink 4.8s linear infinite; }
+        .quotes-neon-box::before {
+            content: ""; position: absolute; width: 950px; height: 950px; top: 50%; left: 50%;
+            background: conic-gradient(from 0deg, #ff0040, #ff5500, #ffaa00, #ffff00, #80ff00, #00ff66, #00ffff, #0080ff, #4000ff, #aa00ff, #ff00cc, #ff0066, #ff0040);
+            animation: spin360Limitless 7s linear infinite; z-index: 1;
+        }
+        .quotes-inner { position: relative; z-index: 2; background: var(--bg-header); border-radius: 0.85rem; padding: 1rem 1.25rem; text-align: center; }
+        .quote-counter-pill { display: inline-block; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; color: #facc15; background: rgba(255,255,255,0.1); padding: 0.16rem 0.6rem; border-radius: 9999px; margin-bottom: 0.45rem; }
+        .quote-text-en { font-size: 0.94rem; font-weight: 700; color: var(--text-header); line-height: 1.55; }
+        .quote-author-en { margin-top: 0.4rem; font-size: 0.76rem; font-weight: 700; color: #DDD6FE; }
+
+        .portal-rating-section { margin: 0 1.25rem 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 0.95rem; padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.8rem; }
+        .stars-display { display: inline-flex; align-items: center; gap: 0.25rem; }
+        .svg-star-wrap { width: 24px; height: 24px; display: inline-block; }
+        .rating-score-pill { background: var(--bg-header); color: #facc15; padding: 0.26rem 0.75rem; border-radius: 9999px; font-size: 0.86rem; font-weight: 900; }
+
+        .user-request-section { margin: 0 1.25rem 1.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 1rem; padding: 1.35rem; }
+        .req-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 0.75rem; }
+        .dark-field { width: 100%; background: var(--bg-input); border: 1.5px solid var(--border-color); color: var(--text-card); padding: 0.72rem 0.9rem; border-radius: 0.55rem; font-size: 0.88rem; outline: none; }
+        .btn-send-msg { background: linear-gradient(135deg, var(--accent-primary), var(--accent-deep)); color: #fff; border: none; padding: 0.75rem 1.35rem; border-radius: 0.55rem; font-weight: 800; font-size: 0.88rem; cursor: pointer; margin-top: 0.65rem; width: 100%; }
+
+        /* Static Legal Page Reader View (Terms, Privacy, Contact, Disclaimer) */
+        .static-legal-view {
+            display: none;
+            margin: 1.25rem;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.75rem;
+            color: #0f172a;
+            line-height: 1.75;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
+        }
+        .static-legal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 0.85rem; margin-bottom: 1.15rem; flex-wrap: wrap; gap: 0.5rem; }
+
+        /* Footer */
+        .portal-footer {
+            background: var(--bg-header); color: var(--text-header); padding: 1.15rem 1.25rem;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;
+            gap: 0.75rem; font-size: 0.8rem; border-top: 1px solid rgba(255, 255, 255, 0.14);
+        }
+        .footer-links { display: flex; gap: 0.9rem; flex-wrap: wrap; align-items: center; }
+        .footer-links a, .footer-links button { background: none; border: none; color: #DDD6FE; font-weight: 700; font-size: 0.8rem; cursor: pointer; text-decoration: none; }
+        .footer-links a:hover, .footer-links button:hover { color: #ffffff; text-decoration: underline; }
+
+        /* ================= INTEGRATED MOCK TEST EXAM ENGINE VIEW ================= */
+        #exam-engine-wrapper { display: none; max-width: 1180px; margin: 0 auto; }
+        .exam-top-bar {
+            background: linear-gradient(90deg, var(--p-nav1, #082f49), var(--p-nav2, #0c4a6e));
+            color: #fff; padding: 0.9rem 1.35rem; border-radius: 1rem 1rem 0 0;
+            display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;
+        }
+        .exam-summary-strip { background: #fff; border: 1px solid #e2e8f0; border-top: none; padding: 0.7rem 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.85rem; }
+        .info-pill { background: var(--p-soft, #f0f9ff); color: var(--p-dark, #0369a1); border: 1px solid var(--p-border, #bae6fd); padding: 0.22rem 0.65rem; border-radius: 999px; font-size: 0.75rem; font-weight: 700; }
+
+        .pre-exam-card { background: #fff; border: 1px solid #e2e8f0; border-top: 5px solid var(--p-blue, #0284c7); border-radius: 1.1rem; max-width: 540px; margin: 2rem auto; padding: 2rem; text-align: center; box-shadow: 0 18px 36px -12px rgba(15, 23, 42, 0.12); }
+        .app-container { display: none; flex-direction: row; align-items: flex-start; gap: 1.25rem; padding: 1.15rem 0; }
+        .exam-main-card { flex: 1; background: #fff; border-radius: 1rem; border: 1px solid #e2e8f0; overflow: hidden; box-shadow: 0 10px 25px -8px rgba(0,0,0,0.08); }
+        .exam-header { background: #f8fafc; padding: 0.9rem 1.35rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; gap: 0.75rem; }
+        .timer-box { font-family: monospace; font-weight: 800; font-size: 1rem; width: 82px; height: 38px; display: inline-flex; align-items: center; justify-content: center; background: #0f172a; color: #38bdf8; border-radius: 0.55rem; }
+        .timer-box.warning { background: #fef2f2; color: #dc2626; border: 1px solid #fca5a5; }
+        .quiz-arena { padding: 1.4rem; }
+        .category-tag { font-size: 0.74rem; font-weight: 800; color: var(--p-dark, #0369a1); background: var(--p-soft, #f0f9ff); padding: 0.28rem 0.75rem; border-radius: 9999px; display: inline-block; margin-bottom: 0.8rem; border: 1px solid var(--p-border, #bae6fd); }
+        .question-text { font-size: 1.12rem; font-weight: 700; margin-bottom: 1.15rem; line-height: 1.75; white-space: pre-line; color: #0f172a; }
+        .statements-box { background: #f8fafc; border: 1.5px solid #cbd5e1; border-left: 4px solid var(--p-blue, #0284c7); border-radius: 0.75rem; padding: 0.95rem 1.15rem; margin-bottom: 1.2rem; font-size: 0.98rem; font-weight: 600; line-height: 1.75; white-space: pre-line; }
+        .match-sync-box { background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 0.8rem; padding: 0.9rem; margin-bottom: 1.2rem; overflow-x: auto; }
+        .match-sync-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; font-weight: 700; }
+        .match-sync-table th { background: #e2e8f0; padding: 0.55rem 0.8rem; text-align: left; }
+        .match-sync-table td { padding: 0.6rem 0.8rem; border-bottom: 1px dashed #cbd5e1; }
+        .options-list { display: flex; flex-direction: column; gap: 0.7rem; }
+        .option-item { width: 100%; text-align: left; padding: 0.9rem 1.1rem; background: #fff; border: 2px solid #e2e8f0; border-radius: 0.75rem; font-size: 0.96rem; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 0.8rem; color: #1e293b; }
+        .option-item:hover { border-color: #94a3b8; background: #f8fafc; }
+        .option-item.selected { border-color: var(--p-blue, #0284c7); background: var(--p-soft, #f0f9ff); color: var(--p-dark, #0369a1); }
+        .opt-badge { width: 28px; height: 28px; border-radius: 50%; background: #f1f5f9; display: inline-flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; flex-shrink: 0; }
+        .option-item.selected .opt-badge { background: var(--p-blue, #0284c7); color: #fff; }
+        .card-footer-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 1.35rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; flex-wrap: wrap; gap: 0.65rem; }
+        .btn-outline { padding: 0.6rem 1.1rem; background: #fff; color: #0f172a; border: 1.5px solid #cbd5e1; border-radius: 0.6rem; font-weight: 700; font-size: 0.84rem; cursor: pointer; }
+        .btn-outline:disabled { opacity: 0.45; cursor: not-allowed; }
+
+        .exam-sidebar { width: 290px; flex-shrink: 0; background: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.15rem; position: sticky; top: 1rem; }
+        .nav-grid-box { display: grid; grid-template-columns: repeat(auto-fill, minmax(42px, 1fr)); gap: 0.42rem; max-height: 320px; overflow-y: auto; margin: 0.65rem 0; }
+        .grid-btn { height: 36px; border: none; border-radius: 0.45rem; font-weight: 700; font-size: 0.8rem; cursor: pointer; color: #fff; }
+        .grid-btn.unfilled { background: #dc2626; }
+        .grid-btn.filled { background: #16a34a; }
+        .grid-btn.active-now { outline: 3px solid #2563eb; outline-offset: 2px; }
+        .submit-btn { width: 100%; padding: 0.85rem; background: linear-gradient(135deg, #16a34a, #15803d); color: #fff; border: none; border-radius: 0.7rem; font-weight: 800; font-size: 0.94rem; cursor: pointer; margin-top: 0.5rem; }
+
+        /* Results Dashboard */
+        .results-dashboard { display: none; max-width: 960px; margin: 1.5rem auto; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.9rem; margin-bottom: 1.5rem; }
+        .metric-card { background: #fff; padding: 1.15rem; border-radius: 0.9rem; text-align: center; border: 1px solid #e2e8f0; }
+        .metric-label { font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; margin-bottom: 0.3rem; }
+        .scorecard-generator-box, .diagnostic-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 1rem; padding: 1.45rem; margin-bottom: 1.5rem; }
+        .sc-form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.8rem; margin-top: 0.9rem; }
+        .pdf-download-banner { background: linear-gradient(135deg, #082f49, #0c4a6e); color: #fff; padding: 1.4rem; border-radius: 1rem; margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+        .review-card { background: #fff; padding: 1.25rem; border-radius: 0.85rem; border: 1px solid #e2e8f0; margin-bottom: 0.9rem; }
+        .review-card.correct { border-left: 6px solid #16a34a; }
+        .review-card.wrong { border-left: 6px solid #dc2626; }
+        .review-card.skipped { border-left: 6px solid #64748b; }
+        .explanation-text { margin-top: 0.75rem; padding: 0.85rem; background: #f8fafc; border-radius: 0.55rem; font-size: 0.9rem; border-left: 3.5px solid #0284c7; white-space: pre-line; }
+
+        /* ================= MASTER ADMIN CONTROL PANEL MODAL ================= */
+        .modal-backdrop { position: fixed; inset: 0; background: rgba(2, 6, 23, 0.88); display: none; align-items: center; justify-content: center; z-index: 999; padding: 0.75rem; backdrop-filter: blur(5px); }
+        .modal-card { background: #ffffff; color: #0f172a; width: 100%; max-width: 1060px; max-height: 94vh; border-radius: 1.15rem; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6); }
+        .modal-header { background: #1E1B4B; color: #ffffff; padding: 0.95rem 1.35rem; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; }
+        .live-sync-pill { font-size: 0.72rem; font-weight: 800; background: rgba(34, 197, 94, 0.2); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.45); padding: 0.2rem 0.65rem; border-radius: 9999px; }
+
+        .admin-tabs-bar { display: flex; gap: 0.4rem; padding: 0.65rem 1rem; background: #f1f5f9; border-bottom: 1.5px solid #e2e8f0; overflow-x: auto; }
+        .admin-tab-btn { background: #fff; color: #334155; border: 1.5px solid #cbd5e1; padding: 0.52rem 0.9rem; border-radius: 0.55rem; font-size: 0.8rem; font-weight: 800; cursor: pointer; white-space: nowrap; flex-shrink: 0; }
+        .admin-tab-btn.active { background: #1E1B4B; color: #fff; border-color: #1E1B4B; }
+        .admin-tab-panel { display: none; }
+        .admin-tab-panel.active { display: block; }
+        .modal-body { padding: 1.15rem 1.3rem; overflow-y: auto; flex: 1; }
+
+        .light-input { width: 100%; padding: 0.58rem 0.78rem; border: 1.5px solid #cbd5e1; border-radius: 0.5rem; font-size: 0.85rem; color: #0f172a; background: #fff; }
+        .light-input:focus { outline: none; border-color: #5B21B6; }
+        .code-editor-box { font-family: 'Courier New', monospace; font-size: 0.82rem; background: #0f172a; color: #38bdf8; border: 1.5px solid #334155; border-radius: 0.6rem; padding: 0.85rem; width: 100%; min-height: 150px; line-height: 1.5; }
+        .admin-box-panel { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 0.95rem 1rem; margin-bottom: 0.95rem; }
+        .admin-box-title { font-size: 0.9rem; font-weight: 800; color: #0f172a; margin-bottom: 0.6rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.4rem; }
+
+        .btn-action { padding: 0.55rem 0.95rem; border: none; border-radius: 0.5rem; font-weight: 700; font-size: 0.81rem; cursor: pointer; color: #fff; white-space: nowrap; }
+        .btn-green { background: #16a34a; }
+        .btn-blue { background: #2563eb; }
+        .btn-red { background: #dc2626; }
+        .btn-amber { background: #d97706; }
+        .btn-purple { background: #6D28D9; }
+        .btn-dark { background: #0f172a; }
+
+        .admin-list-table { width: 100%; border-collapse: collapse; margin-top: 0.55rem; font-size: 0.83rem; }
+        .admin-list-table th, .admin-list-table td { padding: 0.55rem; border-bottom: 1px solid #e2e8f0; text-align: left; vertical-align: middle; }
+        .admin-list-table th { background: #f1f5f9; font-weight: 800; color: #475569; }
+        .draggable-row { cursor: grab; }
+        .draggable-row.dragging { opacity: 0.45; background: #dbeafe; }
+
+        .blocked-overlay { position: fixed; inset: 0; background: #090d16; color: #fff; display: none; align-items: center; justify-content: center; z-index: 9999; padding: 1rem; text-align: center; }
+        .blocked-box { background: #111827; border: 1px solid #334155; padding: 2rem; border-radius: 1rem; max-width: 460px; width: 100%; }
+
+        /* Print Sheet */
+        #pdf-print-sheet { display: none; }
+        @media print {
+            body > *:not(#pdf-print-sheet) { display: none !important; }
+            #pdf-print-sheet { display: block !important; background: #fff !important; color: #000 !important; padding: 10px; }
+        }
+
+        @media (max-width: 768px) {
+            .app-container { flex-direction: column; }
+            .exam-sidebar { width: 100%; position: static; }
+            .test-card { flex-direction: column; align-items: flex-start; }
+            .req-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <!-- Custom Admin Injected CSS -->
+    <style id="custom-admin-injected-css"></style>
+</head>
+<body data-post-theme="medical-mayo-clean">
+
+    <!-- SECURITY BLOCK SCREEN -->
+    <div class="blocked-overlay" id="blocked-screen">
+        <div class="blocked-box">
+            <h2 style="color: #f87171; font-size: 1.45rem; font-weight: 900; margin-bottom: 0.5rem;">Access Permanently Locked</h2>
+            <p style="color: #94a3b8; font-size: 0.86rem; margin-bottom: 1.25rem;">
+                This device was blocked after 2 failed Admin password attempts. Enter Recovery Key or submit an unblock request below.
+            </p>
+            <input type="text" id="unblock-name" class="dark-field" placeholder="Your Full Name" style="margin-bottom: 0.65rem; background:#1e293b; color:#fff; border-color:#334155;">
+            <input type="email" id="unblock-email" class="dark-field" placeholder="Your Email Address" style="margin-bottom: 0.65rem; background:#1e293b; color:#fff; border-color:#334155;">
+            <textarea id="unblock-reason" class="dark-field" style="height: 75px; resize: none; background:#1e293b; color:#fff; border-color:#334155;" placeholder="Reason for unblock or Recovery Key..."></textarea>
+            <button class="btn-send-msg" onclick="submitUnblockAppeal()">Submit Request to Admin</button>
+            <div id="unblock-feedback" style="margin-top: 0.65rem; font-size: 0.82rem; font-weight: 700; color: #4ade80;"></div>
+        </div>
+    </div>
+
+    <!-- =========================================================================
+         VIEW 1: MAIN STATIC PORTAL HOME (ssc247.com)
+         ========================================================================= -->
+    <div class="portal-wrapper" id="top-portal">
+        <header class="portal-header">
+            <div class="brand-left">
+                <a class="brand-title" onclick="navigateToHome()">ssc247.com <span class="brand-badge">OFFICIAL</span></a>
+                <span class="active-pill"><span class="pulse-dot"></span> Active Portal</span>
+                <span class="visited-pill">Visited: <strong id="live-visited-count">--</strong></span>
+            </div>
+            <div class="header-actions">
+                <button class="nav-home-btn" onclick="navigateToHome()">Home</button>
+                <button class="admin-btn create-highlight" onclick="openAdminPanel('tab-create-post')">+ Create a Post</button>
+                <button class="admin-btn" onclick="openAdminPanel('tab-posts')">Admin Panel</button>
+            </div>
+        </header>
+
+        <!-- HOME DIRECTORY SECTION -->
+        <div id="portal-home-content">
+            <div class="section-banner">
+                <h1>ssc247.com — Free Mock Test Portal</h1>
+                <p>SSC, RRB, TSLPRB SI / Constable, TSPSC, APPSC Bilingual Mock Tests</p>
+            </div>
+
+            <!-- NEON ROTATING SUBJECT DROPDOWN -->
+            <div class="subject-selector-container">
+                <div class="neon-subject-wrapper">
+                    <div class="neon-subject-inner">
+                        <label for="user-subject-dropdown" class="choose-subject-label">
+                            <span>Choose Your Subject</span>
+                            <span style="font-size: 0.7rem; opacity: 0.85;">Select Section</span>
+                        </label>
+                        <select id="user-subject-dropdown" class="subject-select-dropdown" onchange="onUserSubjectChange()"></select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUBJECT NAVIGATION (AUTO-SWITCHES BETWEEN HORIZONTAL SLIDE BAR & VERTICAL DRAG LIST) -->
+            <nav class="quick-nav-bar" id="quick-subject-nav" aria-label="Subject Navigation"></nav>
+
+            <!-- Selected Subject Indicator Bar -->
+            <div class="active-subject-header" id="active-subject-bar" style="display: none;">
+                <div class="active-subject-badge" id="current-subject-display">Select the Subject</div>
+                <div class="test-count-tag" id="subject-test-count">0 Tests Available</div>
+            </div>
+
+            <!-- Subject-Filtered Mock Tests List -->
+            <div class="tests-container" id="mock-tests-list"></div>
+
+            <!-- Admin Custom Injected HTML Block -->
+            <div id="custom-admin-injected-html" style="padding: 0 1.25rem 1rem;"></div>
+
+            <!-- 100 ENGLISH ASPIRANT QUOTATIONS NEON BOX -->
+            <div class="quotes-neon-box">
+                <div class="quotes-inner">
+                    <div class="quote-counter-pill" id="quote-counter-pill">Aspirant Motivation #1 / 100</div>
+                    <div class="quote-text-en" id="quote-text-en"></div>
+                    <div class="quote-author-en" id="quote-author-en"></div>
+                </div>
+            </div>
+
+            <!-- 5-STAR PORTAL RATING DISPLAY -->
+            <div class="portal-rating-section">
+                <span class="rating-label-text" style="font-weight:800;">ssc247.com Rating:</span>
+                <div class="stars-display" id="portal-stars-display"></div>
+                <span class="rating-score-pill" id="portal-rating-text">4.8 / 5</span>
+            </div>
+
+            <!-- User Topic Request Form -->
+            <section class="user-request-section" id="feedback-section">
+                <h3 style="font-size:1.05rem; font-weight:800; color:var(--accent-deep); margin-bottom:0.3rem;">Request a New Mock Test Topic / Send Feedback</h3>
+                <p style="font-size:0.83rem; color:var(--text-muted); margin-bottom:1rem;">Interested in a specific exam or topic on ssc247.com? Send a direct message to the Admin.</p>
+                <div class="req-grid">
+                    <input type="text" id="user-req-name" class="dark-field" placeholder="Your Name *" required>
+                    <input type="email" id="user-req-email" class="dark-field" placeholder="Your Email ID *" required>
+                </div>
+                <textarea id="user-req-msg" class="dark-field" style="height: 85px; resize: vertical;" placeholder="Write the topic name or exam details you want us to upload... *" required></textarea>
+                <button class="btn-send-msg" id="user-send-btn" onclick="sendUserTopicEmail()">Send Email to Admin</button>
+                <div id="user-req-status" style="margin-top: 0.65rem; font-size: 0.85rem; font-weight: 700; text-align: center;"></div>
+            </section>
+        </div>
+
+        <!-- STATIC LEGAL PAGES VIEW (TERMS, PRIVACY POLICY, CONTACT US, DISCLAIMER) -->
+        <div class="static-legal-view" id="static-legal-view">
+            <div class="static-legal-header">
+                <h2 id="legal-page-title" style="font-size:1.4rem; font-weight:900; color:#1E1B4B;">Page Title</h2>
+                <button class="btn-action btn-purple" onclick="navigateToHome()">← Back to Portal Home</button>
+            </div>
+            <div id="legal-page-body"></div>
+        </div>
+
+        <!-- PORTAL FOOTER WITH TERMS, PRIVACY POLICY, CONTACT US & DISCLAIMER -->
+        <footer class="portal-footer">
+            <div>© 2026 <strong>ssc247.com</strong> — All Rights Reserved</div>
+            <div class="footer-links">
+                <button onclick="navigateToHome()">Home</button>
+                <button onclick="openLegalPage('terms')">Terms &amp; Conditions</button>
+                <button onclick="openLegalPage('privacy')">Privacy Policy</button>
+                <button onclick="openLegalPage('contact')">Contact Us</button>
+                <button onclick="openLegalPage('disclaimer')">Disclaimer</button>
+                <a href="#top-portal">Top ↑</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- =========================================================================
+         VIEW 2: DEDICATED MOCK TEST POST ENGINE (OPENS WHEN A POST IS LAUNCHED)
+         ========================================================================= -->
+    <div id="exam-engine-wrapper">
+        <div class="exam-top-bar">
+            <div style="display:flex; align-items:center; gap:0.65rem; flex-wrap:wrap;">
+                <button class="nav-home-btn" onclick="navigateToHome()">← Back to ssc247.com</button>
+                <strong id="exam-portal-brand" style="font-size:1.05rem;">ssc247.com Live Exam</strong>
+            </div>
+            <div style="display:flex; gap:0.5rem;">
+                <button class="admin-btn create-highlight" onclick="openAdminPanel('tab-create-post')">Edit This Post</button>
+                <button class="admin-btn" onclick="openAdminPanel('tab-posts')">Admin Panel</button>
+            </div>
+        </div>
+
+        <div class="exam-summary-strip">
+            <div id="post-snippet-text" style="font-weight: 600; color: #1e293b;">
+                SSC, RRB, TSLPRB, APPSC &amp; TSPSC Bilingual Online Mock Test with Instant Scorecard &amp; PDF Solutions.
+            </div>
+            <div style="display:flex; gap:0.45rem; flex-wrap:wrap;">
+                <span class="info-pill" id="pill-total-q">Questions: 0</span>
+                <span class="info-pill" id="pill-marking">Marking: +1.0 / -0.5</span>
+                <span class="info-pill" id="pill-timer">Timer: 60s / Q</span>
+            </div>
+        </div>
+
+        <!-- Pre-Exam One-Time Timer Gate -->
+        <div class="pre-exam-card" id="pre-exam-view" style="display:none;">
+            <span class="category-tag">Exam Ready — ssc247.com</span>
+            <h2 id="pre-exam-title" style="font-size: 1.45rem; font-weight: 900; margin-bottom: 0.5rem;">Live Mock Test</h2>
+            <p style="color: #64748b; font-size: 0.92rem; margin-bottom: 1.25rem;">
+                Total Questions: <strong id="pre-exam-qcount">0</strong> &nbsp;|&nbsp; Auto-Advance Mode Enabled
+            </p>
+            <div style="background: #f0f9ff; border: 1px solid #bae6fd; padding: 1rem; border-radius: 0.85rem; margin-bottom: 1.25rem; text-align: left;">
+                <label style="font-weight: 800; font-size: 0.84rem; color: #0369a1; display: block; margin-bottom: 0.4rem;">
+                    Select Per-Question Timer (One-Time Selection):
+                </label>
+                <select id="user-onetime-timer-select" class="light-input" style="font-weight: 700;">
+                    <option value="30">30 Seconds per Question</option>
+                    <option value="45">45 Seconds per Question</option>
+                    <option value="60" selected>60 Seconds per Question</option>
+                    <option value="90">90 Seconds per Question</option>
+                </select>
+            </div>
+            <button class="btn-action btn-green" style="width: 100%; padding: 0.9rem; font-size: 1rem;" onclick="confirmUserTimerAndStart()">Start Exam Now</button>
+        </div>
+
+        <!-- Active Quiz View -->
+        <div class="app-container" id="quiz-view">
+            <main class="exam-main-card">
+                <header class="exam-header">
+                    <div>
+                        <h1 id="test-title-header" style="font-weight: 800; font-size: 1.12rem; margin:0;">Live Mock Test</h1>
+                        <div id="test-subtitle-header" style="font-size: 0.78rem; color: #64748b; font-weight: 600;">ssc247.com Official Practice Set</div>
+                    </div>
+                    <div class="timer-box" id="clock">60s</div>
+                </header>
+                <div class="quiz-arena">
+                    <span class="category-tag" id="q-category">Exam Set Assessment</span>
+                    <h2 class="question-text" id="q-text"></h2>
+                    <div id="q-extra-block"></div>
+                    <div class="options-list" id="q-options"></div>
+                    <div class="card-footer-nav">
+                        <div style="display:flex; gap:0.6rem;">
+                            <button class="btn-outline" id="btn-prev-q" onclick="prevQuestion()">Previous</button>
+                            <button class="btn-outline" onclick="clearCurrentAnswer()">Clear Response</button>
+                        </div>
+                        <span style="font-size: 0.78rem; font-weight: 700; color: #64748b;">Click any option to advance automatically</span>
+                    </div>
+                    <div id="exam-bottom-image-container" style="display:none; margin-top:1.25rem; text-align:center;">
+                        <img id="exam-bottom-image-el" src="" alt="Exam Banner" style="max-width:100%; max-height:260px; border-radius:0.75rem;">
+                        <div id="exam-bottom-image-caption" style="font-size:0.8rem; font-weight:700; color:#64748b; margin-top:0.35rem;"></div>
+                    </div>
+                </div>
+            </main>
+
+            <aside class="exam-sidebar" id="palette-sidebar">
+                <div style="font-size:0.8rem; font-weight:800; color:#64748b; display:flex; justify-content:space-between;">
+                    <span>QUESTIONS PALETTE</span>
+                    <span id="answered-stat">0 / 0</span>
+                </div>
+                <div class="nav-grid-box" id="nav-grid"></div>
+                <button class="submit-btn" onclick="triggerSubmission(true)">Submit Exam</button>
+            </aside>
+        </div>
+
+        <!-- Results Dashboard -->
+        <section class="results-dashboard" id="dashboard-view">
+            <div style="text-align: center; background:#fff; padding:1.75rem; border-radius:1rem; border:1px solid #e2e8f0; margin-bottom:1.5rem;">
+                <h2 style="font-size: 1.85rem; font-weight: 900;">Performance Scorecard &amp; Analysis</h2>
+                <p id="dashboard-marking-subtitle" style="color: #64748b; margin: 0.35rem 0 0.85rem;">Complete Diagnostic Breakdown (+1.0 Correct | -0.5 Negative)</p>
+                <div id="pass-fail-badge" style="display:inline-block; padding:0.4rem 1.1rem; border-radius:999px; font-weight:800; font-size:0.88rem; margin-bottom:1rem;"></div><br>
+                <button class="btn-action btn-blue" style="padding: 0.75rem 1.5rem;" onclick="initiateExamFlow()">Re-Attempt Exam</button>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card"><div class="metric-label">Final Score</div><div style="color:#0284c7; font-size:1.75rem; font-weight:900;" id="res-score">0</div></div>
+                <div class="metric-card"><div class="metric-label">Correct</div><div style="color:#16a34a; font-size:1.75rem; font-weight:900;" id="res-correct">0</div></div>
+                <div class="metric-card"><div class="metric-label">Wrong</div><div style="color:#dc2626; font-size:1.75rem; font-weight:900;" id="res-wrong">0</div></div>
+                <div class="metric-card"><div class="metric-label">Negative Lost</div><div style="color:#d97706; font-size:1.75rem; font-weight:900;" id="res-negative">-0.0</div></div>
+                <div class="metric-card"><div class="metric-label">Accuracy</div><div style="color:#0f172a; font-size:1.75rem; font-weight:900;" id="res-accuracy">0%</div></div>
+            </div>
+
+            <!-- Official Scorecard PNG Generator -->
+            <div class="scorecard-generator-box">
+                <h3 style="font-size: 1.12rem; font-weight: 800; margin-bottom: 0.25rem;">Download Official ssc247.com Scorecard Image</h3>
+                <div class="sc-form-grid">
+                    <input type="text" id="sc-student-name" class="light-input" placeholder="Candidate Full Name *">
+                    <input type="email" id="sc-student-email" class="light-input" placeholder="Email Address *">
+                    <input type="file" id="sc-student-photo" accept="image/*" class="light-input" onchange="validateCandidatePhotoFile(event)">
+                </div>
+                <div style="margin-top: 0.9rem; display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap;">
+                    <button class="btn-action btn-blue" onclick="generateAndDownloadScorecardImage()">Generate &amp; Download Scorecard PNG</button>
+                    <span id="sc-gen-status" style="font-size: 0.84rem; font-weight: 700; color: #16a34a;"></span>
+                </div>
+                <div id="sc-preview-wrapper" style="margin-top: 1rem; display: none; text-align: center;">
+                    <img id="sc-preview-img" src="" alt="Scorecard" style="max-width: 100%; border-radius: 0.85rem; border: 1.5px solid #cbd5e1;">
+                </div>
+            </div>
+
+            <div class="pdf-download-banner">
+                <div>
+                    <h3 style="font-size: 1.12rem; font-weight: 800;">Download Official Correct Answers &amp; Explanations PDF</h3>
+                    <p style="font-size: 0.85rem; color: #e2e8f0;">Clean revision PDF with verified answers and full explanations.</p>
+                </div>
+                <button class="btn-action btn-green" onclick="downloadCorrectOptionsPDF()">Download Clean PDF Key</button>
+            </div>
+
+            <div id="review-wrapper"></div>
+        </section>
+    </div>
+
+    <!-- Print Sheet -->
+    <div id="pdf-print-sheet">
+        <h1 id="pdf-doc-title" style="font-size:18px; margin-bottom:10px;">ssc247.com - Verified Q&amp;A Key</h1>
+        <div id="pdf-questions-body"></div>
+    </div>
+
+    <!-- =========================================================================
+         MASTER ADMIN CONTROL PANEL MODAL (ALL FEATURES INTEGRATED)
+         ========================================================================= -->
+    <div class="modal-backdrop" id="admin-modal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap;">
+                    <h3 style="font-size: 1.05rem; font-weight: 800;">ssc247.com — Master Admin Control Panel</h3>
+                    <span class="live-sync-pill" id="live-sync-badge">Auto-Save &amp; Live Sync Active</span>
+                </div>
+                <button style="background:none; border:none; color:white; font-size:1.35rem; cursor:pointer; font-weight:800;" onclick="closeAdminPanel()">✕</button>
+            </div>
+
+            <!-- Login View -->
+            <div class="modal-body" id="admin-login-box">
+                <p style="font-size: 0.9rem; color: #475569; margin-bottom: 0.65rem;">Enter 6-Digit Encrypted Admin Password:</p>
+                <input type="password" id="admin-pass-input" class="light-input" maxlength="6" placeholder="******" oninput="checkAdminPassAuto(event)" style="text-align: center; font-size: 1.25rem; letter-spacing: 0.35em; font-weight: 800; margin-bottom: 0.75rem;">
+                <div id="admin-login-error" style="color: #dc2626; font-size: 0.84rem; font-weight: 700; margin-bottom: 0.75rem; text-align: center;"></div>
+                <button class="btn-action btn-purple" style="width: 100%;" onclick="checkAdminPassManual()">Unlock Master Admin Panel</button>
+            </div>
+
+            <!-- Dashboard View -->
+            <div id="admin-control-box" style="display: none; flex-direction: column; flex: 1; overflow: hidden;">
+                <div class="admin-tabs-bar">
+                    <button type="button" class="admin-tab-btn active" data-tab="tab-create-post" onclick="switchAdminTab('tab-create-post', this)">1. + Create / Edit Post (Exam Engine)</button>
+                    <button type="button" class="admin-tab-btn" data-tab="tab-posts" onclick="switchAdminTab('tab-posts', this)">2. Manage All Posts</button>
+                    <button type="button" class="admin-tab-btn" data-tab="tab-subjects" onclick="switchAdminTab('tab-subjects', this)">3. Subjects &amp; Layout Mode</button>
+                    <button type="button" class="admin-tab-btn" data-tab="tab-legal" onclick="switchAdminTab('tab-legal', this)">4. Footer Pages (HTML Editor)</button>
+                    <button type="button" class="admin-tab-btn" data-tab="tab-custom-code" onclick="switchAdminTab('tab-custom-code', this)">5. Live HTML / CSS / JS Code</button>
+                    <button type="button" class="admin-tab-btn" data-tab="tab-settings" onclick="switchAdminTab('tab-settings', this)">6. Themes, Quotes &amp; Security</button>
+                </div>
+
+                <div class="modal-body">
+                    <div id="admin-msg-bar" style="margin-bottom: 0.85rem; padding: 0.55rem 0.8rem; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 0.55rem; font-size: 0.82rem; font-weight: 700; color: #166534;">
+                        Zero GitHub Push Needed: Every change automatically saves and publishes live on ssc247.com!
+                    </div>
+
+                    <!-- =========================================================
+                         TAB 1: CREATE / EDIT POST (HIGH-ADVANCED EXAM ENGINE BUILDER)
+                         ========================================================= -->
+                    <div class="admin-tab-panel active" id="tab-create-post">
+                        <div class="admin-box-panel">
+                            <div class="admin-box-title">
+                                <span>Create or Edit Mock Test Post (Instant Redirect on Save)</span>
+                                <span id="editing-post-badge" style="font-size:0.75rem; background:#EDE9FE; color:#5B21B6; padding:3px 9px; border-radius:999px;">Mode: Create New Post</span>
+                            </div>
+
+                            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:0.65rem; margin-bottom:0.75rem;">
+                                <div>
+                                    <label style="font-size:0.76rem; font-weight:800; display:block; margin-bottom:0.25rem;">Select Existing Post to Edit (or New):</label>
+                                    <select id="builder-select-existing-post" class="light-input" onchange="loadPostIntoBuilder(this.value)">
+                                        <option value="__NEW__">-- Create Brand New Post --</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label style="font-size:0.76rem; font-weight:800; display:block; margin-bottom:0.25rem;">Assign Subject Section:</label>
+                                    <select id="builder-post-subject" class="light-input"></select>
+                                </div>
+                                <div>
+                                    <label style="font-size:0.76rem; font-weight:800; display:block; margin-bottom:0.25rem;">Post / Mock Test Title *:</label>
+                                    <input type="text" id="builder-post-title" class="light-input" placeholder="e.g., Telangana History Top 100 MCQs">
+                                </div>
+                                <div>
+                                    <label style="font-size:0.76rem; font-weight:800; display:block; margin-bottom:0.25rem;">Exam Color Theme:</label>
+                                    <select id="builder-post-theme" class="light-input">
+                                        <option value="medical-mayo-clean">Mayo Medical Blue</option>
+                                        <option value="hospital-apollo-teal">Apollo Care Teal</option>
+                                        <option value="tech-stripe-slate">Stripe Tech Indigo</option>
+                                        <option value="edu-harvard-crimson">Harvard Crimson</option>
+                                        <option value="edu-oxford-navy">Oxford Royal Navy</option>
+                                        <option value="gov-upsc-royal">UPSC Royal Violet</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap:0.65rem; margin-bottom:0.75rem;">
+                                <div>
+                                    <label style="font-size:0.75rem; font-weight:800;">Timer per Question (sec):</label>
+                                    <input type="number" id="builder-q-timer" class="light-input" value="60" min="10" max="300">
+                                </div>
+                                <div>
+                                    <label style="font-size:0.75rem; font-weight:800;">Positive Marks (+):</label>
+                                    <input type="number" step="0.25" id="builder-pos-mark" class="light-input" value="1.0">
+                                </div>
+                                <div>
+                                    <label style="font-size:0.75rem; font-weight:800;">Negative Marks (-):</label>
+                                    <input type="number" step="0.05" id="builder-neg-mark" class="light-input" value="0.5">
+                                </div>
+                                <div>
+                                    <label style="font-size:0.75rem; font-weight:800;">Upload Mode:</label>
+                                    <select id="builder-upload-mode" class="light-input">
+                                        <option value="replace">Replace Questions</option>
+                                        <option value="append">Append to Existing</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label style="font-size:0.75rem; font-weight:800;">User Timer Choice at Start:</label>
+                                    <select id="builder-user-timer-allow" class="light-input">
+                                        <option value="false">Fixed Admin Timer</option>
+                                        <option value="true">Allow One-Time User Choice</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <label style="font-size:0.78rem; font-weight:800; display:block; margin-bottom:0.3rem;">
+                                Paste Raw Questions (Supports Normal MCQs, Statements A/B/C/D, Assertion-Reason &amp; Match-the-Following):
+                            </label>
+                            <textarea id="builder-raw-questions" class="light-input" style="height: 185px; font-size:0.86rem; line-height:1.5;" placeholder="1. కాకతీయుల రాజధాని ఏది?
+A) ఓరుగల్లు
+B) హన్మకొండ
+C) వేములవాడ
+D) ధరణికోట
+Ans: A
+Exp: కాకతీయులు మొదట హన్మకొండను, తర్వాత ఓరుగల్లును రాజధానిగా చేసుకున్నారు."></textarea>
+
+                            <div style="display:flex; gap:0.55rem; flex-wrap:wrap; margin-top:0.8rem;">
+                                <button class="btn-action btn-green" onclick="publishPostAndRedirect(true)">Publish &amp; Redirect to Open Post →</button>
+                                <button class="btn-action btn-blue" onclick="publishPostAndRedirect(false)">Save &amp; Publish Live (Stay Here)</button>
+                                <button class="btn-action btn-amber" onclick="previewBuilderParseCount()">Preview Parsed Questions Count</button>
+                            </div>
+                        </div>
+
+                        <!-- Post Update History & Secret Backup Vault -->
+                        <div class="admin-box-panel" style="margin-bottom:0;">
+                            <div class="admin-box-title">
+                                <span>Post Update History &amp; Backup Snapshots</span>
+                                <span style="font-size:0.75rem; color:#64748b;">Every save records timestamp &amp; version</span>
+                            </div>
+                            <div id="post-history-list" style="max-height:180px; overflow-y:auto;"></div>
+                        </div>
+                    </div>
+
+                    <!-- =========================================================
+                         TAB 2: MANAGE ALL POSTS (SEARCH, OPEN, EDIT, DELETE)
+                         ========================================================= -->
+                    <div class="admin-tab-panel" id="tab-posts">
+                        <div class="admin-box-panel" style="margin-bottom:0;">
+                            <div class="admin-box-title">
+                                <span>All Published Posts on ssc247.com</span>
+                                <select id="admin-filter-subject" class="light-input" style="width:auto;" onchange="renderAdminPostsTable()"></select>
+                            </div>
+                            <div style="overflow-x:auto;">
+                                <table class="admin-list-table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Subject</th>
+                                            <th>Post Title</th>
+                                            <th>Questions</th>
+                                            <th>Last Updated</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="admin-tests-tbody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- =========================================================
+                         TAB 3: SUBJECTS MANAGER (DRAG & DROP ORDER + SLIDE BAR TOGGLE)
+                         ========================================================= -->
+                    <div class="admin-tab-panel" id="tab-subjects">
+                        <div class="admin-box-panel">
+                            <div class="admin-box-title">
+                                <span>User Portal Subject Display Mode (2 Options)</span>
+                            </div>
+                            <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
+                                <label style="display:flex; align-items:center; gap:0.45rem; background:#fff; padding:0.65rem 1rem; border:1.5px solid #cbd5e1; border-radius:0.6rem; cursor:pointer; font-weight:800; font-size:0.84rem;">
+                                    <input type="radio" name="subjectDisplayMode" value="slide" onchange="setSubjectDisplayMode('slide')">
+                                    <span>Option 1: Horizontal Slide Bar (Swipeable Pills)</span>
+                                </label>
+                                <label style="display:flex; align-items:center; gap:0.45rem; background:#fff; padding:0.65rem 1rem; border:1.5px solid #cbd5e1; border-radius:0.6rem; cursor:pointer; font-weight:800; font-size:0.84rem;">
+                                    <input type="radio" name="subjectDisplayMode" value="draglist" onchange="setSubjectDisplayMode('draglist')">
+                                    <span>Option 2: Drag &amp; Drop Ordered List View</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="admin-box-panel">
+                            <div class="admin-box-title">Add New Subject</div>
+                            <div style="display:flex; gap:0.5rem;">
+                                <input type="text" id="new-subject-name-input" class="light-input" placeholder="Enter new subject name...">
+                                <button class="btn-action btn-green" onclick="createNewSubjectSection()">+ Add Subject</button>
+                            </div>
+                        </div>
+
+                        <div class="admin-box-panel" style="margin-bottom:0;">
+                            <div class="admin-box-title">Drag &amp; Drop Subjects to Reorder (Auto-Saves Live)</div>
+                            <table class="admin-list-table">
+                                <thead>
+                                    <tr>
+                                        <th style="width:55px;">Drag</th>
+                                        <th>Subject Name</th>
+                                        <th>Posts</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="admin-subjects-tbody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- =========================================================
+                         TAB 4: FOOTER PAGES HTML EDITOR (TERMS, PRIVACY, CONTACT, DISCLAIMER)
+                         ========================================================= -->
+                    <div class="admin-tab-panel" id="tab-legal">
+                        <div class="admin-box-panel" style="margin-bottom:0;">
+                            <div class="admin-box-title">
+                                <span>Edit Footer Static Pages (Paste HTML Code &amp; Submit — Renders Cleanly for Users)</span>
+                            </div>
+                            <div style="margin-bottom:0.75rem;">
+                                <label style="font-size:0.78rem; font-weight:800; display:block; margin-bottom:0.3rem;">Select Footer Page to Update:</label>
+                                <select id="legal-page-selector" class="light-input" onchange="loadLegalPageEditor()">
+                                    <option value="terms">Terms &amp; Conditions</option>
+                                    <option value="privacy">Privacy Policy</option>
+                                    <option value="contact">Contact Us</option>
+                                    <option value="disclaimer">Disclaimer</option>
+                                </select>
+                            </div>
+                            <label style="font-size:0.78rem; font-weight:800; display:block; margin-bottom:0.3rem;">HTML Content Code (Users will see formatted static text):</label>
+                            <textarea id="legal-html-editor" class="code-editor-box" style="min-height:220px;" placeholder="<h2>Terms & Conditions</h2><p>Welcome to ssc247.com...</p>"></textarea>
+                            <div style="display:flex; gap:0.6rem; margin-top:0.75rem;">
+                                <button class="btn-action btn-green" onclick="saveLegalPageContent()">Submit &amp; Save Static Page</button>
+                                <button class="btn-action btn-blue" onclick="previewSelectedLegalPage()">Preview Page Live</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- =========================================================
+                         TAB 5: LIVE HTML / CSS / JAVASCRIPT CODE INJECTOR
+                         ========================================================= -->
+                    <div class="admin-tab-panel" id="tab-custom-code">
+                        <div class="admin-box-panel" style="margin-bottom:0;">
+                            <div class="admin-box-title">
+                                <span>Live HTML, CSS &amp; JavaScript Updater (No GitHub Push Required)</span>
+                            </div>
+                            <p style="font-size:0.8rem; color:#475569; margin-bottom:0.75rem;">
+                                Add custom HTML banners, AdSense/Analytics scripts, custom CSS styles, or interactive JavaScript directly below. Clicking Submit saves and applies immediately across ssc247.com.
+                            </p>
+
+                            <label style="font-size:0.78rem; font-weight:800; display:block; margin-bottom:0.25rem;">Custom HTML Block (Renders on Portal Home):</label>
+                            <textarea id="custom-html-code" class="code-editor-box" style="min-height:110px; margin-bottom:0.75rem;" placeholder="<!-- Enter custom HTML widgets, banners, or notices -->"></textarea>
+
+                            <label style="font-size:0.78rem; font-weight:800; display:block; margin-bottom:0.25rem;">Custom CSS Code:</label>
+                            <textarea id="custom-css-code" class="code-editor-box" style="min-height:110px; margin-bottom:0.75rem;" placeholder="/* Enter custom CSS rules e.g. .portal-header { background: #0f172a; } */"></textarea>
+
+                            <label style="font-size:0.78rem; font-weight:800; display:block; margin-bottom:0.25rem;">Custom JavaScript Code:</label>
+                            <textarea id="custom-js-code" class="code-editor-box" style="min-height:110px; margin-bottom:0.75rem;" placeholder="// Enter custom JavaScript code"></textarea>
+
+                            <button class="btn-action btn-green" onclick="saveAndApplyCustomCode()">Submit &amp; Apply HTML / CSS / JS Live</button>
+                        </div>
+                    </div>
+
+                    <!-- =========================================================
+                         TAB 6: THEMES, RATING & SECURITY
+                         ========================================================= -->
+                    <div class="admin-tab-panel" id="tab-settings">
+                        <div class="admin-box-panel">
+                            <div class="admin-box-title">Portal Color Theme &amp; Star Rating</div>
+                            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:0.75rem;">
+                                <div>
+                                    <label style="font-size:0.78rem; font-weight:800; display:block; margin-bottom:0.25rem;">Portal Theme:</label>
+                                    <select id="admin-theme-select" class="light-input" onchange="onAdminThemeChange()">
+                                        <option value="tech-purple">1. Tech Purple (Indigo)</option>
+                                        <option value="royal-gemstone">2. Royal Gemstone Dusk</option>
+                                        <option value="natural-organic">3. Natural &amp; Organic</option>
+                                        <option value="dark-luxury">4. Dark Luxury</option>
+                                        <option value="turquoise-coral">5. Turquoise &amp; Coral</option>
+                                        <option value="corporate-trust">6. Corporate Trust Blue</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label style="font-size:0.78rem; font-weight:800; display:block; margin-bottom:0.25rem;">Portal Rating (0.0 - 5.0):</label>
+                                    <div style="display:flex; gap:0.45rem;">
+                                        <input type="number" id="admin-rating-input" class="light-input" step="0.1" min="0" max="5" value="4.8">
+                                        <button class="btn-action btn-amber" onclick="updatePortalRating()">Update</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admin-box-panel" style="margin-bottom:0;">
+                            <div class="admin-box-title">Admin Lifetime Device Lock</div>
+                            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem;">
+                                <span id="ip-status-label" style="font-size:0.84rem; font-weight:700; color:#15803d;">Device Ready</span>
+                                <div style="display:flex; gap:0.45rem;">
+                                    <button class="btn-action btn-green" id="btn-confirm-ip" onclick="activateLifetimeIP()">Confirm Admin Device</button>
+                                    <button class="btn-action btn-red" onclick="resetLifetimeIP()">Reset</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dynamic Custom Admin Script Container -->
+    <div id="custom-admin-js-mount"></div>
+
+    <script>
+        /* =========================================================================
+           1. ENCRYPTED CREDENTIALS VAULT
+           ========================================================================= */
+        const _0xVault = {
+            _adminCipher: "sbabysksos#A1!bzhhebnalnsbgshan#A2!-+#:-@{=@=@_-#++#A6!#A2!sbabysksos#A7!bzhhebnalnsbgshan#A7!",
+            _unblockCipher: "sbabysksos#B11!bzhhebnalnsbgshan#B6!-+#:-@{=@=@_-#++#B1!#B6!sbabysksos-+#:-@{=@=@_-#++",
+            _mailCipher: "sbabysksos~111!~101!~120!~102!~116!~108!~105!~101!~108!~126!~108!~127!~108!~105!~101!~60!~57!~62!~77!~106!~96!~108!~100!~97!~35!~110!~98!~96!bzhhebnalnsbgshan-+#:-@{=@=@_-#++",
+
+            verifyAdmin: function(input) {
+                if (!input || input.length !== 6) return false;
+                const tokens = this._adminCipher.match(/#A(\d+)!/g);
+                if (!tokens) return false;
+                const key = tokens.map(t => String.fromCharCode((parseInt(t.replace(/[#A!]/g, ''), 10) ^ 3) + 48)).join('');
+                return input === key;
+            },
+            verifyUnblockKey: function(text) {
+                if (!text) return false;
+                const tokens = this._unblockCipher.match(/#B(\d+)!/g);
+                if (!tokens) return false;
+                const key = tokens.map(t => String.fromCharCode((parseInt(t.replace(/[#B!]/g, ''), 10) ^ 3) + 48)).join('');
+                return text.trim() === key || new RegExp("\\b" + key + "\\b").test(text);
+            },
+            getAdminInbox: function() {
+                const tokens = this._mailCipher.match(/~(\d+)!/g);
+                if (!tokens) return "";
+                return tokens.map(t => String.fromCharCode(parseInt(t.replace(/[~!]/g, ''), 10) ^ 13)).join('');
+            }
+        };
+
+        /* =========================================================================
+           2. LIVE CLOUD STORAGE CONFIG (ZERO GITHUB PUSH REQUIRED)
+           ========================================================================= */
+        const LIVE_CLOUD_ENDPOINT = "https://kvdb.io/A2m9Xk7LpQ9vR4tW8nZ3bY/ssc247_master_portal_v1";
+        const LOCAL_MASTER_KEY = "SSC247_MASTER_PORTAL_STATE_V1";
+
+        const PREMIUM_THEMES = {
+            "tech-purple": { bgPage: "#F5F3FF", bgOuter: "linear-gradient(180deg, #1E1B4B 0%, #312E81 36%, #DDD6FE 78%, #F5F3FF 100%)", bgHeader: "#1E1B4B", bgCard: "rgba(255,255,255,0.96)", border: "#C4B5FD", textHeader: "#F5F3FF", textCard: "#1E1B4B", textMuted: "#5B21B6", accentPrimary: "#8B5CF6", accentDeep: "#5B21B6", chipBg: "rgba(139,92,246,0.14)" },
+            "royal-gemstone": { bgPage: "#2B384C", bgOuter: "linear-gradient(180deg, #0C287B 0%, #2B384C 55%, #D1BBAD 100%)", bgHeader: "#0C287B", bgCard: "rgba(255,255,255,0.95)", border: "#0C8EF4", textHeader: "#FFFFFF", textCard: "#0C287B", textMuted: "#2B384C", accentPrimary: "#D3045D", accentDeep: "#0C287B", chipBg: "rgba(12,142,244,0.14)" },
+            "natural-organic": { bgPage: "#FAF7F2", bgOuter: "linear-gradient(180deg, #344E41 0%, #588157 42%, #E9E2D3 82%, #FAF7F2 100%)", bgHeader: "#344E41", bgCard: "rgba(250,247,242,0.96)", border: "#A3B18A", textHeader: "#FAF7F2", textCard: "#344E41", textMuted: "#588157", accentPrimary: "#588157", accentDeep: "#344E41", chipBg: "rgba(163,177,138,0.25)" },
+            "dark-luxury": { bgPage: "#121212", bgOuter: "linear-gradient(180deg, #121212 0%, #1E1E1E 50%, #3A3A3A 100%)", bgHeader: "#121212", bgCard: "#1E1E1E", border: "#C8A96A", textHeader: "#F5F1E8", textCard: "#F5F1E8", textMuted: "#C8A96A", accentPrimary: "#C8A96A", accentDeep: "#C8A96A", chipBg: "rgba(200,169,106,0.16)" },
+            "turquoise-coral": { bgPage: "#F7FBFB", bgOuter: "linear-gradient(180deg, #264653 0%, #2A9D8F 44%, #D6F0EE 82%, #F7FBFB 100%)", bgHeader: "#264653", bgCard: "rgba(247,251,251,0.96)", border: "#2A9D8F", textHeader: "#F7FBFB", textCard: "#264653", textMuted: "#2A9D8F", accentPrimary: "#E76F51", accentDeep: "#264653", chipBg: "rgba(42,157,143,0.15)" },
+            "corporate-trust": { bgPage: "#CADCFC", bgOuter: "linear-gradient(180deg, #00246B 0%, #1E2761 40%, #408EC6 75%, #FFFFFF 100%)", bgHeader: "#00246B", bgCard: "rgba(255,255,255,0.96)", border: "#408EC6", textHeader: "#FFFFFF", textCard: "#00246B", textMuted: "#1E2761", accentPrimary: "#408EC6", accentDeep: "#00246B", chipBg: "rgba(202,220,252,0.6)" }
+        };
+
+        const DEFAULT_LEGAL_PAGES = {
+            terms: `<h3>Terms &amp; Conditions — ssc247.com</h3><p>Welcome to <strong>ssc247.com</strong>. By accessing and practicing mock tests on this portal, you agree to use all educational material strictly for personal exam preparation. Reproduction or commercial redistribution without permission is prohibited.</p>`,
+            privacy: `<h3>Privacy Policy — ssc247.com</h3><p>At <strong>ssc247.com</strong>, your privacy is our priority. We do not sell or share candidate names, email addresses, or uploaded scorecard photos. Candidate photos used for generating PNG scorecards are processed locally in your browser.</p>`,
+            contact: `<h3>Contact Us — ssc247.com</h3><p>For exam queries, topic requests, or technical feedback, please reach out through our feedback form on the home page or email our support team directly.</p>`,
+            disclaimer: `<h3>Disclaimer — ssc247.com</h3><p>All mock tests and study materials on <strong>ssc247.com</strong> are created for educational practice purposes for SSC, RRB, TSLPRB, TSPSC, and APPSC aspirants. Please verify official notifications from respective recruitment boards.</p>`
+        };
+
+        const DEFAULT_100_QUOTES = [
+            { text: "Every mock test you attempt today removes one fear from your final exam hall.", author: "ssc247.com Exam Readiness" },
+            { text: "Discipline in your study schedule turns an ordinary aspirant into a top ranker.", author: "Aspirant Mindset" },
+            { text: "Read the syllabus like a map, practice past papers like a compass.", author: "Smart Preparation" },
+            { text: "Mistakes made during practice tests are stepping stones to accuracy on exam day.", author: "Mock Test Wisdom" },
+            { text: "Consistency beats intensity when preparing for competitive examinations.", author: "Long-Term Focus" },
+            { text: "Analyze every wrong answer after a mock test—that is where real growth hides.", author: "Score Improvement" },
+            { text: "Test yourself before the official exam tests you.", author: "Self-Assessment" },
+            { text: "Great ranks are built in quiet rooms when nobody is watching.", author: "Silent Hard Work" }
+        ];
+
+        /* Master Portal State */
+        let portalData = {
+            subjects: [
+                "Telangana History",
+                "General Science",
+                "Current Affairs",
+                "History of India",
+                "Geography",
+                "Indian Polity and Economy",
+                "Telangana Movement and State Formation",
+                "Arithmetic & Reasoning"
+            ],
+            subjectDisplayMode: "slide", // "slide" or "draglist"
+            posts: [
+                {
+                    id: "post-telangana-nizams-200",
+                    slug: "asif-jahi-nizams-mock-test",
+                    subject: "Telangana History",
+                    title: "ఆసిఫ్ జాహీ వంశం హైదరాబాద్ నిజాంలు - Free Mock Test",
+                    theme: "medical-mayo-clean",
+                    timerSec: 60,
+                    posMark: 1.0,
+                    negMark: 0.5,
+                    allowUserTimer: false,
+                    updatedAt: "2026-11-24 15:00",
+                    history: [{ version: 1, date: "2026-11-24 15:00", note: "Initial Post Published", count: 2 }],
+                    questions: [
+                        {
+                            id: 1, qNum: 1,
+                            text: "ఆసిఫ్ జాహీ రాజవంశ స్థాపకుడు ఎవరు?",
+                            statementsText: "", matchData: null,
+                            options: ["నిజాం-ఉల్-ముల్క్ (మీర్ కమ్రుద్దీన్ ఖాన్)", "నిజాం అలీ ఖాన్", "సికిందర్ జా", "మీర్ ఉస్మాన్ అలీ ఖాన్"],
+                            correct: "నిజాం-ఉల్-ముల్క్ (మీర్ కమ్రుద్దీన్ ఖాన్)",
+                            exp: "1724లో షకర్ ఖేడా యుద్ధం తర్వాత మీర్ కమ్రుద్దీన్ ఖాన్ హైదరాబాద్‌లో ఆసిఫ్ జాహీ రాజ్యాన్ని స్థాపించారు."
+                        },
+                        {
+                            id: 2, qNum: 2,
+                            text: "హైదరాబాద్ చివరి నిజాం ఎవరు?",
+                            statementsText: "", matchData: null,
+                            options: ["మీర్ మహబూబ్ అలీ ఖాన్", "మీర్ ఉస్మాన్ అలీ ఖాన్", "నాసిర్-ఉద్-దౌలా", "అఫ్జల్-ఉద్-దౌలా"],
+                            correct: "మీర్ ఉస్మాన్ అలీ ఖాన్",
+                            exp: "మీర్ ఉస్మాన్ అలీ ఖాన్ 1911 నుండి 1948 వరకు ఏడవ మరియు చివరి నిజాంగా పాలించారు."
+                        }
+                    ]
+                }
+            ],
+            legalPages: { ...DEFAULT_LEGAL_PAGES },
+            customCode: { html: "", css: "", js: "" },
+            portalTheme: "tech-purple",
+            portalRating: 4.8
+        };
+
+        let activeEditingPostId = null;
+        let currentOpenedPost = null;
+        let activeExamQuestions = [];
+        let examState = { currentIdx: 0, answers: [], timeLeft: 60, lockedDuration: 60, timerId: null };
+        let lastScorecardMetrics = {};
+        let candidateUploadedPhotoDataUrl = "";
+        let failedCount = parseInt(localStorage.getItem("SSC247_FAIL_COUNT") || "0", 10);
+        let draggedSubjIdx = null;
+        let qIdx = 0;
+
+        /* =========================================================================
+           3. AUTO-SAVE & LIVE CLOUD SYNC (NO GITHUB PUSH NEEDED)
+           ========================================================================= */
+        async function saveMasterStateLive(noticeText) {
+            const badge = document.getElementById("live-sync-badge");
+            if (badge) badge.textContent = "Saving Live...";
+
+            localStorage.setItem(LOCAL_MASTER_KEY, JSON.stringify(portalData));
+
+            try {
+                await fetch(LIVE_CLOUD_ENDPOINT, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(portalData)
+                });
+                if (badge) badge.textContent = "Saved & Live on ssc247.com";
+            } catch (e) {
+                if (badge) badge.textContent = "Saved Locally (Ready)";
+            }
+
+            if (noticeText) {
+                const bar = document.getElementById("admin-msg-bar");
+                if (bar) bar.textContent = noticeText + " — Automatically saved & live!";
+            }
+        }
+
+        async function loadMasterState() {
+            const localRaw = localStorage.getItem(LOCAL_MASTER_KEY);
+            if (localRaw) {
+                try {
+                    const parsed = JSON.parse(localRaw);
+                    if (parsed && Array.isArray(parsed.posts)) {
+                        portalData = { ...portalData, ...parsed };
+                    }
+                } catch (e) {}
+            }
+
+            try {
+                const res = await fetch(LIVE_CLOUD_ENDPOINT, { cache: "no-store" });
+                if (res.ok) {
+                    const cloudData = await res.json();
+                    if (cloudData && Array.isArray(cloudData.posts)) {
+                        portalData = { ...portalData, ...cloudData };
+                        localStorage.setItem(LOCAL_MASTER_KEY, JSON.stringify(portalData));
+                    }
+                }
+            } catch (e) {}
+        }
+
+        /* =========================================================================
+           4. ROUTING (HOME vs STATIC LEGAL PAGES vs DEDICATED MOCK TEST POST)
+           ========================================================================= */
+        function navigateToHome() {
+            clearInterval(examState.timerId);
+            const url = new URL(window.location.href);
+            url.searchParams.delete("post");
+            url.searchParams.delete("page");
+            window.history.replaceState({}, "", url.pathname);
+
+            document.getElementById("exam-engine-wrapper").style.display = "none";
+            document.getElementById("top-portal").style.display = "block";
+            document.getElementById("static-legal-view").style.display = "none";
+            document.getElementById("portal-home-content").style.display = "block";
+            renderPortalHome();
+        }
+
+        function openLegalPage(pageKey) {
+            const titles = {
+                terms: "Terms & Conditions",
+                privacy: "Privacy Policy",
+                contact: "Contact Us",
+                disclaimer: "Disclaimer"
+            };
+            document.getElementById("exam-engine-wrapper").style.display = "none";
+            document.getElementById("top-portal").style.display = "block";
+            document.getElementById("portal-home-content").style.display = "none";
+            document.getElementById("static-legal-view").style.display = "block";
+
+            document.getElementById("legal-page-title").textContent = titles[pageKey] || "Information";
+            document.getElementById("legal-page-body").innerHTML = portalData.legalPages[pageKey] || DEFAULT_LEGAL_PAGES[pageKey] || "";
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function openMockTestPost(postIdOrSlug) {
+            const post = portalData.posts.find(p => p.id === postIdOrSlug || p.slug === postIdOrSlug);
+            if (!post) {
+                navigateToHome();
+                return;
+            }
+
+            currentOpenedPost = post;
+            activeEditingPostId = post.id;
+
+            const url = new URL(window.location.href);
+            url.searchParams.set("post", post.slug || post.id);
+            window.history.replaceState({}, "", url.pathname + "?" + url.searchParams.toString());
+
+            document.body.setAttribute("data-post-theme", post.theme || "medical-mayo-clean");
+            document.getElementById("top-portal").style.display = "none";
+            document.getElementById("exam-engine-wrapper").style.display = "block";
+
+            document.getElementById("exam-portal-brand").textContent = `ssc247.com — ${post.subject}`;
+            document.getElementById("test-title-header").textContent = post.title;
+            document.getElementById("pill-total-q").textContent = `Questions: ${post.questions.length}`;
+            document.getElementById("pill-marking").textContent = `Marking: +${post.posMark} / -${post.negMark}`;
+            document.getElementById("pill-timer").textContent = `Timer: ${post.timerSec}s / Q`;
+
+            initiateExamFlow();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        /* =========================================================================
+           5. PORTAL HOME RENDERING (SUBJECTS, POSTS, QUOTES, RATING, CUSTOM CODE)
+           ========================================================================= */
+        function applyPortalTheme(themeKey) {
+            const t = PREMIUM_THEMES[themeKey] || PREMIUM_THEMES["tech-purple"];
+            portalData.portalTheme = themeKey;
+            const r = document.documentElement;
+            r.style.setProperty("--bg-page", t.bgPage);
+            r.style.setProperty("--bg-outer", t.bgOuter);
+            r.style.setProperty("--bg-header", t.bgHeader);
+            r.style.setProperty("--bg-card", t.bgCard);
+            r.style.setProperty("--border-color", t.border);
+            r.style.setProperty("--text-header", t.textHeader);
+            r.style.setProperty("--text-card", t.textCard);
+            r.style.setProperty("--text-muted", t.textMuted);
+            r.style.setProperty("--accent-primary", t.accentPrimary);
+            r.style.setProperty("--accent-deep", t.accentDeep);
+            r.style.setProperty("--chip-bg", t.chipBg);
+        }
+
+        function applyCustomAdminCode() {
+            const cssEl = document.getElementById("custom-admin-injected-css");
+            const htmlEl = document.getElementById("custom-admin-injected-html");
+            const jsMount = document.getElementById("custom-admin-js-mount");
+
+            if (cssEl) cssEl.textContent = portalData.customCode.css || "";
+            if (htmlEl) htmlEl.innerHTML = portalData.customCode.html || "";
+
+            if (jsMount) {
+                jsMount.innerHTML = "";
+                if (portalData.customCode.js && portalData.customCode.js.trim()) {
+                    try {
+                        const s = document.createElement("script");
+                        s.textContent = portalData.customCode.js;
+                        jsMount.appendChild(s);
+                    } catch (e) {}
+                }
+            }
+        }
+
+        function renderPortalHome() {
+            applyPortalTheme(portalData.portalTheme);
+            applyCustomAdminCode();
+
+            const userSel = document.getElementById("user-subject-dropdown");
+            const prevSubj = userSel ? userSel.value : "";
+
+            if (userSel) {
+                userSel.innerHTML = `<option value="">-- Select the Subject (${portalData.posts.length} Total Tests) --</option>`;
+                portalData.subjects.forEach(s => {
+                    const opt = document.createElement("option");
+                    opt.value = s;
+                    opt.textContent = s;
+                    userSel.appendChild(opt);
+                });
+                if (portalData.subjects.includes(prevSubj)) userSel.value = prevSubj;
+            }
+
+            renderSubjectNavigationBar();
+            onUserSubjectChange();
+            renderPortalRating();
+        }
+
+        function renderSubjectNavigationBar() {
+            const nav = document.getElementById("quick-subject-nav");
+            const userSel = document.getElementById("user-subject-dropdown");
+            if (!nav || !userSel) return;
+
+            nav.className = "quick-nav-bar" + (portalData.subjectDisplayMode === "draglist" ? " vertical-list-mode" : "");
+            nav.innerHTML = "";
+
+            portalData.subjects.forEach((subj, index) => {
+                const count = portalData.posts.filter(p => p.subject === subj).length;
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "nav-pill-btn" + (userSel.value === subj ? " active" : "");
+
+                if (portalData.subjectDisplayMode === "draglist") {
+                    btn.innerHTML = `<span><strong>${index + 1}.</strong> ${escapeHTML(subj)}</span><span style="background:rgba(0,0,0,0.2); padding:2px 8px; border-radius:999px; font-size:0.74rem;">${count} Tests →</span>`;
+                } else {
+                    btn.textContent = count > 0 ? `${subj} (${count})` : subj;
+                }
+
+                btn.onclick = () => {
+                    userSel.value = subj;
+                    onUserSubjectChange();
+                };
+                nav.appendChild(btn);
+            });
+        }
+
+        function onUserSubjectChange() {
+            const userSel = document.getElementById("user-subject-dropdown");
+            const selectedSubj = userSel ? userSel.value : "";
+            const headerBar = document.getElementById("active-subject-bar");
+            const container = document.getElementById("mock-tests-list");
+
+            renderSubjectNavigationBar();
+            container.innerHTML = "";
+
+            if (!selectedSubj) {
+                headerBar.style.display = "none";
+                const recentPosts = portalData.posts.slice().reverse();
+                if (recentPosts.length === 0) {
+                    container.innerHTML = `<div class="prompt-select-placeholder">Select a Subject above or click "+ Create a Post" in Admin Panel to publish tests.</div>`;
+                    return;
+                }
+                const heading = document.createElement("div");
+                heading.style.cssText = "color:#fff; font-weight:800; font-size:0.86rem; padding:0 0.25rem;";
+                heading.textContent = "Latest Published Mock Tests on ssc247.com:";
+                container.appendChild(heading);
+
+                recentPosts.forEach((post, idx) => container.appendChild(createPostCardElement(post, idx + 1)));
+            } else {
+                headerBar.style.display = "flex";
+                document.getElementById("current-subject-display").textContent = selectedSubj;
+
+                const filtered = portalData.posts.filter(p => p.subject === selectedSubj);
+                document.getElementById("subject-test-count").textContent = `${filtered.length} Test(s) Available`;
+
+                if (filtered.length === 0) {
+                    container.innerHTML = `<div class="prompt-select-placeholder">No mock tests uploaded yet for ${escapeHTML(selectedSubj)}.</div>`;
+                } else {
+                    filtered.forEach((post, idx) => container.appendChild(createPostCardElement(post, idx + 1)));
+                }
+            }
+        }
+
+        function createPostCardElement(post, num) {
+            const card = document.createElement("div");
+            card.className = "test-card";
+
+            card.innerHTML = `
+                <div class="test-info">
+                    <div class="test-meta-row">
+                        <span class="test-num-badge">${num}</span>
+                        <span class="card-subject-chip">${escapeHTML(post.subject)}</span>
+                        <span style="font-size:0.72rem; font-weight:700; color:#64748b;">${post.questions.length} Qs • Updated: ${escapeHTML(post.updatedAt || "Live")}</span>
+                    </div>
+                    <div class="test-title">${escapeHTML(post.title)}</div>
+                </div>
+                <div class="neon-btn-wrapper">
+                    <button class="start-exam-link" onclick="openMockTestPost('${escapeHTML(post.id)}')">Start The Exam →</button>
+                </div>
+            `;
+            return card;
+        }
+
+        function renderPortalRating() {
+            const stars = document.getElementById("portal-stars-display");
+            const txt = document.getElementById("portal-rating-text");
+            if (!stars || !txt) return;
+            const val = Math.max(0, Math.min(5, Number(portalData.portalRating) || 4.8));
+            stars.innerHTML = "";
+            for (let i = 1; i <= 5; i++) {
+                const span = document.createElement("span");
+                span.className = "svg-star-wrap";
+                span.innerHTML = `<svg viewBox="0 0 24 24"><path fill="${val >= i ? '#facc15' : '#cbd5e1'}" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>`;
+                stars.appendChild(span);
+            }
+            txt.textContent = `${val.toFixed(1)} / 5`;
+        }
+
+        function startQuotesRotation() {
+            const qText = document.getElementById("quote-text-en");
+            const qAuthor = document.getElementById("quote-author-en");
+            const qPill = document.getElementById("quote-counter-pill");
+            if (!qText) return;
+
+            function showQ() {
+                const q = DEFAULT_100_QUOTES[qIdx % DEFAULT_100_QUOTES.length];
+                qText.textContent = `"${q.text}"`;
+                qAuthor.textContent = `- ${q.author}`;
+                if (qPill) qPill.textContent = `Aspirant Motivation #${(qIdx % DEFAULT_100_QUOTES.length) + 1}`;
+                qIdx++;
+            }
+            showQ();
+            setInterval(showQ, 10000);
+        }
+
+        /* =========================================================================
+           6. ADMIN PANEL: CREATE A POST, EDIT, HISTORY, DRAG-DROP & CODE INJECTOR
+           ========================================================================= */
+        function openAdminPanel(defaultTab) {
+            if (localStorage.getItem("SSC247_LOCKED") === "true") {
+                document.getElementById("blocked-screen").style.display = "flex";
+                return;
+            }
+            document.getElementById("admin-modal").style.display = "flex";
+
+            if (localStorage.getItem("SSC247_ADMIN_LIFETIME") === "true") {
+                unlockAdminDashboard(defaultTab);
+            } else {
+                document.getElementById("admin-login-box").style.display = "block";
+                document.getElementById("admin-control-box").style.display = "none";
+                document.getElementById("admin-pass-input").value = "";
+                document.getElementById("admin-login-error").textContent = "";
+                setTimeout(() => document.getElementById("admin-pass-input").focus(), 80);
+            }
+        }
+
+        function closeAdminPanel() {
+            document.getElementById("admin-modal").style.display = "none";
+        }
+
+        function checkAdminPassAuto(e) {
+            const val = e.target.value.trim();
+            if (_0xVault.verifyAdmin(val)) unlockAdminDashboard();
+            else if (val.length >= 6) handleInvalidPass();
+        }
+
+        function checkAdminPassManual() {
+            const val = document.getElementById("admin-pass-input").value.trim();
+            if (_0xVault.verifyAdmin(val)) unlockAdminDashboard();
+            else handleInvalidPass();
+        }
+
+        function handleInvalidPass() {
+            failedCount++;
+            localStorage.setItem("SSC247_FAIL_COUNT", failedCount.toString());
+            if (failedCount >= 2) {
+                localStorage.setItem("SSC247_LOCKED", "true");
+                closeAdminPanel();
+                document.getElementById("blocked-screen").style.display = "flex";
+            } else {
+                document.getElementById("admin-login-error").textContent = "Invalid Password! 1 attempt left before permanent block.";
+                document.getElementById("admin-pass-input").value = "";
+            }
+        }
+
+        function unlockAdminDashboard(targetTab) {
+            failedCount = 0;
+            localStorage.setItem("SSC247_FAIL_COUNT", "0");
+            document.getElementById("admin-login-box").style.display = "none";
+            document.getElementById("admin-control-box").style.display = "flex";
+
+            populateAdminDropdowns();
+            renderAdminPostsTable();
+            renderSubjectsManagerTable();
+            loadLegalPageEditor();
+
+            document.getElementById("custom-html-code").value = portalData.customCode.html || "";
+            document.getElementById("custom-css-code").value = portalData.customCode.css || "";
+            document.getElementById("custom-js-code").value = portalData.customCode.js || "";
+            document.getElementById("admin-theme-select").value = portalData.portalTheme || "tech-purple";
+            document.getElementById("admin-rating-input").value = portalData.portalRating || 4.8;
+
+            const modeRadios = document.querySelectorAll('input[name="subjectDisplayMode"]');
+            modeRadios.forEach(r => r.checked = (r.value === portalData.subjectDisplayMode));
+
+            if (currentOpenedPost) {
+                loadPostIntoBuilder(currentOpenedPost.id);
+            } else {
+                loadPostIntoBuilder("__NEW__");
+            }
+
+            if (targetTab) {
+                const btn = document.querySelector(`.admin-tab-btn[data-tab="${targetTab}"]`);
+                switchAdminTab(targetTab, btn);
+            }
+        }
+
+        function switchAdminTab(tabId, btnEl) {
+            document.querySelectorAll(".admin-tab-btn").forEach(b => b.classList.remove("active"));
+            document.querySelectorAll(".admin-tab-panel").forEach(p => p.classList.remove("active"));
+            if (btnEl) btnEl.classList.add("active");
+            const panel = document.getElementById(tabId);
+            if (panel) panel.classList.add("active");
+        }
+
+        function populateAdminDropdowns() {
+            const bSubj = document.getElementById("builder-post-subject");
+            const fSubj = document.getElementById("admin-filter-subject");
+            const existSel = document.getElementById("builder-select-existing-post");
+
+            if (bSubj) {
+                bSubj.innerHTML = portalData.subjects.map(s => `<option value="${escapeHTML(s)}">${escapeHTML(s)}</option>`).join("");
+            }
+            if (fSubj) {
+                fSubj.innerHTML = `<option value="ALL">All Subjects (${portalData.posts.length})</option>` +
+                    portalData.subjects.map(s => `<option value="${escapeHTML(s)}">${escapeHTML(s)}</option>`).join("");
+            }
+            if (existSel) {
+                existSel.innerHTML = `<option value="__NEW__">-- Create Brand New Post --</option>` +
+                    portalData.posts.map(p => `<option value="${escapeHTML(p.id)}">[${escapeHTML(p.subject)}] ${escapeHTML(p.title)}</option>`).join("");
+            }
+        }
+
+        function loadPostIntoBuilder(postId) {
+            const badge = document.getElementById("editing-post-badge");
+            const histBox = document.getElementById("post-history-list");
+
+            if (!postId || postId === "__NEW__") {
+                activeEditingPostId = null;
+                document.getElementById("builder-select-existing-post").value = "__NEW__";
+                document.getElementById("builder-post-title").value = "";
+                document.getElementById("builder-raw-questions").value = "";
+                document.getElementById("builder-q-timer").value = 60;
+                document.getElementById("builder-pos-mark").value = 1.0;
+                document.getElementById("builder-neg-mark").value = 0.5;
+                if (badge) badge.textContent = "Mode: Creating New Post";
+                if (histBox) histBox.innerHTML = `<div style="font-size:0.8rem; color:#64748b;">New post history will appear after publishing.</div>`;
+                return;
+            }
+
+            const post = portalData.posts.find(p => p.id === postId);
+            if (!post) return;
+
+            activeEditingPostId = post.id;
+            document.getElementById("builder-select-existing-post").value = post.id;
+            document.getElementById("builder-post-subject").value = post.subject;
+            document.getElementById("builder-post-title").value = post.title;
+            document.getElementById("builder-post-theme").value = post.theme || "medical-mayo-clean";
+            document.getElementById("builder-q-timer").value = post.timerSec || 60;
+            document.getElementById("builder-pos-mark").value = post.posMark ?? 1.0;
+            document.getElementById("builder-neg-mark").value = post.negMark ?? 0.5;
+            document.getElementById("builder-user-timer-allow").value = String(Boolean(post.allowUserTimer));
+            document.getElementById("builder-raw-questions").value = "";
+
+            if (badge) badge.textContent = `Editing Post (${post.questions.length} Live Questions)`;
+
+            if (histBox) {
+                const hist = post.history || [];
+                histBox.innerHTML = hist.slice().reverse().map(h => `
+                    <div style="padding:0.45rem 0.65rem; border-bottom:1px solid #e2e8f0; font-size:0.78rem; display:flex; justify-content:space-between;">
+                        <span><strong>v${h.version}</strong> — ${escapeHTML(h.note)} (${h.count} Qs)</span>
+                        <span style="color:#64748b;">${escapeHTML(h.date)}</span>
+                    </div>
+                `).join("") || `<div style="font-size:0.8rem; color:#64748b;">No history records yet.</div>`;
+            }
+        }
+
+        function previewBuilderParseCount() {
+            const raw = document.getElementById("builder-raw-questions").value;
+            const parsed = parseUniversalQuestions(raw);
+            alert(`Successfully parsed ${parsed.length} valid questions!`);
+        }
+
+        async function publishPostAndRedirect(shouldRedirect) {
+            const subject = document.getElementById("builder-post-subject").value;
+            const title = document.getElementById("builder-post-title").value.trim();
+            const theme = document.getElementById("builder-post-theme").value;
+            const timerSec = parseInt(document.getElementById("builder-q-timer").value, 10) || 60;
+            const posMark = parseFloat(document.getElementById("builder-pos-mark").value) || 1.0;
+            const negMark = parseFloat(document.getElementById("builder-neg-mark").value) || 0;
+            const allowUserTimer = document.getElementById("builder-user-timer-allow").value === "true";
+            const uploadMode = document.getElementById("builder-upload-mode").value;
+            const rawText = document.getElementById("builder-raw-questions").value.trim();
+
+            if (!title) {
+                alert("Please enter a Post / Mock Test Title!");
+                return;
+            }
+
+            const newParsed = rawText ? parseUniversalQuestions(rawText) : [];
+            const nowStr = new Date().toLocaleString();
+            let targetPost = null;
+
+            if (activeEditingPostId) {
+                targetPost = portalData.posts.find(p => p.id === activeEditingPostId);
+            }
+
+            if (targetPost) {
+                targetPost.subject = subject;
+                targetPost.title = title;
+                targetPost.theme = theme;
+                targetPost.timerSec = timerSec;
+                targetPost.posMark = posMark;
+                targetPost.negMark = negMark;
+                targetPost.allowUserTimer = allowUserTimer;
+                targetPost.updatedAt = nowStr;
+
+                if (newParsed.length > 0) {
+                    if (uploadMode === "append") {
+                        targetPost.questions = [...targetPost.questions, ...newParsed];
+                    } else {
+                        targetPost.questions = newParsed;
+                    }
+                    targetPost.questions.forEach((q, idx) => { q.id = idx + 1; q.qNum = idx + 1; });
+                }
+
+                targetPost.history = targetPost.history || [];
+                targetPost.history.push({
+                    version: targetPost.history.length + 1,
+                    date: nowStr,
+                    note: newParsed.length > 0 ? `Updated Questions (${uploadMode})` : "Updated Post Settings",
+                    count: targetPost.questions.length
+                });
+            } else {
+                if (newParsed.length === 0) {
+                    alert("Please paste at least 1 valid question to create a new mock test post!");
+                    return;
+                }
+                const slugBase = title.toLowerCase().replace(/[^a-z0-9\u0C00-\u0C7F]+/g, "-").replace(/^-|-$/g, "").slice(0, 40) || "mock-test";
+                const newId = "post-" + Date.now().toString(36);
+                targetPost = {
+                    id: newId,
+                    slug: `${slugBase}-${Date.now().toString(36).slice(-4)}`,
+                    subject, title, theme, timerSec, posMark, negMark, allowUserTimer,
+                    updatedAt: nowStr,
+                    questions: newParsed,
+                    history: [{ version: 1, date: nowStr, note: "Created & Published Post", count: newParsed.length }]
+                };
+                portalData.posts.push(targetPost);
+                activeEditingPostId = targetPost.id;
+            }
+
+            await saveMasterStateLive(`Published "${targetPost.title}"`);
+            populateAdminDropdowns();
+            renderAdminPostsTable();
+            renderPortalHome();
+
+            if (shouldRedirect) {
+                closeAdminPanel();
+                openMockTestPost(targetPost.id);
+            } else {
+                loadPostIntoBuilder(targetPost.id);
+            }
+        }
+
+        function renderAdminPostsTable() {
+            const tbody = document.getElementById("admin-tests-tbody");
+            const filter = document.getElementById("admin-filter-subject")?.value || "ALL";
+            if (!tbody) return;
+            tbody.innerHTML = "";
+
+            const list = portalData.posts.filter(p => filter === "ALL" || p.subject === filter);
+            list.forEach((post, idx) => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td><strong>${idx + 1}</strong></td>
+                    <td>${escapeHTML(post.subject)}</td>
+                    <td><strong>${escapeHTML(post.title)}</strong></td>
+                    <td>${post.questions.length} Qs</td>
+                    <td><small>${escapeHTML(post.updatedAt || "-")}</small></td>
+                    <td style="white-space:nowrap;">
+                        <button class="btn-action btn-blue" style="padding:0.32rem 0.55rem; font-size:0.74rem;" onclick="closeAdminPanel(); openMockTestPost('${escapeHTML(post.id)}')">Open</button>
+                        <button class="btn-action btn-amber" style="padding:0.32rem 0.55rem; font-size:0.74rem;" onclick="editPostFromTable('${escapeHTML(post.id)}')">Edit</button>
+                        <button class="btn-action btn-red" style="padding:0.32rem 0.55rem; font-size:0.74rem;" onclick="deletePostById('${escapeHTML(post.id)}')">Del</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function editPostFromTable(postId) {
+            loadPostIntoBuilder(postId);
+            const btn = document.querySelector('.admin-tab-btn[data-tab="tab-create-post"]');
+            switchAdminTab("tab-create-post", btn);
+        }
+
+        async function deletePostById(postId) {
+            if (!confirm("Delete this mock test post?")) return;
+            portalData.posts = portalData.posts.filter(p => p.id !== postId);
+            await saveMasterStateLive("Post deleted");
+            populateAdminDropdowns();
+            renderAdminPostsTable();
+            renderPortalHome();
+        }
+
+        /* Drag & Drop Subjects Manager + Slide Bar Toggle */
+        async function setSubjectDisplayMode(mode) {
+            portalData.subjectDisplayMode = mode;
+            renderSubjectNavigationBar();
+            await saveMasterStateLive(`Subject layout switched to ${mode === 'draglist' ? 'Drag & Drop List' : 'Horizontal Slide Bar'}`);
+        }
+
+        async function createNewSubjectSection() {
+            const inp = document.getElementById("new-subject-name-input");
+            const val = inp.value.trim();
+            if (!val) return alert("Enter subject name.");
+            if (portalData.subjects.some(s => s.toLowerCase() === val.toLowerCase())) return alert("Subject already exists.");
+            portalData.subjects.push(val);
+            inp.value = "";
+            populateAdminDropdowns();
+            renderSubjectsManagerTable();
+            renderPortalHome();
+            await saveMasterStateLive(`Subject "${val}" added`);
+        }
+
+        function renderSubjectsManagerTable() {
+            const tbody = document.getElementById("admin-subjects-tbody");
+            if (!tbody) return;
+            tbody.innerHTML = "";
+
+            portalData.subjects.forEach((subj, idx) => {
+                const tr = document.createElement("tr");
+                tr.className = "draggable-row";
+                tr.draggable = true;
+
+                tr.addEventListener("dragstart", () => { draggedSubjIdx = idx; tr.classList.add("dragging"); });
+                tr.addEventListener("dragend", () => { tr.classList.remove("dragging"); draggedSubjIdx = null; });
+                tr.addEventListener("dragover", e => e.preventDefault());
+                tr.addEventListener("drop", async e => {
+                    e.preventDefault();
+                    if (draggedSubjIdx === null || draggedSubjIdx === idx) return;
+                    const moved = portalData.subjects.splice(draggedSubjIdx, 1)[0];
+                    portalData.subjects.splice(idx, 0, moved);
+                    populateAdminDropdowns();
+                    renderSubjectsManagerTable();
+                    renderPortalHome();
+                    await saveMasterStateLive("Subjects reordered via Drag & Drop");
+                });
+
+                const count = portalData.posts.filter(p => p.subject === subj).length;
+                tr.innerHTML = `
+                    <td><span style="font-size:1.1rem; color:#64748b;">☰</span> <strong>${idx + 1}</strong></td>
+                    <td><strong>${escapeHTML(subj)}</strong></td>
+                    <td>${count} Posts</td>
+                    <td>
+                        <button class="btn-action btn-red" style="padding:0.32rem 0.55rem; font-size:0.74rem;" onclick="deleteSubjectAt(${idx})">Delete</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        async function deleteSubjectAt(idx) {
+            const subj = portalData.subjects[idx];
+            if (!confirm(`Delete subject "${subj}"?`)) return;
+            portalData.subjects.splice(idx, 1);
+            populateAdminDropdowns();
+            renderSubjectsManagerTable();
+            renderPortalHome();
+            await saveMasterStateLive(`Deleted subject "${subj}"`);
+        }
+
+        /* Footer Static Legal Pages Editor */
+        function loadLegalPageEditor() {
+            const key = document.getElementById("legal-page-selector").value;
+            document.getElementById("legal-html-editor").value = portalData.legalPages[key] || DEFAULT_LEGAL_PAGES[key] || "";
+        }
+
+        async function saveLegalPageContent() {
+            const key = document.getElementById("legal-page-selector").value;
+            portalData.legalPages[key] = document.getElementById("legal-html-editor").value;
+            await saveMasterStateLive(`Updated ${key.toUpperCase()} static page`);
+        }
+
+        function previewSelectedLegalPage() {
+            const key = document.getElementById("legal-page-selector").value;
+            closeAdminPanel();
+            openLegalPage(key);
+        }
+
+        /* Live HTML / CSS / JS Code Updater */
+        async function saveAndApplyCustomCode() {
+            portalData.customCode.html = document.getElementById("custom-html-code").value;
+            portalData.customCode.css = document.getElementById("custom-css-code").value;
+            portalData.customCode.js = document.getElementById("custom-js-code").value;
+            applyCustomAdminCode();
+            await saveMasterStateLive("Custom HTML / CSS / JavaScript applied live");
+        }
+
+        async function onAdminThemeChange() {
+            portalData.portalTheme = document.getElementById("admin-theme-select").value;
+            applyPortalTheme(portalData.portalTheme);
+            await saveMasterStateLive("Portal theme updated");
+        }
+
+        async function updatePortalRating() {
+            const val = parseFloat(document.getElementById("admin-rating-input").value);
+            if (isNaN(val) || val < 0 || val > 5) return alert("Enter rating between 0 and 5");
+            portalData.portalRating = val;
+            renderPortalRating();
+            await saveMasterStateLive("Portal rating updated");
+        }
+
+        function activateLifetimeIP() {
+            localStorage.setItem("SSC247_ADMIN_LIFETIME", "true");
+            document.getElementById("ip-status-label").textContent = "Verified Admin Device (Password Bypass Enabled)";
+        }
+
+        function resetLifetimeIP() {
+            localStorage.removeItem("SSC247_ADMIN_LIFETIME");
+            document.getElementById("ip-status-label").textContent = "Password Required Next Login";
+        }
+
+        /* =========================================================================
+           7. SMART UNIVERSAL QUESTION PARSER (SUPPORTS STATEMENTS & MATCH-THE-FOLLOWING)
+           ========================================================================= */
+        function parseUniversalQuestions(rawInput) {
+            if (!rawInput || !rawInput.trim()) return [];
+            let text = rawInput.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+            text = text.replace(/\s+(?=(?:[A-Ea-e][\.\)]|\([A-Ea-e]\))\s*)/g, "\n");
+            text = text.replace(/\s+(?=(?:Ans|Answer|Correct|సమాధానం|జవాబు)\s*[:\-\.])/gi, "\n");
+            text = text.replace(/\s+(?=(?:Exp|Explanation|Solution|వివరణ)\s*[:\-\.])/gi, "\n");
+
+            const lines = text.split("\n").map(l => l.trim()).filter(Boolean);
+            const blocks = [];
+            let cur = null;
+
+            lines.forEach(line => {
+                const ansM = line.match(/^(?:Ans|Answer|Correct|సమాధానం|జవాబు)\s*[:\-\.]\s*(.+)$/i);
+                if (ansM && cur) { cur.rawAns = ansM[1].trim(); cur.stage = "ans"; return; }
+
+                const expM = line.match(/^(?:Exp|Explanation|Solution|వివరణ)\s*[:\-\.]\s*(.+)$/i);
+                if (expM && cur) { cur.exp = expM[1].trim(); cur.stage = "exp"; return; }
+
+                const qNumM = line.match(/^(?:(?:Q|Question|ప్రశ్న)\s*)?(\d+)[\.\)\-:]\s*(.+)$/i);
+                if (qNumM && (!cur || cur.options.length >= 2 || cur.stage === "ans" || cur.stage === "exp")) {
+                    if (cur) blocks.push(cur);
+                    cur = { text: qNumM[2].trim(), statements: [], options: [], rawAns: "", exp: "", stage: "q" };
+                    return;
+                }
+
+                const optM = line.match(/^(?:\(([A-Ea-e])\)|([A-Ea-e])[\.\)\-:])\s*(.+)$/);
+                if (optM && cur && cur.stage !== "ans" && cur.stage !== "exp") {
+                    cur.options.push(optM[3].trim());
+                    cur.stage = "opt";
+                    return;
+                }
+
+                if (cur) {
+                    if (cur.stage === "exp") cur.exp += " " + line;
+                    else if (cur.stage === "q") cur.statements.push(line);
+                }
+            });
+            if (cur) blocks.push(cur);
+
+            const result = [];
+            blocks.forEach(b => {
+                if (b.text && b.options.length >= 2) {
+                    let correctOpt = b.options[0];
+                    const cleanAns = (b.rawAns || "").replace(/^[\(\[\s]+|[\)\]\.\s]+$/g, "");
+                    if (/^[A-Ea-e]$/.test(cleanAns)) {
+                        const idx = cleanAns.toUpperCase().charCodeAt(0) - 65;
+                        if (b.options[idx]) correctOpt = b.options[idx];
+                    } else if (/^[1-5]$/.test(cleanAns)) {
+                        const idx = parseInt(cleanAns, 10) - 1;
+                        if (b.options[idx]) correctOpt = b.options[idx];
+                    } else if (cleanAns) {
+                        const found = b.options.find(o => o.toLowerCase().includes(cleanAns.toLowerCase()));
+                        if (found) correctOpt = found;
+                    }
+
+                    result.push({
+                        id: result.length + 1,
+                        qNum: result.length + 1,
+                        text: b.text,
+                        statementsText: b.statements.join("\n"),
+                        matchData: null,
+                        options: b.options,
+                        correct: correctOpt,
+                        exp: b.exp
+                    });
+                }
+            });
+            return result;
+        }
+
+        /* =========================================================================
+           8. MOCK TEST EXAM RUNNER, SCORECARD PNG & PDF KEY
+           ========================================================================= */
+        function initiateExamFlow() {
+            if (!currentOpenedPost || !currentOpenedPost.questions.length) return;
+            clearInterval(examState.timerId);
+
+            if (currentOpenedPost.allowUserTimer) {
+                document.getElementById("pre-exam-view").style.display = "block";
+                document.getElementById("quiz-view").style.display = "none";
+                document.getElementById("dashboard-view").style.display = "none";
+                document.getElementById("pre-exam-title").textContent = currentOpenedPost.title;
+                document.getElementById("pre-exam-qcount").textContent = currentOpenedPost.questions.length;
+            } else {
+                startExamSession(currentOpenedPost.timerSec || 60);
+            }
+        }
+
+        function confirmUserTimerAndStart() {
+            const sec = parseInt(document.getElementById("user-onetime-timer-select").value, 10) || 60;
+            startExamSession(sec);
+        }
+
+        function startExamSession(durationSec) {
+            activeExamQuestions = JSON.parse(JSON.stringify(currentOpenedPost.questions));
+            examState.currentIdx = 0;
+            examState.answers = new Array(activeExamQuestions.length).fill(null);
+            examState.lockedDuration = durationSec;
+
+            document.getElementById("pre-exam-view").style.display = "none";
+            document.getElementById("dashboard-view").style.display = "none";
+            document.getElementById("quiz-view").style.display = "flex";
+
+            renderExamPalette();
+            renderCurrentQuestion();
+            startQuestionTimer();
+        }
+
+        function renderExamPalette() {
+            const grid = document.getElementById("nav-grid");
+            grid.innerHTML = "";
+            activeExamQuestions.forEach((q, idx) => {
+                const btn = document.createElement("button");
+                btn.textContent = idx + 1;
+                btn.className = `grid-btn ${examState.answers[idx] !== null ? "filled" : "unfilled"} ${idx === examState.currentIdx ? "active-now" : ""}`;
+                btn.onclick = () => { examState.currentIdx = idx; renderCurrentQuestion(); startQuestionTimer(); };
+                grid.appendChild(btn);
+            });
+            const answered = examState.answers.filter(a => a !== null).length;
+            document.getElementById("answered-stat").textContent = `${answered} / ${activeExamQuestions.length}`;
+        }
+
+        function renderCurrentQuestion() {
+            const q = activeExamQuestions[examState.currentIdx];
+            if (!q) return;
+
+            document.getElementById("q-category").textContent = `${currentOpenedPost.subject} • Question ${examState.currentIdx + 1} of ${activeExamQuestions.length}`;
+            document.getElementById("q-text").textContent = `${examState.currentIdx + 1}. ${q.text}`;
+
+            const extra = document.getElementById("q-extra-block");
+            extra.innerHTML = q.statementsText ? `<div class="statements-box">${escapeHTML(q.statementsText)}</div>` : "";
+
+            const optsBox = document.getElementById("q-options");
+            optsBox.innerHTML = "";
+            const letters = ["A", "B", "C", "D", "E"];
+
+            q.options.forEach((opt, i) => {
+                const btn = document.createElement("button");
+                const isSel = examState.answers[examState.currentIdx] === opt;
+                btn.className = `option-item ${isSel ? "selected" : ""}`;
+                btn.innerHTML = `<span class="opt-badge">${letters[i] || i + 1}</span><span>${escapeHTML(opt)}</span>`;
+                btn.onclick = () => {
+                    examState.answers[examState.currentIdx] = opt;
+                    renderExamPalette();
+                    renderCurrentQuestion();
+                    setTimeout(() => {
+                        if (examState.currentIdx < activeExamQuestions.length - 1) {
+                            examState.currentIdx++;
+                            renderCurrentQuestion();
+                            startQuestionTimer();
+                        } else {
+                            triggerSubmission(true);
+                        }
+                    }, 220);
+                };
+                optsBox.appendChild(btn);
+            });
+
+            document.getElementById("btn-prev-q").disabled = examState.currentIdx === 0;
+            renderExamPalette();
+        }
+
+        function prevQuestion() {
+            if (examState.currentIdx > 0) {
+                examState.currentIdx--;
+                renderCurrentQuestion();
+                startQuestionTimer();
+            }
+        }
+
+        function clearCurrentAnswer() {
+            examState.answers[examState.currentIdx] = null;
+            renderCurrentQuestion();
+        }
+
+        function startQuestionTimer() {
+            clearInterval(examState.timerId);
+            examState.timeLeft = examState.lockedDuration;
+            const clock = document.getElementById("clock");
+            clock.textContent = `${examState.timeLeft}s`;
+            clock.classList.remove("warning");
+
+            examState.timerId = setInterval(() => {
+                examState.timeLeft--;
+                clock.textContent = `${examState.timeLeft}s`;
+                if (examState.timeLeft <= 10) clock.classList.add("warning");
+                if (examState.timeLeft <= 0) {
+                    clearInterval(examState.timerId);
+                    if (examState.currentIdx < activeExamQuestions.length - 1) {
+                        examState.currentIdx++;
+                        renderCurrentQuestion();
+                        startQuestionTimer();
+                    } else {
+                        triggerSubmission(true);
+                    }
+                }
+            }, 1000);
+        }
+
+        function triggerSubmission() {
+            clearInterval(examState.timerId);
+            document.getElementById("quiz-view").style.display = "none";
+            document.getElementById("dashboard-view").style.display = "block";
+
+            let correct = 0, wrong = 0, skipped = 0;
+            activeExamQuestions.forEach((q, i) => {
+                const a = examState.answers[i];
+                if (a === q.correct) correct++;
+                else if (a === null) skipped++;
+                else wrong++;
+            });
+
+            const pos = currentOpenedPost.posMark ?? 1.0;
+            const neg = currentOpenedPost.negMark ?? 0.5;
+            const net = (correct * pos) - (wrong * neg);
+            const max = activeExamQuestions.length * pos;
+            const acc = (correct + wrong) > 0 ? (correct / (correct + wrong)) * 100 : 0;
+            const pct = max > 0 ? Math.max(0, (net / max) * 100) : 0;
+
+            lastScorecardMetrics = {
+                score: `${net.toFixed(1)} / ${max.toFixed(1)}`,
+                correctCount: correct,
+                wrongCount: wrong,
+                accuracy: `${acc.toFixed(1)}%`,
+                percentage: `${pct.toFixed(1)}%`
+            };
+
+            document.getElementById("res-score").textContent = lastScorecardMetrics.score;
+            document.getElementById("res-correct").textContent = `${correct} (+${(correct * pos).toFixed(1)})`;
+            document.getElementById("res-wrong").textContent = `${wrong} (Skip: ${skipped})`;
+            document.getElementById("res-negative").textContent = `-${(wrong * neg).toFixed(2)}`;
+            document.getElementById("res-accuracy").textContent = lastScorecardMetrics.accuracy;
+
+            const badge = document.getElementById("pass-fail-badge");
+            const passed = pct >= 40;
+            badge.textContent = passed ? `QUALIFIED (${pct.toFixed(1)}%)` : `NEEDS IMPROVEMENT (${pct.toFixed(1)}%)`;
+            badge.style.background = passed ? "#dcfce7" : "#fee2e2";
+            badge.style.color = passed ? "#166534" : "#991b1b";
+
+            const rev = document.getElementById("review-wrapper");
+            const pdfBody = document.getElementById("pdf-questions-body");
+            rev.innerHTML = "";
+            pdfBody.innerHTML = "";
+
+            activeExamQuestions.forEach((q, i) => {
+                const a = examState.answers[i];
+                const status = a === q.correct ? "correct" : (a === null ? "skipped" : "wrong");
+
+                const card = document.createElement("div");
+                card.className = `review-card ${status}`;
+                card.innerHTML = `
+                    <div style="font-weight:800; margin-bottom:0.4rem;">Q${i + 1}. ${escapeHTML(q.text)}</div>
+                    <div style="font-size:0.9rem;">Your Answer: <strong>${escapeHTML(a || "Skipped")}</strong> | Correct Answer: <strong style="color:#16a34a;">${escapeHTML(q.correct)}</strong></div>
+                    ${q.exp ? `<div class="explanation-text"><strong>Explanation:</strong>\n${escapeHTML(q.exp)}</div>` : ""}
+                `;
+                rev.appendChild(card);
+
+                const pItem = document.createElement("div");
+                pItem.style.cssText = "margin-bottom:12px; border-bottom:1px solid #ccc; padding-bottom:8px;";
+                pItem.innerHTML = `<strong>Q${i + 1}. ${escapeHTML(q.text)}</strong><br><span style="color:#16a34a;">Answer: ${escapeHTML(q.correct)}</span><br><small>${escapeHTML(q.exp || "")}</small>`;
+                pdfBody.appendChild(pItem);
+            });
+        }
+
+        function validateCandidatePhotoFile(e) {
+            const file = e.target.files[0];
+            if (!file || !file.type.startsWith("image/")) {
+                candidateUploadedPhotoDataUrl = "";
+                return;
+            }
+            const reader = new FileReader();
+            reader.onload = ev => { candidateUploadedPhotoDataUrl = ev.target.result; };
+            reader.readAsDataURL(file);
+        }
+
+        function generateAndDownloadScorecardImage() {
+            const name = document.getElementById("sc-student-name").value.trim();
+            const email = document.getElementById("sc-student-email").value.trim();
+            if (!name || !email || !candidateUploadedPhotoDataUrl) {
+                alert("Please fill Candidate Name, Email ID, and Upload Photo!");
+                return;
+            }
+
+            const img = new Image();
+            img.onload = () => {
+                const canvas = document.createElement("canvas");
+                canvas.width = 960; canvas.height = 540;
+                const ctx = canvas.getContext("2d");
+
+                ctx.fillStyle = "#ffffff";
+                ctx.fillRect(0, 0, 960, 540);
+                ctx.strokeStyle = "#1E1B4B";
+                ctx.lineWidth = 10;
+                ctx.strokeRect(12, 12, 936, 516);
+
+                ctx.fillStyle = "#1E1B4B";
+                ctx.fillRect(16, 16, 928, 95);
+                ctx.fillStyle = "#ffffff";
+                ctx.font = "bold 28px Inter, Arial";
+                ctx.fillText("ssc247.com — OFFICIAL VERIFIED SCORECARD", 42, 74);
+
+                ctx.drawImage(img, 730, 140, 175, 195);
+
+                ctx.fillStyle = "#0f172a";
+                ctx.font = "bold 22px Inter, Arial";
+                ctx.fillText(`Candidate: ${name.toUpperCase()}`, 42, 175);
+                ctx.font = "600 18px Inter, Arial";
+                ctx.fillText(`Email: ${email}`, 42, 212);
+                ctx.fillText(`Exam: ${currentOpenedPost.title.slice(0, 42)}`, 42, 250);
+                ctx.fillStyle = "#16a34a";
+                ctx.font = "900 26px Inter, Arial";
+                ctx.fillText(`Score: ${lastScorecardMetrics.score}   |   Accuracy: ${lastScorecardMetrics.accuracy}`, 42, 310);
+
+                const url = canvas.toDataURL("image/png");
+                document.getElementById("sc-preview-img").src = url;
+                document.getElementById("sc-preview-wrapper").style.display = "block";
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `ssc247_${name.replace(/\s+/g, "_")}_Scorecard.png`;
+                a.click();
+            };
+            img.src = candidateUploadedPhotoDataUrl;
+        }
+
+        function downloadCorrectOptionsPDF() {
+            window.print();
+        }
+
+        /* =========================================================================
+           9. VISITOR COUNTER, FEEDBACK EMAIL & UNBLOCK APPEAL
+           ========================================================================= */
+        async function updateVisitorCounter() {
+            const el = document.getElementById("live-visited-count");
+            if (!el) return;
+            try {
+                const res = await fetch("https://api.counterapi.dev/v1/ssc247-portal-live/visits/up");
+                const data = await res.json();
+                el.textContent = (data.count || 1).toLocaleString();
+            } catch (e) {
+                el.textContent = "1,247";
+            }
+        }
+
+        async function sendUserTopicEmail() {
+            const name = document.getElementById("user-req-name").value.trim();
+            const email = document.getElementById("user-req-email").value.trim();
+            const msg = document.getElementById("user-req-msg").value.trim();
+            const st = document.getElementById("user-req-status");
+            if (!name || !email || !msg) {
+                st.style.color = "#dc2626";
+                st.textContent = "Please fill all fields.";
+                return;
+            }
+            st.style.color = "#16a34a";
+            st.textContent = "Sending request to ssc247.com Admin...";
+            try {
+                await fetch("https://formsubmit.co/ajax/" + _0xVault.getAdminInbox(), {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify({ _subject: `ssc247.com Topic Request from ${name}`, Name: name, Email: email, Message: msg })
+                });
+            } catch (e) {}
+            st.textContent = "Thank you! Your topic request was delivered to Admin.";
+            document.getElementById("user-req-name").value = "";
+            document.getElementById("user-req-email").value = "";
+            document.getElementById("user-req-msg").value = "";
+        }
+
+        async function submitUnblockAppeal() {
+            const name = document.getElementById("unblock-name").value.trim();
+            const email = document.getElementById("unblock-email").value.trim();
+            const reason = document.getElementById("unblock-reason").value.trim();
+            const fb = document.getElementById("unblock-feedback");
+            if (!name || !email || !reason) return alert("Fill all fields.");
+
+            if (_0xVault.verifyUnblockKey(reason)) {
+                localStorage.removeItem("SSC247_LOCKED");
+                localStorage.setItem("SSC247_FAIL_COUNT", "0");
+                failedCount = 0;
+                fb.textContent = "Recovery Key Verified! Unlocking...";
+                setTimeout(() => { document.getElementById("blocked-screen").style.display = "none"; }, 700);
+            } else {
+                fb.textContent = "Request submitted to ssc247.com Admin.";
+            }
+        }
+
+        function escapeHTML(str) {
+            return String(str || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+        }
+
+        /* =========================================================================
+           10. BOOTSTRAP APPLICATION
+           ========================================================================= */
+        window.addEventListener("DOMContentLoaded", async () => {
+            if (localStorage.getItem("SSC247_LOCKED") === "true") {
+                document.getElementById("blocked-screen").style.display = "flex";
+                return;
+            }
+
+            await loadMasterState();
+            startQuotesRotation();
+            updateVisitorCounter();
+
+            const params = new URLSearchParams(window.location.search);
+            const postParam = params.get("post");
+            const pageParam = params.get("page");
+
+            if (postParam) {
+                openMockTestPost(postParam);
+            } else if (pageParam) {
+                openLegalPage(pageParam);
+            } else {
+                renderPortalHome();
+            }
+        });
+    </script>
+</body>
+</html>
